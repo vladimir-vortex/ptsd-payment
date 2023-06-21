@@ -4,28 +4,33 @@
         <div class="container px-4 md:px-8 mx-auto mt-8 max-w-md">
             <form [formGroup]="startTestForm" (ngSubmit)="onSubmit()">
                 <!-- <p *ngIf="startTestForm.controls.test.errors && startTestForm.controls.test.errors['minlength']">minlength</p> -->
-                <mat-form-field appearance="fill" class="w-full">
-                    <mat-select required formControlName="gender">
-                        <mat-option value="b">Хлопчик</mat-option>
-                        <mat-option value="g">Дівчинка</mat-option>
-                    </mat-select>
-                    <mat-label>Стать дитини</mat-label>
-                </mat-form-field>
-                <mat-form-field appearance="fill" class="w-full">
-                    <mat-select required formControlName="age">
-                        <!-- <mat-option>-- None --</mat-option> -->
-                        <mat-option value="8">8</mat-option>
-                        <mat-option value="9">9</mat-option>
-                        <mat-option value="10">10</mat-option>
-                        <mat-option value="11">11</mat-option>
-                        <mat-option value="12">12</mat-option>
-                        <mat-option value="13">13</mat-option>
-                        <mat-option value="14">14</mat-option>
-                    </mat-select>
-                    <mat-label>Вік дитини</mat-label>
-                </mat-form-field>
+                <div class="relative">
+                    <mat-form-field appearance="fill" class="w-full">
+                        <mat-select required formControlName="gender" [disabled]="isLoading">
+                            <mat-option value="b">Хлопчик</mat-option>
+                            <mat-option value="g">Дівчинка</mat-option>
+                        </mat-select>
+                        <mat-label>Стать дитини</mat-label>
+                    </mat-form-field>
+                    <mat-form-field appearance="fill" class="w-full">
+                        <mat-select required formControlName="age" [disabled]="isLoading">
+                            <!-- <mat-option>-- None --</mat-option> -->
+                            <mat-option value="8">8</mat-option>
+                            <mat-option value="9">9</mat-option>
+                            <mat-option value="10">10</mat-option>
+                            <mat-option value="11">11</mat-option>
+                            <mat-option value="12">12</mat-option>
+                            <mat-option value="13">13</mat-option>
+                            <mat-option value="14">14</mat-option>
+                        </mat-select>
+                        <mat-label>Вік дитини</mat-label>
+                    </mat-form-field>
+                    <div *ngIf="isLoading" class="absolute top-0 bottom-0 w-full flex justify-center items-center">
+                        <app-loader></app-loader>
+                    </div>
+                </div>
                 <div class="flex">
-                    <button type="submit" class="tm-button tm-button-primary tm-button-flat w-48" [disabled]="startTestForm.status !=='VALID'">
+                    <button type="submit" class="tm-button tm-button-primary tm-button-flat w-48" [disabled]="startTestForm.status !=='VALID' || isLoading">
                         <div class="flex items-center gap-1">
                             <span>Далі</span>
                             <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
