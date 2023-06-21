@@ -1,0 +1,43 @@
+<div class="container px-4 md:px-8 mx-auto max-w-md">
+    <h1 class="text-3xl lg:text-4xl text-center">PTSD test</h1>
+    <div class="mt-4 text-base">
+        <p>This is description PTSD test</p>
+        <p>Pick your gender and age</p>
+    </div>
+</div>
+<div class="container px-4 md:px-8 mx-auto mt-4 max-w-md">
+    <form [formGroup]="startTestForm" (ngSubmit)="onSubmit()">
+        <!-- <p *ngIf="startTestForm.controls.test.errors && startTestForm.controls.test.errors['minlength']">minlength</p> -->
+        <mat-form-field appearance="fill" class="w-full">
+            <mat-select required formControlName="gender">
+                <mat-option value="b">Male</mat-option>
+                <mat-option value="g">Female</mat-option>
+            </mat-select>
+            <mat-label>Gender</mat-label>
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="w-full">
+            <mat-select required formControlName="age">
+                <!-- <mat-option>-- None --</mat-option> -->
+                <mat-option value="8">8</mat-option>
+                <mat-option value="9">9</mat-option>
+                <mat-option value="10">10</mat-option>
+                <mat-option value="11">11</mat-option>
+                <mat-option value="12">12</mat-option>
+                <mat-option value="13">13</mat-option>
+                <mat-option value="14">14</mat-option>
+            </mat-select>
+            <mat-label>Age</mat-label>
+        </mat-form-field>
+        <div class="flex">
+            <button type="submit" class="tm-button tm-button-primary tm-button-flat w-48" [disabled]="startTestForm.status !=='VALID'">
+                <div class="flex items-center gap-1">
+                    <span>Далі</span>
+                    <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3.83337 8H13.1667" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M8.5 3.3335L13.1667 8.00016L8.5 12.6668" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>                    
+                </div>
+            </button>
+        </div>
+    </form>
+</div>
