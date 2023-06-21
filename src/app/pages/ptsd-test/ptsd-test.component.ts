@@ -59,6 +59,7 @@ export class PtsdTestComponent implements OnInit {
         if(this.test.gender == "b") {
           this.gender = "b"
         }
+        this.isLoading = false;
       }
     });
     this.router.events.subscribe((event: Event) => {

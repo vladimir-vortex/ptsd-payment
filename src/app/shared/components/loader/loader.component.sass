@@ -1,0 +1,29 @@
+$loader-size: 32px
+
+.loader-container
+    padding: 24px
+    width: 100%
+    display: flex
+    justify-content: center
+    align-items: center
+
+.lds-dual-ring
+    display: inline-block
+    width: $loader-size
+    height: $loader-size
+    &:after
+        content: " "
+        display: block
+        width: $loader-size
+        height: $loader-size
+        margin: 0px
+        border-radius: 50%
+        border: 1px solid var(--color-primary)
+        border-color: var(--color-primary) transparent var(--color-primary) transparent
+        animation: lds-dual-ring .5s linear infinite
+
+@keyframes lds-dual-ring
+    0%
+        transform: rotate(0deg)
+    100%
+        transform: rotate(360deg)

@@ -1,6 +1,7 @@
 <section class="px-4 sm:px-8 py-10 sm:py-14">
     <div class="tm-container tm-container-2xs">
-        <div *ngIf="question">
+        <app-loader *ngIf="isLoading"></app-loader>
+        <div *ngIf="question && !isLoading">
             <h1 *ngIf="question.title" class="tm-section-header">
                 {{question.title[lang] || question.title[lang_default]}}
             </h1>

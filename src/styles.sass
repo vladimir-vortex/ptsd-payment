@@ -29,6 +29,9 @@ $section-gap-sm: 6rem
 $section-header-gap: 2rem
 $section-header-gap-sm: 3rem
 
+:root
+    --color-primary: #{$color-primary}
+
 @mixin title-1
     font-family: $font-primary
     font-weight: 700
@@ -91,7 +94,7 @@ svg
 .content
     flex: 1 0 auto
 
-header
+header  
     position: relative
     z-index: 50
     background-color: $color-grey-tetriary

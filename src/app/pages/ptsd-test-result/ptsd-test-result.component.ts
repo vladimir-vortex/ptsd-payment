@@ -8,6 +8,7 @@ import { MatIconRegistry } from '@angular/material/icon';
 import { ErrorStateMatcher } from '@angular/material/core';
 import { timer } from 'rxjs';
 import { PtsdResult } from 'src/app/interfaces/ptsd-result';
+import { Router } from '@angular/router';
 
 /** Error when invalid control is dirty, touched, or submitted. */
 export class MyErrorStateMatcher implements ErrorStateMatcher {
@@ -35,7 +36,8 @@ export class PtsdTestResultComponent implements OnInit {
     iconRegistry: MatIconRegistry,
     sanitizer: DomSanitizer,
     private clipboard: Clipboard,
-    private _snackBar: MatSnackBar
+    private _snackBar: MatSnackBar,
+    private router: Router
   ) {
     // Note that we provide the icon here as a string literal here due to a limitation in
     // Stackblitz. If you want to provide the icon from a URL, you can use:
@@ -51,8 +53,8 @@ export class PtsdTestResultComponent implements OnInit {
   });
 
   isSending = false;
-  isLoading = false;
-  resultUrl = 'https://test.com/test/';
+  isLoading = true;
+  resultUrl = window.location.href;
 
   results: PtsdResult[] = [
     {
@@ -108,6 +110,7 @@ export class PtsdTestResultComponent implements OnInit {
             this.textResults.push(this.results[3]);
           };
         }
+        this.isLoading = false;
       },
       error: (error) => {
         this.isLoading = false;

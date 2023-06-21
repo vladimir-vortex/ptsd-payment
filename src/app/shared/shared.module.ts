@@ -4,12 +4,14 @@ import { RouterModule } from '@angular/router';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { MaterialModule } from './material/material.module';
+import { LoaderComponent } from './components/loader/loader.component';
 
 
 @NgModule({
   declarations: [
     FooterComponent,
-    HeaderComponent
+    HeaderComponent,
+    LoaderComponent
   ],
   imports: [
     CommonModule,
@@ -19,6 +21,7 @@ import { MaterialModule } from './material/material.module';
   exports: [
     HeaderComponent,
     FooterComponent,
+    LoaderComponent,
     MaterialModule
   ],
 })
