@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, NavigationEnd, NavigationError, NavigationStart, Router, Event } from '@angular/router';
-import { PtsdQuestion } from 'src/app/interfaces/ptsd-question';
 import { PtsdTestService } from 'src/app/services/ptsd-test.service';
+import { FormControl, FormGroup } from '@angular/forms';
 import { environment } from 'src/environments/environment';
+import { PtsdQuestion } from 'src/app/interfaces/ptsd-question';
 
 @Component({
-  selector: 'app-ptsd-test',
-  templateUrl: './ptsd-test.component.html',
-  styleUrls: ['./ptsd-test.component.sass']
+  selector: 'app-ptsd-test-fables',
+  templateUrl: './ptsd-test-fables.component.html',
+  styleUrls: ['./ptsd-test-fables.component.sass']
 })
-export class PtsdTestComponent implements OnInit {
+export class PtsdTestFablesComponent implements OnInit {
 
   constructor(
     private ptsdTestService: PtsdTestService,
@@ -45,12 +45,12 @@ export class PtsdTestComponent implements OnInit {
   
   ngOnInit(): void {
     this.questionId = Number(this.route.snapshot.paramMap.get('question')); 
-    this.ptsdTestService.getQuestions().subscribe({
+    this.ptsdTestService.getFablesQuestions().subscribe({
       next: (data) => {
         this.test = this.ptsdTestService.getTest();
         this.questions = data;
         this.question = this.getQuestion(this.questionId);
-        this.answer = this.test.child.find((e: { questionId: number; }) => e.questionId === this.questionId);
+        this.answer = this.test.fables.find((e: { questionId: number; }) => e.questionId === this.questionId);
         if(this.answer) {
           this.answerForm.patchValue({
             answer: this.answer.answer.toString()
@@ -73,7 +73,7 @@ export class PtsdTestComponent implements OnInit {
           //this.currentRoute = event.url;
           this.questionId = Number(this.route.snapshot.paramMap.get('question')); 
           this.question = this.getQuestion(this.questionId);
-          this.answer = this.test.child.find((e: { questionId: number; }) => e.questionId === this.questionId);
+          this.answer = this.test.fables.find((e: { questionId: number; }) => e.questionId === this.questionId);
           if(this.answer) {
             this.answerForm.patchValue({
               answer: this.answer.answer.toString()
@@ -102,26 +102,26 @@ export class PtsdTestComponent implements OnInit {
 
   onSubmit() {
     console.log(this.answerForm.value);
-    if(this.test.child) {
-      this.answer = this.test.child.find((e: { questionId: number; }) => e.questionId === this.questionId);
+    if(this.test.fables) {
+      this.answer = this.test.fables.find((e: { questionId: number; }) => e.questionId === this.questionId);
       if(this.answer) {
         this.answer.answer = Number(this.answerForm.value.answer);
       } else {
-        this.test.child = [...this.test.child, {questionId: this.questionId, answer: Number(this.answerForm.value.answer)}];
+        this.test.fables = [...this.test.fables, {questionId: this.questionId, answer: Number(this.answerForm.value.answer)}];
         // this.answers.push({questionId: this.questionId, answer: Number(this.answerForm.value.answer)});
       }
     } else {
-      this.test.child = [{questionId: this.questionId, answer: Number(this.answerForm.value.answer)}];
+      this.test.fables = [{questionId: this.questionId, answer: Number(this.answerForm.value.answer)}];
     }
     this.ptsdTestService.setTest(this.test);
     this.answerForm.patchValue({
       answer: ''
     });
     if(this.nextQuestion) {
-      this.router.navigate(['/ptsd-test', this.questionId + 1 ]);
+      this.router.navigate(['/ptsd-test-fables', this.questionId + 1 ]);
     } else {
       // this.router.navigate(['/ptsd-test-lusher']);
-      this.router.navigate(['/ptsd-test-fables', 1 ]);
+      this.router.navigate(['/ptsd-test-lusher']);
       // this.ptsdTestService.submit().subscribe({
       //   next: (response) => {
       //     this.isLoading = false;

@@ -54,6 +54,14 @@ $section-header-gap-sm: 3rem
     line-height: 1.2em
     letter-spacing: -0.02em
 
+@mixin subtitle-3
+    /* Subtitle 3 */
+    font-family: $font-primary
+    font-weight: 600
+    font-size: 24px
+    line-height: 1.2em
+    letter-spacing: -0.02em
+
 @mixin body-2
     /* body 2 */
     font-family: $font-primary
@@ -112,6 +120,9 @@ footer
 
 .tm-section-header
     @include title-2
+
+.tm-section-subheader
+    @include subtitle-3
 
 .tm-container
     max-width: 1200px

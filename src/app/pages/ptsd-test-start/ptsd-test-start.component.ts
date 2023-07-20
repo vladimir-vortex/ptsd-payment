@@ -41,7 +41,9 @@ export class PtsdTestStartComponent implements OnInit {
           let test: any;
           test = this.startTestForm.value;
           test.id = response.body.id;
-          test.answers = [];
+          test.child = [];
+          test.fables = [];
+          test.lusher = [];
           this.ptsdTestService.setTest(test);
           console.log(this.ptsdTestService.getTest());
           this.ptsdTestService.setTestId(response.body.id);

@@ -11,6 +11,9 @@ import { PtsdTestStartComponent } from './pages/ptsd-test-start/ptsd-test-start.
 import { PtsdTestResultComponent } from './pages/ptsd-test-result/ptsd-test-result.component';
 import { SharedModule } from './shared/shared.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { PtsdTestLusherComponent } from './pages/ptsd-test-lusher/ptsd-test-lusher.component';
+import { PtsdTestSecondComponent } from './pages/ptsd-test-second/ptsd-test-second.component';
+import { PtsdTestFablesComponent } from './pages/ptsd-test-fables/ptsd-test-fables.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,10 @@ import { ReactiveFormsModule } from '@angular/forms';
     HomeComponent,
     PtsdTestComponent,
     PtsdTestStartComponent,
-    PtsdTestResultComponent
+    PtsdTestResultComponent,
+    PtsdTestLusherComponent,
+    PtsdTestSecondComponent,
+    PtsdTestFablesComponent
   ],
   imports: [
     BrowserModule,

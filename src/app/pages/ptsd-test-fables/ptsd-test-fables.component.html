@@ -1,0 +1,35 @@
+<section class="px-4 sm:px-8 py-10 sm:py-14">
+    <div class="tm-container tm-container-2xs">
+        <app-loader *ngIf="isLoading"></app-loader>
+        <div *ngIf="question && !isLoading">
+            <h1 *ngIf="question.title" class="tm-section-header">
+                {{question.title[lang] || question.title[lang_default]}}
+            </h1>
+            <p *ngIf="question.description" class="mt-6">
+                {{question.description[lang] || question.description[lang_default]}}
+            </p>
+            <div class="mt-14 flex justify-center">
+                <img src="{{imagesUrl}}/{{question.image_b}}" alt="" class="object-contain w-96 h-96">
+            </div>
+            <div *ngIf="question.answers" class="mt-14">
+                <form [formGroup]="answerForm" (ngSubmit)="onSubmit()">
+                    <div class="flex flex-col gap-4">
+                        <div *ngFor="let answer of question.answers" class="flex gap-3 items-center">
+                            <input type="radio" id="{{answer.id}}" formControlName="answer" value="{{answer.id}}">
+                            <label for="{{answer.id}}">{{answer.title[lang] || answer.title[lang_default]}}</label>
+                        </div>
+                    </div>
+                    <button type="submit" class="tm-button tm-button-primary tm-button-width tm-button-flat mt-8" [disabled]="!this.answerForm.value.answer">
+                        <div class="flex items-center gap-1">
+                            <span>Далі</span>
+                            <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3.83337 8H13.1667" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M8.5 3.3335L13.1667 8.00016L8.5 12.6668" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>                    
+                        </div>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

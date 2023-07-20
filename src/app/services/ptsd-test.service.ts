@@ -29,6 +29,11 @@ export class PtsdTestService {
       // .map((response:any) => response.json())
       // .catch((error:any) => console.log(error));
   }
+  
+  getFablesQuestions(): Observable<any> {
+    return this.http.get<any>('assets/data/ptsd-fables-questions.json');
+
+  }
 
   getResults(): Observable<any> {
     return this.http.get<any>('assets/data/ptsd-results.json');
@@ -44,7 +49,8 @@ export class PtsdTestService {
 
   submit(): Observable<any> {
     let test = this.getTest();
-    return this.http.post<any>(environment.apiUrl + `/api/v1/ptsd-test-result/${this.getTestId()}`, test.answers, { headers: this.headers, observe: 'response', responseType: 'json' });
+    return this.http.post<any>(environment.apiUrl + `/api/v1/ptsd-test-result/${this.getTestId()}`,
+     { "child": test.child, "lusher": test.lusher, "fables": test.fables }, { headers: this.headers, observe: 'response', responseType: 'json' });
   }
 
   // test(body: any): Observable<any> {

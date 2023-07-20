@@ -87,9 +87,79 @@ export class PtsdTestResultComponent implements OnInit {
     }
   ];
 
+  lusher_results: PtsdResult[] = [
+    {
+        "id": 1,
+        "description": {
+            "en": "Сприятливий емоційний стан",
+            "uk": "Сприятливий емоційний стан"
+        }
+    },
+    {
+        "id": 2,
+        "description": {
+            "en": "Задовільний емоційний стан",
+            "uk": "Задовільний емоційний стан"
+        }
+    },
+    {
+        "id": 3,
+        "description": {
+            "en": "Емоційний стан дитини незадовільний – потрібна допомога психолога, педагога",
+            "uk": "Емоційний стан дитини незадовільний – потрібна допомога психолога, педагога"
+        }
+    },
+    {
+        "id": 4,
+        "description": {
+            "en": "Дитина перебуває у кризовому стані, потрібна допомога спеціалістів (психолога, психотерапевта)",
+            "uk": "Дитина перебуває у кризовому стані, потрібна допомога спеціалістів (психолога, психотерапевта)"
+        }
+    },
+  ];
+
+  fables_results: PtsdResult[] = [
+    {
+        "id": 1,
+        "description": {
+            "en": "Стан особистості дитини та її почуття - в межаї норми. Ознак проблем не виявлено",
+            "uk": "Стан особистості дитини та її почуття - в межаї норми. Ознак проблем не виявлено"
+        }
+    },
+    {
+        "id": 2,
+        "description": {
+            "en": "Стан особистості дитини та її почуття в цілому - в межаї норми. Окремі відповіді не є типовими для нормального стану. Для більш точної оцінки слід звернутися до психолога",
+            "uk": "Стан особистості дитини та її почуття в цілому - в межаї норми. Окремі відповіді не є типовими для нормального стану. Для більш точної оцінки слід звернутися до психолога"
+        }
+    },
+    {
+        "id": 3,
+        "description": {
+            "en": "Стан особистості дитини та її почуття виходячи із відповідей на декілька із поставлених питаннь викликають занепокоєння. Рекомендовано звернутись до психолога",
+            "uk": "Стан особистості дитини та її почуття виходячи із відповідей на декілька із поставлених питаннь викликають занепокоєння. Рекомендовано звернутись до психолога"
+        }
+    },
+    {
+        "id": 4,
+        "description": {
+            "en": "Стан особистості дитини та її почуття виходячи із відповідей на більшість із поставлених питаннь викликають занепокоєння. Наполегливо рекомендуємо звернутись до психолога",
+            "uk": "Стан особистості дитини та її почуття виходячи із відповідей на більшість із поставлених питаннь викликають занепокоєння. Наполегливо рекомендуємо звернутись до психолога"
+        }
+    },
+  ];
+
   test: any;
 
   textResults: PtsdResult[] = [];
+
+  textLusher: any;
+
+  textFables: any;
+
+  scoreLusher: number = 0;
+
+  scoreFables = 0.0;
 
   emailFormControl = new FormControl('', [Validators.required, Validators.email]);
   matcher = new MyErrorStateMatcher();
@@ -97,19 +167,48 @@ export class PtsdTestResultComponent implements OnInit {
   ngOnInit(): void {
     this.ptsdTestService.result().subscribe({
       next: (response) => {
-        if(response.body?.score?.param_1 > 0.6) {
+        if(response.body?.child?.param_1 > 0.6) {
           this.textResults.push(this.results[0]);
         } else {
-          if(response.body?.score?.param_2 > 0.1) {
+          if(response.body?.child?.param_2 > 0.1) {
             this.textResults.push(this.results[1]);
           };
-          if(response.body?.score?.param_3 > 0.1) {
+          if(response.body?.child?.param_3 > 0.1) {
             this.textResults.push(this.results[2]);
           };
-          if(response.body?.score?.param_4 > 0.1) {
+          if(response.body?.child?.param_4 > 0.1) {
             this.textResults.push(this.results[3]);
           };
         }
+
+        if(response.body?.lusher?.score) {
+          this.scoreLusher = response.body?.lusher?.score;
+          
+          if(this.scoreLusher < 3) {
+            this.textLusher = this.lusher_results[0];
+          } else if(this.scoreLusher < 6) {
+            this.textLusher = this.lusher_results[1];
+          } else if(this.scoreLusher < 9) {
+            this.textLusher = this.lusher_results[2];
+          } else {
+            this.textLusher = this.lusher_results[3];
+          }
+        }
+
+        if(response.body?.fables?.score) {
+          this.scoreFables = response.body?.fables?.score;
+          
+          if(this.scoreFables > 0.8) {
+            this.textFables = this.fables_results[0];
+          } else if(this.scoreFables > 0.7) {
+            this.textFables = this.fables_results[1];
+          } else if(this.scoreFables > 0.55) {
+            this.textFables = this.fables_results[2];
+          } else {
+            this.textFables = this.fables_results[3];
+          }
+        }
+
         this.isLoading = false;
       },
       error: (error) => {
