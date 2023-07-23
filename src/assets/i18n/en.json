@@ -1,0 +1,88 @@
+{
+    "menu": {
+        "header": {
+            "item1": "Menu 1",
+            "item2": "Menu 2",
+            "item3": "Menu 3",
+            "item4": "Menu 4"
+        }
+    },
+    "page": {
+        "results": {
+            "title": "Test result",
+            "subtitle1": "Playing with younger children",
+            "subtitle2": "Tales-tests of Louise Duss",
+            "subtitle3": "Luscher color test",
+            "copyLinkButton": "Copy link",
+            "sendResultTitle": "Send test results to email?",
+            "sendResultButton": "Send result"
+        },
+        "test-start": {
+            "header": "PTSD test",
+            "input-gender": {
+                "label": "Gender of child",
+                "option-b": "Boy",
+                "option-g": "Girl"
+            },
+            "input-age": {
+                "label": "Age of the child"
+            }
+        },
+        "lusher": {
+            "header": "Luscher color test",
+            "text": "From the offered colors, choose the one you like the most."
+        },      
+        "home": {
+            "cover": {
+                "header": "PTSD in a child",
+                "text": "Traumatic experiences can lead to the development of post-traumatic stress disorder (PTSD) in children. This process can become irreversible if you miss the moment when you need to see a specialist.",
+                "subheader": "Start Assessment Now"
+            },
+            "points": {
+                "text-1": "According to official data, as of August 1, 2022, at least 1,051 children have been affected by the war in Ukraine this year. Every day this disappointing statistic grows",
+                "text-2": "Laboratory methods for detecting PTSD do not exist. Therefore, methods for diagnosing PTSD in children are based on psychophysiological examination",
+                "text-3": "It is estimated that the number of such children reaches 4-5 million. It is assumed that the vast majority of them will develop clinical signs of post-traumatic stress disorder (PTSD)."
+            },
+            "what": {
+                "header": "What is PTSD?",
+                "text": "PTSD is a mental disorder that usually begins to manifest about six months after the traumatic event. However, if the stressor has a strong long-term effect (for example, being under occupation, constant situations of shelling and air raids, etc.), the likelihood of rapid development of PTSD increases.",
+                "link": "More information about PTSD"
+            },
+            "problem": {
+                "header": "Why does PTSD in children become a threat?",
+                "text": "If we don't start rehabilitating Ukrainian children now, then in 10-20 years we can expect a generation of traumatized adults, people with various addictions, cruel, at best withdrawn and indifferent people. And all this is the consequences of PTSD."
+            },
+            "diagnostic": {
+                "header": "Some symptoms of PTSD:",
+                "text-1": "There are no laboratory methods for detecting PTSD. Methods for diagnosing PTSD in children are based on a comprehensive psychophysiological examination.",
+                "text-2": "However, online testing can highlight aspects that can be a signal to parents.",
+                "list": {
+                    "item-1": "Reaction to sharp sounds, shivering",
+                    "item-2": "Fears, nervousness",
+                    "item-3": "Stuttering",
+                    "item-4": "High temperature",
+                    "item-5": "Digestive disorders, nausea",
+                    "item-6": "Sleep disorders",
+                    "item-7": "Enuresis"
+                },
+                "link": "Learn more about the manifestations of PTSD in children"
+            },
+            "action": {
+                "header": "Online test for signs of PTSD in children",
+                "text": "Our method is aimed at identifying signs of PTSD in children of preschool, elementary school, and middle school age. It can be additional in the comprehensive diagnosis of PTSD in children."
+            }
+        }
+    },
+    "footer": {
+        "copy": "© ПТСРкідс, 2023",
+        "textLinkTermsOfUse": "Terms of use",
+        "textLinkPrivacyPolicy": "Privacy policy",
+        "messageCookie": "By accessing the site, you consent to the use of cookies and other data in accordance with the Policy"
+    },
+    "common": {
+        "button": {
+            "startPtsdTest": "Start Test",
+            "next": "Next"
+        }
+    }
+  }

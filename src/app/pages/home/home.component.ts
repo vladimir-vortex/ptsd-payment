@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TranslocoService } from '@ngneat/transloco';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private translocoService: TranslocoService
+  ) { }
+
+  lang = this.translocoService.getActiveLang();
+  lang_default = this.translocoService.getDefaultLang();
 
   ngOnInit(): void {
+    this.translocoService.langChanges$.subscribe(lang => {
+      this.lang = lang;
+    });
   }
 
 }

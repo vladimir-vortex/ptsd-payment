@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { TranslocoService } from '@ngneat/transloco';
 import { PtsdTestService } from 'src/app/services/ptsd-test.service';
 
 @Component({
@@ -12,7 +13,8 @@ export class PtsdTestStartComponent implements OnInit {
 
   constructor(
     private ptsdTestService: PtsdTestService,
-    private router: Router
+    private router: Router,
+    private translocoService: TranslocoService
   ) { }
 
   startTestForm = new FormGroup({
@@ -20,10 +22,16 @@ export class PtsdTestStartComponent implements OnInit {
     age: new FormControl('')
   });
 
+  lang = this.translocoService.getActiveLang();
+  lang_default = this.translocoService.getDefaultLang();
+
   isLoading = false;
 
   ngOnInit(): void {
     this.ptsdTestService.clearTest();
+    this.translocoService.langChanges$.subscribe(lang => {
+      this.lang = lang;
+    });
   }
 
   onSubmit() {
@@ -47,7 +55,7 @@ export class PtsdTestStartComponent implements OnInit {
           this.ptsdTestService.setTest(test);
           console.log(this.ptsdTestService.getTest());
           this.ptsdTestService.setTestId(response.body.id);
-          this.router.navigate(['/ptsd-test', 1 ]);
+          this.router.navigate([this.lang, 'ptsd-test', 1 ]);
         }
       },
       error: (error) => {

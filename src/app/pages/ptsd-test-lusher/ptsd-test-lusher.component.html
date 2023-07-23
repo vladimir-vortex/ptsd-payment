@@ -1,11 +1,7 @@
 <section class="px-4 sm:px-8 py-10 sm:py-14">
     <div class="tm-container tm-container-2xs">
-        <h1 class="tm-section-header">
-            Колі́рний тест Лю́шера
-        </h1>
-        <p class="mt-6">
-            Із запропонованих кольорів оберіть той, який Вам найбільше подобається.
-        </p>
+        <h1 class="tm-section-header">{{ 'page.lusher.header' | transloco }}</h1>
+        <p class="mt-6">{{ 'page.lusher.text' | transloco }}</p>
         <div class="container px-4 md:px-8 mx-auto mt-8">
             <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-8 gap-4 lg:gap-6">
                 <button *ngFor="let color of colors" class="aspect-[16/9] md:aspect-[2/3] relative" matRipple (click)="selectColor(color.id)" [disabled]="color.checked" [matRippleDisabled]="color.checked" >

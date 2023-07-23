@@ -1,4 +1,4 @@
-<header class="header px-4 sm:px-8">
+<header class="header px-4 sm:px-8" *transloco="let t">
     <div class="tm-container">
         <div class="flex justify-between gap-4 items-center h-14">
             <a routerLink="/">
@@ -65,7 +65,31 @@
             </div>
             <div class="gap-7 hidden lg:flex">
                 <div>
-                    <a routerLink="/ptsd-test" class="tm-button tm-button-stroked tm-button-primary tm-button-sm">Почати тестування</a>
+                    <button [matMenuTriggerFor]="lang" class="menu-icon-button flex items-center h-10">
+                        <div class="h-6 uppercase">
+                            {{currentLang.id}}
+                        </div>
+                        <div>
+                            <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M13.4732 14.6432C13.0816 15.2699 12.1689 15.2699 11.7772 14.6432L8.58149 9.53C8.16521 8.86395 8.64406 8 9.42949 8L15.821 8C16.6064 8 17.0853 8.86395 16.669 9.53L13.4732 14.6432Z" fill="#495C66"/>
+                            </svg>
+                        </div>
+                    </button>
+                    <mat-menu #lang="matMenu" xPosition="before" class="header-dropdown">
+                        <a [routerLink]="[lang_item.id + currentUrl]" mat-menu-item *ngFor="let lang_item of langs">
+                            <div class="flex gap-2">
+                                <div class="uppercase">
+                                    {{lang_item.id}}
+                                </div>
+                                <div>
+                                    {{lang_item.label}}
+                                </div>
+                            </div>
+                        </a>
+                    </mat-menu>
+                </div>
+                <div>
+                    <a routerLink="{{lang}}/ptsd-test" class="tm-button tm-button-stroked tm-button-primary tm-button-sm">{{ t("common.button.startPtsdTest") }}</a>
                 </div>
             </div>
         </div>

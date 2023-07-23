@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TranslocoService } from '@ngneat/transloco';
 
 @Component({
   selector: 'app-footer',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private translocoService: TranslocoService
+  ) { }
+
+  lang = "en";
+  lang_default = "en";
 
   ngOnInit(): void {
+    this.translocoService.langChanges$.subscribe(lang => {
+      this.lang = lang;
+    });
   }
 
 }

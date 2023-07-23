@@ -5,6 +5,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { MaterialModule } from './material/material.module';
 import { LoaderComponent } from './components/loader/loader.component';
+import { TranslocoRootModule } from '../transloco-root.module';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { LoaderComponent } from './components/loader/loader.component';
   imports: [
     CommonModule,
     MaterialModule,
-    RouterModule
+    RouterModule,
+    TranslocoRootModule
   ],
   exports: [
     HeaderComponent,

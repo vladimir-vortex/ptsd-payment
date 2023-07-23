@@ -10,19 +10,19 @@
                     </svg>    
                 </div>
                 <div>
-                    © ПТСРкідс, 2023
+                    {{ 'footer.copy' | transloco }}
                 </div>
             </div>
             <div class="flex flex-col gap-2">
                 <div>
-                    <a href="#">Умови користування сайтом</a>
+                    <a  routerLink="{{lang}}/terms-of-use">{{ 'footer.textLinkTermsOfUse' | transloco }}</a>
                 </div>
                 <div>
-                    <a href="#">Політика о даних користувачів</a>
+                    <a  routerLink="{{lang}}/privacy-policy">{{ 'footer.textLinkPrivacyPolicy' | transloco }}</a>
                 </div>
             </div>
             <div>
-                Заходячи на сайт, ви даєте згоду на використання файлів cookie та інших даних у відповідності з Політикою
+                {{ 'footer.messageCookie' | transloco }}
             </div>
         </div>
     </div>

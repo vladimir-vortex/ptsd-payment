@@ -12,8 +12,10 @@ import { PtsdTestResultComponent } from './pages/ptsd-test-result/ptsd-test-resu
 import { SharedModule } from './shared/shared.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PtsdTestLusherComponent } from './pages/ptsd-test-lusher/ptsd-test-lusher.component';
-import { PtsdTestSecondComponent } from './pages/ptsd-test-second/ptsd-test-second.component';
 import { PtsdTestFablesComponent } from './pages/ptsd-test-fables/ptsd-test-fables.component';
+import { TranslocoRootModule } from './transloco-root.module';
+import { PrivacyPolicyComponent } from './pages/privacy-policy/privacy-policy.component';
+import { TermsOfUseComponent } from './pages/terms-of-use/terms-of-use.component';
 
 @NgModule({
   declarations: [
@@ -23,8 +25,9 @@ import { PtsdTestFablesComponent } from './pages/ptsd-test-fables/ptsd-test-fabl
     PtsdTestStartComponent,
     PtsdTestResultComponent,
     PtsdTestLusherComponent,
-    PtsdTestSecondComponent,
-    PtsdTestFablesComponent
+    PtsdTestFablesComponent,
+    PrivacyPolicyComponent,
+    TermsOfUseComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +35,8 @@ import { PtsdTestFablesComponent } from './pages/ptsd-test-fables/ptsd-test-fabl
     HttpClientModule,
     BrowserAnimationsModule,
     SharedModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    TranslocoRootModule
   ],
   providers: [],
   bootstrap: [AppComponent]

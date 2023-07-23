@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { TranslocoService } from '@ngneat/transloco';
 import { map, tail, times, uniq, shuffle } from 'lodash';
 import { PtsdTestService } from 'src/app/services/ptsd-test.service';
 
@@ -14,6 +15,7 @@ export class PtsdTestLusherComponent implements OnInit {
     private ptsdTestService: PtsdTestService,
     private route: ActivatedRoute,
     private router: Router,
+    private translocoService: TranslocoService
   ) { }
 
   colors = [
@@ -59,8 +61,8 @@ export class PtsdTestLusherComponent implements OnInit {
     }
   ];
 
-  lang = "uk";
-  lang_default = "uk";
+  lang = this.translocoService.getActiveLang();
+  lang_default = this.translocoService.getDefaultLang();
 
   test: any;
 
@@ -71,6 +73,10 @@ export class PtsdTestLusherComponent implements OnInit {
   ngOnInit(): void {
     this.colors = shuffle(this.colors);
     this.test = this.ptsdTestService.getTest();
+
+    this.translocoService.langChanges$.subscribe(lang => {
+      this.lang = lang;
+    });
   }
 
   selectColor(id: number): void {
@@ -87,7 +93,7 @@ export class PtsdTestLusherComponent implements OnInit {
           this.isLoading = false;
           console.log(response);
           if(response.body) {
-            this.router.navigate(['/ptsd-test-result', this.ptsdTestService.getTestId()]);
+            this.router.navigate([this.lang, 'ptsd-test-result', this.ptsdTestService.getTestId()]);
           }
           // if(response.body?.id) {
           //   this.ptsdTestService.setTestId(response.body.id);

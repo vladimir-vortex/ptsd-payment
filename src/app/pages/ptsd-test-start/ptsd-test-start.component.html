@@ -1,16 +1,16 @@
 <section class="px-4 sm:px-8 py-10 sm:py-14">
     <div class="tm-container tm-container-2xs">
-        <h1 class="tm-section-header text-center">ПТСР тест</h1>
+        <h1 class="tm-section-header text-center">{{ 'page.test-start.header' | transloco }}</h1>
         <div class="container px-4 md:px-8 mx-auto mt-8 max-w-md">
             <form [formGroup]="startTestForm" (ngSubmit)="onSubmit()">
                 <!-- <p *ngIf="startTestForm.controls.test.errors && startTestForm.controls.test.errors['minlength']">minlength</p> -->
                 <div class="relative">
                     <mat-form-field appearance="fill" class="w-full">
                         <mat-select required formControlName="gender" [disabled]="isLoading">
-                            <mat-option value="b">Хлопчик</mat-option>
-                            <mat-option value="g">Дівчинка</mat-option>
+                            <mat-option value="b">{{ 'page.test-start.input-gender.option-b' | transloco }}</mat-option>
+                            <mat-option value="g">{{ 'page.test-start.input-gender.option-g' | transloco }}</mat-option>
                         </mat-select>
-                        <mat-label>Стать дитини</mat-label>
+                        <mat-label>{{ 'page.test-start.input-gender.label' | transloco }}</mat-label>
                     </mat-form-field>
                     <mat-form-field appearance="fill" class="w-full">
                         <mat-select required formControlName="age" [disabled]="isLoading">
@@ -23,7 +23,7 @@
                             <mat-option value="13">13</mat-option>
                             <mat-option value="14">14</mat-option>
                         </mat-select>
-                        <mat-label>Вік дитини</mat-label>
+                        <mat-label>{{ 'page.test-start.input-age.label' | transloco }}</mat-label>
                     </mat-form-field>
                     <div *ngIf="isLoading" class="absolute top-0 bottom-0 w-full flex justify-center items-center">
                         <app-loader></app-loader>
@@ -32,7 +32,7 @@
                 <div class="flex">
                     <button type="submit" class="tm-button tm-button-primary tm-button-flat w-48" [disabled]="startTestForm.status !=='VALID' || isLoading">
                         <div class="flex items-center gap-1">
-                            <span>Далі</span>
+                            <span>{{ 'common.button.next' | transloco }}</span>
                             <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M3.83337 8H13.1667" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
                                 <path d="M8.5 3.3335L13.1667 8.00016L8.5 12.6668" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>

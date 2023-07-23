@@ -1,0 +1,88 @@
+{
+    "menu": {
+        "header": {
+            "item1": "Menu 1",
+            "item2": "Menu 2",
+            "item3": "Menu 3",
+            "item4": "Menu 4"
+        }
+    },
+    "page": {
+        "results": {
+            "title": "Wynik testu",
+            "subtitle1": "Zabawa z młodszymi dziećmi",
+            "subtitle2": "Opowieści-testy Louise Duss",
+            "subtitle3": "Test koloru Lüschera",
+            "copyLinkButton": "Skopiuj link",
+            "sendResultTitle": "Wysłać wyniki testu e-mailem?",
+            "sendResultButton": "Wyślij wynik"
+        },
+        "test-start": {
+            "header": "Test na zespół stresu pourazowego",
+            "input-gender": {
+                "label": "Płeć dziecka",
+                "option-b": "Chłopak",
+                "option-g": "Dziewczyna"
+            },
+            "input-age": {
+                "label": "Wiek dziecka"
+            }
+        },
+        "lusher": {
+            "header": "Test koloru Lüschera",
+            "text": "Z oferowanych kolorów wybierz ten, który najbardziej Ci się podoba."
+        },
+        "home": {
+            "cover": {
+                "header": "Zespół stresu pourazowego u dziecka",
+                "text": "Traumatyczne przeżycie może prowadzić do rozwoju zespołu stresu pourazowego (PTSD) u dzieci. Ten proces może stać się nieodwracalny, jeśli przegapisz moment, w którym musisz skontaktować się ze specjalistą.",
+                "subheader": "Rozpocznij test oceniający już teraz"
+            },
+            "points": {
+                "text-1": "Według oficjalnych danych, według stanu na 1 sierpnia 2022 r., wojna na Ukrainie w tym roku dotknęła co najmniej 1051 dzieci. Każdego dnia ta rozczarowująca statystyka rośnie",
+                "text-2": "Nie ma laboratoryjnych metod wykrywania PTSD. Dlatego metody diagnozowania PTSD u dzieci opierają się na badaniu psychofizjologicznym",
+                "text-3": "Szacunkowa liczba takich dzieci sięga 4-5 milionów. Przyjmuje się, że u zdecydowanej większości z nich rozwiną się kliniczne objawy zespołu stresu pourazowego (PTSD)."
+            },
+            "what": {
+                "header": "Co to jest zespół stresu pourazowego?",
+                "text": "PTSD to zaburzenie psychiczne, które zwykle zaczyna się objawiać około sześć miesięcy po traumatycznym zdarzeniu. Jeśli jednak stresor ma silny długotrwały efekt (na przykład przebywanie pod okupacją, ciągłe sytuacje ostrzału i nalotów itp.), Prawdopodobieństwo szybkiego rozwoju PTSD wzrasta.",
+                "link": "Więcej informacji o zespole stresu pourazowego"
+            },
+            "problem": {
+                "header": "Dlaczego zespół stresu pourazowego u dzieci staje się zagrożeniem?",
+                "text": "Jeżeli teraz nie zaczniemy rehabilitować ukraińskich dzieci, to za 10-20 lat możemy spodziewać się pokolenia dorosłych z traumą, ludzi z różnymi uzależnieniami, ludzi okrutnych, co najwyżej wycofanych i obojętnych. A to wszystko jest następstwem PTSD."
+            },
+            "diagnostic": {
+                "header": "Niektóre objawy PTSD:",
+                "text-1": "Nie ma laboratoryjnych metod wykrywania PTSD. Metody diagnozowania PTSD u dzieci opierają się na kompleksowym badaniu psychofizjologicznym.",
+                "text-2": "Jednak testy online mogą uwypuklić aspekty, które mogą być sygnałem dla rodziców.",
+                "list": {
+                    "item-1": "Reakcja na ostre dźwięki, dreszcze",
+                    "item-2": "Strachy, nerwowość",
+                    "item-3": "Jąkanie się",
+                    "item-4": "Wysoka temperatura",
+                    "item-5": "Zaburzenia trawienia, nudności",
+                    "item-6": "Zaburzenia snu",
+                    "item-7": "Enureza"
+                },
+                "link": "Dowiedz się więcej o przejawach PTSD u dzieci"
+            },
+            "action": {
+                "header": "Test online na objawy PTSD u dzieci",
+                "text": "Nasza technika ma na celu identyfikację objawów PTSD u dzieci w wieku przedszkolnym, wczesnoszkolnym i gimnazjalnym. Może stanowić uzupełnienie kompleksowej diagnostyki zespołu stresu pourazowego u dzieci."
+            }
+        }
+    },
+    "footer": {
+        "copy": "© ПТСРкідс, 2023",
+        "textLinkTermsOfUse": "Warunki korzystania",
+        "textLinkPrivacyPolicy": "Półka prywatności",
+        "messageCookie": "Wchodząc na stronę wyrażasz zgodę na wykorzystywanie plików cookies i innych danych zgodnie z Polityką"
+    },
+    "common": {
+        "button": {
+            "startPtsdTest": "Rozpocznij testowanie",
+            "next": "Następny"
+        }
+    }
+  }

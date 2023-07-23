@@ -4,6 +4,7 @@ import { PtsdTestService } from 'src/app/services/ptsd-test.service';
 import { FormControl, FormGroup } from '@angular/forms';
 import { environment } from 'src/environments/environment';
 import { PtsdQuestion } from 'src/app/interfaces/ptsd-question';
+import { TranslocoService } from '@ngneat/transloco';
 
 @Component({
   selector: 'app-ptsd-test-fables',
@@ -16,10 +17,11 @@ export class PtsdTestFablesComponent implements OnInit {
     private ptsdTestService: PtsdTestService,
     private route: ActivatedRoute,
     private router: Router,
+    private translocoService: TranslocoService
   ) { }
 
-  lang = "uk";
-  lang_default = "uk";
+  lang = this.translocoService.getActiveLang();
+  lang_default = this.translocoService.getDefaultLang();
 
   imagesUrl = environment.imagesUrl;
   
@@ -62,6 +64,11 @@ export class PtsdTestFablesComponent implements OnInit {
         this.isLoading = false;
       }
     });
+
+    this.translocoService.langChanges$.subscribe(lang => {
+      this.lang = lang;
+    });
+    
     this.router.events.subscribe((event: Event) => {
       if (event instanceof NavigationStart) {
           // Show progress spinner or progress bar
@@ -118,10 +125,10 @@ export class PtsdTestFablesComponent implements OnInit {
       answer: ''
     });
     if(this.nextQuestion) {
-      this.router.navigate(['/ptsd-test-fables', this.questionId + 1 ]);
+      this.router.navigate([this.lang, 'ptsd-test-fables', this.questionId + 1 ]);
     } else {
       // this.router.navigate(['/ptsd-test-lusher']);
-      this.router.navigate(['/ptsd-test-lusher']);
+      this.router.navigate([this.lang, 'ptsd-test-lusher']);
       // this.ptsdTestService.submit().subscribe({
       //   next: (response) => {
       //     this.isLoading = false;
