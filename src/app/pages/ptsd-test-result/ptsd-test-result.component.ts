@@ -8,7 +8,7 @@ import { MatIconRegistry } from '@angular/material/icon';
 import { ErrorStateMatcher } from '@angular/material/core';
 import { timer } from 'rxjs';
 import { PtsdResult } from 'src/app/interfaces/ptsd-result';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { TranslocoService } from '@ngneat/transloco';
 
 /** Error when invalid control is dirty, touched, or submitted. */
@@ -39,7 +39,8 @@ export class PtsdTestResultComponent implements OnInit {
     private clipboard: Clipboard,
     private _snackBar: MatSnackBar,
     private router: Router,
-    private translocoService: TranslocoService
+    private translocoService: TranslocoService,
+    private route: ActivatedRoute
   ) {
     // Note that we provide the icon here as a string literal here due to a limitation in
     // Stackblitz. If you want to provide the icon from a URL, you can use:
@@ -54,7 +55,10 @@ export class PtsdTestResultComponent implements OnInit {
     email: new FormControl(''),
   });
 
+  testId ='';
+
   isSending = false;
+  isSend = false;
   isLoading = true;
   resultUrl = window.location.href;
 
@@ -163,11 +167,12 @@ export class PtsdTestResultComponent implements OnInit {
 
   scoreFables = 0.0;
 
-  emailFormControl = new FormControl('', [Validators.required, Validators.email]);
+  emailFormControl = new FormControl({ value: '', disabled: this.isSending || this.isSend }, [Validators.required, Validators.email, ]);
   matcher = new MyErrorStateMatcher();
 
   ngOnInit(): void {
-    this.ptsdTestService.result().subscribe({
+    this.testId = this.route.snapshot.paramMap.get('id') || '';
+    this.ptsdTestService.result(this.testId).subscribe({
       next: (response) => {
         if(response.body?.child?.param_1 > 0.6) {
           this.textResults.push(this.results[0]);
@@ -223,16 +228,42 @@ export class PtsdTestResultComponent implements OnInit {
   onSendResult(): void {
     if(this.emailFormControl.valid) {
       this.isSending = true;
-      timer(2000)
-        .pipe()
-        .subscribe(
-          res => {
-            this.isSending = false;
-            this._snackBar.open('Email has been send!', 'OK', {
-              duration: 3000
-            });
-          }
-        );
+
+      this.emailFormControl.disable();
+
+      let email = this.emailFormControl.value;
+
+      this.ptsdTestService.send({testId: this.testId, email: email}).subscribe({
+        next: (response) => {
+          this.isSending = false;
+          this.isSend = true;
+          this._snackBar.open('Email has been send!', 'OK', {
+            duration: 3000
+          });
+          console.log(response);
+          // if(response.body?.id) {
+          //   this.ptsdTestService.setTestId(response.body.id);
+          // }
+        },
+        error: (error) => {
+          this.isSending = false;
+          this.emailFormControl.enable();
+          this._snackBar.open('ERROR send email', 'OK', {
+            duration: 3000
+          });
+          console.error(error);
+        }
+      });
+      // timer(2000)
+      //   .pipe()
+      //   .subscribe(
+      //     res => {
+      //       this.isSending = false;
+      //       this._snackBar.open('Email has been send!', 'OK', {
+      //         duration: 3000
+      //       });
+      //     }
+      //   );
     }
   }
 

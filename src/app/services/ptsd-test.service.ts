@@ -43,14 +43,19 @@ export class PtsdTestService {
     return this.http.post<any>(environment.apiUrl + `/api/v1/ptsd-test`, body, { headers: this.headers, observe: 'response', responseType: 'json' });
   }
 
-  result(): Observable<any> {
-    return this.http.get<any>(environment.apiUrl + `/api/v1/ptsd-test-result/${this.getTestId()}`, { headers: this.headers, observe: 'response', responseType: 'json' });
+  result(testId: string): Observable<any> {
+    return this.http.get<any>(environment.apiUrl + `/api/v1/ptsd-test-result/${testId}`, { headers: this.headers, observe: 'response', responseType: 'json' });
   }
 
   submit(): Observable<any> {
     let test = this.getTest();
     return this.http.post<any>(environment.apiUrl + `/api/v1/ptsd-test-result/${this.getTestId()}`,
      { "child": test.child, "lusher": test.lusher, "fables": test.fables }, { headers: this.headers, observe: 'response', responseType: 'json' });
+  }
+
+  send(body: any): Observable<any> {
+    return this.http.post<any>(environment.apiUrl + `/api/v1/ptsd-test-send-result`,
+    body, { headers: this.headers, observe: 'response', responseType: 'json' });
   }
 
   // test(body: any): Observable<any> {
