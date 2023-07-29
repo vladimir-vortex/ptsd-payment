@@ -4,7 +4,7 @@
 
 export const environment = {
   baseUrl: 'http://localhost:4200',
-  production: false,
+  production: true,
   apiUrl: 'http://localhost:8080',
   imagesUrl: 'https://ik.imagekit.io/dk2qinybhy'
 };

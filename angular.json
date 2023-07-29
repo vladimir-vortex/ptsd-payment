@@ -54,11 +54,7 @@
                 }
               ],
               "outputHashing": "all",
-              "optimization": {
-                "scripts": true,
-                 "styles": true,
-                 "fonts": false
-              }
+              "optimization": false
             },
             "development": {
               "buildOptimizer": false,
