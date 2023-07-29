@@ -35,6 +35,11 @@ export class TranslocoHttpLoader implements TranslocoLoader {
         // Remove this option if your application doesn't support changing language in runtime.
         reRenderOnLangChange: true,
         prodMode: environment.production,
+        failedRetries: 1,
+        missingHandler: {
+          useFallbackTranslation: true,
+          allowEmpty: true
+        }
       })
     },
     { provide: TRANSLOCO_LOADER, useClass: TranslocoHttpLoader }
