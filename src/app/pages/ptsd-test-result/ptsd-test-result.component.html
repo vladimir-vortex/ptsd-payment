@@ -23,8 +23,7 @@
             <mat-form-field class="w-full mt-4" appearance="outline">
                 <mat-label>Email</mat-label>
                 <input type="email" matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher"
-                    placeholder="Ex. pat@example.com" [disabled]="true">
-                <mat-icon matSuffix>mail_outline</mat-icon>                
+                    placeholder="Ex. pat@example.com" [disabled]="true">               
                 <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
                     Please enter a valid email address
                 </mat-error>
