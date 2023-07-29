@@ -8,11 +8,11 @@
             <p *ngIf="question.description" class="mt-6">
                 {{question.description[lang] || question.description[lang_default]}}
             </p>
-            <div class="mt-14 flex justify-center">
+            <div class="mt-8 flex justify-center">
                 <img *ngIf="gender == 'b'" src="{{imagesUrl}}/{{question.image_b}}" alt="" class="object-contain w-96 h-96">
                 <img *ngIf="gender == 'g'" src="{{imagesUrl}}/{{question.image_g}}" alt="" class="object-contain w-96 h-96">
             </div>
-            <div *ngIf="question.answers" class="mt-14">
+            <div *ngIf="question.answers" class="mt-8">
                 <form [formGroup]="answerForm" (ngSubmit)="onSubmit()">
                     <div class="flex flex-col gap-4">
                         <div *ngFor="let answer of question.answers" class="flex gap-3 items-center">

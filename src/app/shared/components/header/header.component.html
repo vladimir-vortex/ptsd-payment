@@ -63,7 +63,7 @@
                     </mat-menu>
                 </div>
             </div>
-            <div class="gap-7 hidden lg:flex">
+            <div class="gap-7 flex">
                 <div>
                     <button [matMenuTriggerFor]="lang" class="menu-icon-button flex items-center h-10">
                         <div class="h-6 uppercase">
@@ -88,7 +88,7 @@
                         </a>
                     </mat-menu>
                 </div>
-                <div>
+                <div class="hidden sm:block">
                     <a routerLink="{{lang}}/ptsd-test" class="tm-button tm-button-stroked tm-button-primary tm-button-sm">{{ t("common.button.startPtsdTest") }}</a>
                 </div>
             </div>
