@@ -237,7 +237,8 @@ export class PtsdTestResultComponent implements OnInit {
         next: (response) => {
           this.isSending = false;
           this.isSend = true;
-          this._snackBar.open('Email has been send!', 'OK', {
+          let sendResultSendSuccessMessage = this.translocoService.translate('page.results.sendResultSendSuccessMessage');
+          this._snackBar.open(sendResultSendSuccessMessage, 'OK', {
             duration: 3000
           });
           console.log(response);
@@ -248,8 +249,9 @@ export class PtsdTestResultComponent implements OnInit {
         error: (error) => {
           this.isSending = false;
           this.emailFormControl.enable();
-          this._snackBar.open('ERROR send email', 'OK', {
-            duration: 3000
+          let sendResultSendErrorMessage = this.translocoService.translate('page.results.sendResultSendErrorMessage');
+          this._snackBar.open(sendResultSendErrorMessage, 'OK', {
+            // duration: 3000
           });
           console.error(error);
         }

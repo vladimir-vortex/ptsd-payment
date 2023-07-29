@@ -15,7 +15,13 @@
             "subtitle3": "Luscher color test",
             "copyLinkButton": "Copy link",
             "sendResultTitle": "Send test results to email?",
-            "sendResultButton": "Send result"
+            "sendResultInputEmailRequiredMessage": "Email is required",
+            "sendResultInputEmailValidMessage": "Please enter a valid email address",
+            "sendResultSendSuccessMessage": "Email has been send!",
+            "sendResultSendErrorMessage": "ERROR send email",
+            "sendResultButton": "Send result",
+            "sendResultButtonSending": "Sending ...",
+            "sendResultButtonSuccess": "Надіслано"
         },
         "test-start": {
             "header": "PTSD test",

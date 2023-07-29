@@ -15,7 +15,13 @@
             "subtitle3": "Колі́рний тест Люшера",
             "copyLinkButton": "Копіювати посилання",
             "sendResultTitle": "Надіслати результати тестування на email?",
-            "sendResultButton": "Надіслати результат"
+            "sendResultInputEmailRequiredMessage": "Потрібно вказати ваш Email",
+            "sendResultInputEmailValidMessage": "Будь ласка введіть корректну email-адресу",
+            "sendResultSendSuccessMessage": "Результати надіслано на ваш email",
+            "sendResultSendErrorMessage": "Щось пішло не так, спроба надіслати листа не вдалася. Перезавантажте сторінку та спробуйте ще раз. Якщо не виходить - напишіть нам",
+            "sendResultButton": "Надіслати результат",
+            "sendResultButtonSending": "Надсилається ...",
+            "sendResultButtonSuccess": "Надіслано"
         },
         "test-start": {
             "header": "ПТСР тест",

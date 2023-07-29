@@ -25,17 +25,17 @@
                 <input type="email" matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher"
                     placeholder="Ex. pat@example.com" [disabled]="true">               
                 <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
-                    Please enter a valid email address
+                    {{ 'page.results.sendResultInputEmailValidMessage' | transloco }}
                 </mat-error>
                 <mat-error *ngIf="emailFormControl.hasError('required')">
-                    Email is <strong>required</strong>
+                    {{ 'page.results.sendResultInputEmailRequiredMessage' | transloco }}
                 </mat-error>
             </mat-form-field>
             <div class="flex justify-center">
                 <button type="submit" mat-raised-button color="primary" class="tm-button tm-button-primary tm-button-flat tm-button-width" [disabled]="isSending || isSend">
                     <div class="flex items-center justify-center gap-1">
-                        <span [hidden]="!isSending">Sending ...</span>
-                        <span [hidden]="!isSend">Отправлено</span>
+                        <span [hidden]="!isSending">{{ 'page.results.sendResultButtonSending' | transloco }}</span>
+                        <span [hidden]="!isSend">{{ 'page.results.sendResultButtonSuccess' | transloco }}</span>
                         <span [hidden]="isSending || isSend">{{ 'page.results.sendResultButton' | transloco }}</span>                  
                     </div>
                 </button>
