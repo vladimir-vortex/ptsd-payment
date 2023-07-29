@@ -30,7 +30,7 @@ export class TranslocoHttpLoader implements TranslocoLoader {
           { id: 'pl', label: 'Polski' },
           { id: 'uk', label: 'Українська' },
         ],
-        defaultLang: 'en',
+        // defaultLang: 'en',
         fallbackLang: 'en',
         // Remove this option if your application doesn't support changing language in runtime.
         reRenderOnLangChange: true,
