@@ -18,6 +18,8 @@
             "sendResultButton": "Wyślij wynik"
         },
         "test-start": {
+            "intro-header": "Powinniśmy zaczynać?",
+            "intro-text": "Rozpocznij test wypoczęty i nie rozpraszaj się niczym.",
             "header": "Test na zespół stresu pourazowego",
             "input-gender": {
                 "label": "Płeć dziecka",
@@ -28,9 +30,22 @@
                 "label": "Wiek dziecka"
             }
         },
+        "fables-start": {
+            "header": "Wspaniały!",
+            "text": "Przejdźmy teraz do drugiej części testu"
+        },
+        "lusher-start": {
+            "header": "Doskonale!",
+            "text": "Z oferowanych kolorów wybierz ten, który najbardziej Ci się podoba."
+        },
         "lusher": {
             "header": "Test koloru Lüschera",
-            "text": "Z oferowanych kolorów wybierz ten, który najbardziej Ci się podoba."
+            "text": "Z oferowanych kolorów wybierz ten, który najbardziej Ci się podoba.",
+            "calc-header": "Obliczenie!",
+            "calc-text": "Może to potrwać kilka sekund...",
+            "result-header": "Gotowy!",
+            "result-text": "Aby zapoznać się z wynikami, kliknij przycisk poniżej",
+            "result-button": "Aż do wyniku"
         },
         "home": {
             "cover": {

@@ -2,10 +2,17 @@
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
+// export const environment = {
+//   baseUrl: 'http://localhost:4200',
+//   production: true,
+//   apiUrl: 'http://localhost:8080',
+//   imagesUrl: 'https://ik.imagekit.io/dk2qinybhy'
+// };
+
 export const environment = {
-  baseUrl: 'http://localhost:4200',
+  baseUrl: 'https://ptsd-avangraph.vercel.app',
   production: true,
-  apiUrl: 'http://localhost:8080',
+  apiUrl: 'https://ptsd-rest.onrender.com',
   imagesUrl: 'https://ik.imagekit.io/dk2qinybhy'
 };
 

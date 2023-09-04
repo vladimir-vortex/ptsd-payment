@@ -21,9 +21,11 @@
             "sendResultSendErrorMessage": "ERROR send email",
             "sendResultButton": "Send result",
             "sendResultButtonSending": "Sending ...",
-            "sendResultButtonSuccess": "Надіслано"
+            "sendResultButtonSuccess": "Sent"
         },
         "test-start": {
+            "intro-header": "Shall we begin?",
+            "intro-text": "Please start the test well-rested and with minimal distractions.",
             "header": "PTSD test",
             "input-gender": {
                 "label": "Gender of child",
@@ -34,9 +36,22 @@
                 "label": "Age of the child"
             }
         },
+        "fables-start": {
+            "header": "Wonderful!",
+            "text": "Now let's move on to the second part of the test"
+        },
+        "lusher-start": {
+            "header": "Perfectly!",
+            "text": "From the offered colors, choose the one you like the most."
+        },
         "lusher": {
             "header": "Luscher color test",
-            "text": "From the offered colors, choose the one you like the most."
+            "text": "From the offered colors, choose the one you like the most.",
+            "calc-header": "Calculation!",
+            "calc-text": "This may take a few seconds...",
+            "result-header": "Ready!",
+            "result-text": "Click on the button below to get the results",
+            "result-button": "Up to the result"
         },      
         "home": {
             "cover": {

@@ -26,12 +26,17 @@ export class PtsdTestStartComponent implements OnInit {
   lang_default = this.translocoService.getDefaultLang();
 
   isLoading = false;
+  isIntro = true;
 
   ngOnInit(): void {
     this.ptsdTestService.clearTest();
     this.translocoService.langChanges$.subscribe(lang => {
       this.lang = lang;
     });
+  }
+
+  onStart() {
+    this.isIntro = false;
   }
 
   onSubmit() {

@@ -16,6 +16,8 @@ import { PtsdTestFablesComponent } from './pages/ptsd-test-fables/ptsd-test-fabl
 import { TranslocoRootModule } from './transloco-root.module';
 import { PrivacyPolicyComponent } from './pages/privacy-policy/privacy-policy.component';
 import { TermsOfUseComponent } from './pages/terms-of-use/terms-of-use.component';
+import { PtsdTestFablesStartComponent } from './pages/ptsd-test-fables-start/ptsd-test-fables-start.component';
+import { PtsdTestLusherStartComponent } from './pages/ptsd-test-lusher-start/ptsd-test-lusher-start.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { TermsOfUseComponent } from './pages/terms-of-use/terms-of-use.component
     PtsdTestComponent,
     PtsdTestStartComponent,
     PtsdTestResultComponent,
+    PtsdTestLusherStartComponent,
     PtsdTestLusherComponent,
+    PtsdTestFablesStartComponent,
     PtsdTestFablesComponent,
     PrivacyPolicyComponent,
     TermsOfUseComponent

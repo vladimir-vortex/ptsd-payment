@@ -128,7 +128,7 @@ export class PtsdTestFablesComponent implements OnInit {
       this.router.navigate([this.lang, 'ptsd-test-fables', this.questionId + 1 ]);
     } else {
       // this.router.navigate(['/ptsd-test-lusher']);
-      this.router.navigate([this.lang, 'ptsd-test-lusher']);
+      this.router.navigate([this.lang, 'ptsd-test-lusher-start']);
       // this.ptsdTestService.submit().subscribe({
       //   next: (response) => {
       //     this.isLoading = false;
