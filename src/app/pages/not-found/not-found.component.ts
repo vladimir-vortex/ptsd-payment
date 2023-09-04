@@ -16,6 +16,9 @@ export class NotFoundComponent implements OnInit {
   lang_default = this.translocoService.getDefaultLang();
 
   ngOnInit(): void {
+    this.translocoService.langChanges$.subscribe(lang => {
+      this.lang = lang;
+    });
   }
 
 }
