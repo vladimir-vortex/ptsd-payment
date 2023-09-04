@@ -86,6 +86,11 @@
                 "header": "Test online na objawy PTSD u dzieci",
                 "text": "Nasza technika ma na celu identyfikację objawów PTSD u dzieci w wieku przedszkolnym, wczesnoszkolnym i gimnazjalnym. Może stanowić uzupełnienie kompleksowej diagnostyki zespołu stresu pourazowego u dzieci."
             }
+        },
+        "not-found": {
+            "header": "Strona nie znaleziona",
+            "text": "Ups! Coś poszło nie tak",
+            "link": "Na głównym"
         }
     },
     "footer": {

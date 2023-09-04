@@ -92,6 +92,11 @@
                 "header": "Online test for signs of PTSD in children",
                 "text": "Our method is aimed at identifying signs of PTSD in children of preschool, elementary school, and middle school age. It can be additional in the comprehensive diagnosis of PTSD in children."
             }
+        },
+        "not-found": {
+            "header": "Page not found",
+             "text": "oops, something went wrong",
+             "link": "To the main"
         }
     },
     "footer": {
