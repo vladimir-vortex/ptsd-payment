@@ -6,9 +6,9 @@
 $media-sm: 640px
 $media-md: 768px
 $media-2md: 880px
-$megia-lg: 1024px
-$megia-xl: 1280px
-$megia-2xl: 1536px
+$media-lg: 1024px
+$media-xl: 1280px
+$media-2xl: 1536px
 
 $color-grey-blue-dark: #495C66
 $color-blue-oceanic: #3B75BF
@@ -144,10 +144,20 @@ footer
     border: 2px solid $color-grey-tetriary
     padding: 24px
     border-radius: 4px
+    box-shadow: 0px 5px 15px 0px rgba(183, 183, 183, 0.15)
+
+.tm-section-p
+    &-lg
+        @media ( min-width: $media-sm )
+            font-size: 20px
+            line-height: 1.4em
 
 .tm-section-header
     @include title-2
     color: $color-base
+    &-lg
+        @media ( min-width: $media-sm )
+            @include title-1
 
 .tm-section-subheader
     @include subtitle-3
