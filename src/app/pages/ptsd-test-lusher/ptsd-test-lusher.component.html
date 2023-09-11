@@ -1,14 +1,16 @@
-<section *ngIf="!isShowResultBlock" class="px-4 sm:px-8 py-10 sm:py-14">
-    <div class="tm-container tm-container-2xs">
-        <h1 class="tm-section-header">{{ 'page.lusher.header' | transloco }}</h1>
-        <p class="mt-6">{{ 'page.lusher.text' | transloco }}</p>
-        <div class="container px-4 md:px-8 mx-auto mt-8">
-            <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-8 gap-4 lg:gap-6">
-                <button *ngFor="let color of colors" class="aspect-[16/9] md:aspect-[2/3] relative" matRipple (click)="selectColor(color.id)" [disabled]="color.checked" [matRippleDisabled]="color.checked" >
-                    <canvas width="500" height="1000" [ngStyle]="{'background-color': color.hex}" [hidden]="color.checked"></canvas>
-                </button>
-            </div> 
+<section *ngIf="!isShowResultBlock" class="py-10 sm:py-14">
+    <div class="px-4 sm:px-8">
+        <div class="tm-container tm-container-2xs">
+            <h1 class="tm-section-header">{{ 'page.lusher.header' | transloco }}</h1>
+            <p class="mt-6">{{ 'page.lusher.text' | transloco }}</p>
         </div>
+    </div>
+    <div class="mt-6">
+        <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-8">
+            <button *ngFor="let color of colors" class="aspect-[16/9] md:aspect-[1/2] relative" matRipple (click)="selectColor(color.id)" [disabled]="color.checked" [matRippleDisabled]="color.checked" >
+                <canvas width="500" height="1000" [ngStyle]="{'background-color': color.hex}" [hidden]="color.checked"></canvas>
+            </button>
+        </div> 
     </div>
 </section>
 
@@ -135,8 +137,8 @@
         <div class="flex justify-center mt-8">
             <button class="tm-button tm-button-primary tm-button-flat w-48" (click)="onNext()">
                 <div class="flex items-center gap-1">
-                    <span>{{ 'page.lusher.result-button' | transloco}}</span>
-                    <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <span class="flex-initial">{{ 'page.lusher.result-button' | transloco}}</span>
+                    <svg class="flex-initial" width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M3.83337 8H13.1667" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
                         <path d="M8.5 3.3335L13.1667 8.00016L8.5 12.6668" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>                    
