@@ -3,6 +3,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, NavigationEnd, NavigationError, NavigationStart, Router, Event } from '@angular/router';
 import { TranslocoService } from '@ngneat/transloco';
 import { PtsdQuestion } from 'src/app/interfaces/ptsd-question';
+import { BgTestSoundService } from 'src/app/services/bg-test-sound.service';
 import { PtsdTestService } from 'src/app/services/ptsd-test.service';
 import { environment } from 'src/environments/environment';
 
@@ -17,7 +18,8 @@ export class PtsdTestComponent implements OnInit {
     private ptsdTestService: PtsdTestService,
     private route: ActivatedRoute,
     private router: Router,
-    private translocoService: TranslocoService
+    private translocoService: TranslocoService,
+    private bgTestSoundService: BgTestSoundService
   ) { }
 
   lang = this.translocoService.getActiveLang();
@@ -44,9 +46,12 @@ export class PtsdTestComponent implements OnInit {
   answers: any;
   answer: any;
   test: any;
+
+  isBgSoundPlaying = false;
   
   ngOnInit(): void {
-    this.questionId = Number(this.route.snapshot.paramMap.get('question')); 
+    this.questionId = Number(this.route.snapshot.paramMap.get('question'));
+    this.isBgSoundPlaying = this.bgTestSoundService.isPlaying;
     this.ptsdTestService.getQuestions().subscribe({
       next: (data) => {
         this.test = this.ptsdTestService.getTest();
@@ -96,6 +101,7 @@ export class PtsdTestComponent implements OnInit {
           console.log(event.error);
       }
     });
+
   }
 
   getQuestion(id: number) {
@@ -108,7 +114,6 @@ export class PtsdTestComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.answerForm.value);
     if(this.test.child) {
       this.answer = this.test.child.find((e: { questionId: number; }) => e.questionId === this.questionId);
       if(this.answer) {
@@ -145,6 +150,16 @@ export class PtsdTestComponent implements OnInit {
       //     console.error(error);
       //   }
       // });
+    }
+  }
+
+  onBgSoundClick() {
+    if(this.isBgSoundPlaying == false) {
+      this.bgTestSoundService.start();
+      this.isBgSoundPlaying = this.bgTestSoundService.isPlaying;
+    } else {
+      this.bgTestSoundService.pause();
+      this.isBgSoundPlaying = this.bgTestSoundService.isPlaying;
     }
   }
 

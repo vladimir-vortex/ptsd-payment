@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { TranslocoService } from '@ngneat/transloco';
 import { shuffle } from 'lodash';
 import { timer } from 'rxjs';
+import { BgTestSoundService } from 'src/app/services/bg-test-sound.service';
 import { PtsdTestService } from 'src/app/services/ptsd-test.service';
 
 @Component({
@@ -15,7 +16,8 @@ export class PtsdTestLusherComponent implements OnInit {
     private ptsdTestService: PtsdTestService,
     private route: ActivatedRoute,
     private router: Router,
-    private translocoService: TranslocoService
+    private translocoService: TranslocoService,
+    private bgTestSoundService: BgTestSoundService
   ) {}
 
   colors = [
@@ -74,6 +76,8 @@ export class PtsdTestLusherComponent implements OnInit {
 
   isShowResultBlock = false;
 
+  isBgSoundPlaying = false
+
   ngOnInit(): void {
     this.colors = shuffle(this.colors);
     this.test = this.ptsdTestService.getTest();
@@ -81,6 +85,7 @@ export class PtsdTestLusherComponent implements OnInit {
     this.translocoService.langChanges$.subscribe((lang) => {
       this.lang = lang;
     });
+    this.isBgSoundPlaying = this.bgTestSoundService.isPlaying;
   }
 
   selectColor(id: number): void {
@@ -119,6 +124,16 @@ export class PtsdTestLusherComponent implements OnInit {
 
   onNext(): void {
     this.router.navigate([this.lang, 'ptsd-test-result', this.ptsdTestService.getTestId()]);
+  }
+
+  onBgSoundClick() {
+    if(this.isBgSoundPlaying == false) {
+      this.bgTestSoundService.start();
+      this.isBgSoundPlaying = this.bgTestSoundService.isPlaying;
+    } else {
+      this.bgTestSoundService.pause();
+      this.isBgSoundPlaying = this.bgTestSoundService.isPlaying;
+    }
   }
 
 }

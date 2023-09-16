@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslocoService } from '@ngneat/transloco';
+import { BgTestSoundService } from 'src/app/services/bg-test-sound.service';
 
 @Component({
   selector: 'app-not-found',
@@ -10,6 +11,7 @@ export class NotFoundComponent implements OnInit {
 
   constructor(
     private translocoService: TranslocoService,
+    private bgTestSoundService: BgTestSoundService
   ) { }
 
   lang = this.translocoService.getActiveLang();
@@ -19,6 +21,7 @@ export class NotFoundComponent implements OnInit {
     this.translocoService.langChanges$.subscribe(lang => {
       this.lang = lang;
     });
+    this.bgTestSoundService.stop();
   }
 
 }

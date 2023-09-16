@@ -10,6 +10,7 @@ import { timer } from 'rxjs';
 import { PtsdResult } from 'src/app/interfaces/ptsd-result';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TranslocoService } from '@ngneat/transloco';
+import { BgTestSoundService } from 'src/app/services/bg-test-sound.service';
 
 /** Error when invalid control is dirty, touched, or submitted. */
 export class MyErrorStateMatcher implements ErrorStateMatcher {
@@ -40,7 +41,8 @@ export class PtsdTestResultComponent implements OnInit {
     private _snackBar: MatSnackBar,
     private router: Router,
     private translocoService: TranslocoService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private bgTestSoundService: BgTestSoundService
   ) {
     // Note that we provide the icon here as a string literal here due to a limitation in
     // Stackblitz. If you want to provide the icon from a URL, you can use:
@@ -171,6 +173,7 @@ export class PtsdTestResultComponent implements OnInit {
   matcher = new MyErrorStateMatcher();
 
   ngOnInit(): void {
+    this.bgTestSoundService.stop();
     this.testId = this.route.snapshot.paramMap.get('id') || '';
     this.ptsdTestService.result(this.testId).subscribe({
       next: (response) => {

@@ -147,3 +147,16 @@
         </div>
     </div>
 </section>
+
+<div class="fixed bottom-4 right-4">
+    <button (click)="onBgSoundClick()" class="tm-button-icon">
+        <svg *ngIf="!isBgSoundPlaying" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M11 5L6 9H2V15H6L11 19V5Z" stroke="#95AB63" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M23 9L17 15" stroke="#95AB63" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M17 9L23 15" stroke="#95AB63" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <svg *ngIf="isBgSoundPlaying" width="11" height="16" viewBox="0 0 11 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10 1L5 5H1V11H5L10 15V1Z" stroke="#95AB63" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </button>
+</div>

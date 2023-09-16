@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { TranslocoService } from '@ngneat/transloco';
+import { BgTestSoundService } from 'src/app/services/bg-test-sound.service';
 import { PtsdTestService } from 'src/app/services/ptsd-test.service';
 
 @Component({
@@ -14,7 +15,8 @@ export class PtsdTestStartComponent implements OnInit {
   constructor(
     private ptsdTestService: PtsdTestService,
     private router: Router,
-    private translocoService: TranslocoService
+    private translocoService: TranslocoService,
+    private bgTestSoundService: BgTestSoundService
   ) { }
 
   startTestForm = new FormGroup({
@@ -28,6 +30,8 @@ export class PtsdTestStartComponent implements OnInit {
   isLoading = false;
   isIntro = true;
 
+  isBgSoundPlaying = false;
+
   ngOnInit(): void {
     this.ptsdTestService.clearTest();
     this.translocoService.langChanges$.subscribe(lang => {
@@ -37,6 +41,9 @@ export class PtsdTestStartComponent implements OnInit {
 
   onStart() {
     this.isIntro = false;
+    this.bgTestSoundService.stop();
+    this.bgTestSoundService.start();
+    this.isBgSoundPlaying = this.bgTestSoundService.isPlaying;
   }
 
   onSubmit() {
@@ -68,6 +75,16 @@ export class PtsdTestStartComponent implements OnInit {
         console.error(error);
       }
     });
+  }
+
+  onBgSoundClick() {
+    if(this.isBgSoundPlaying == false) {
+      this.bgTestSoundService.start();
+      this.isBgSoundPlaying = this.bgTestSoundService.isPlaying;
+    } else {
+      this.bgTestSoundService.pause();
+      this.isBgSoundPlaying = this.bgTestSoundService.isPlaying;
+    }
   }
 
 }

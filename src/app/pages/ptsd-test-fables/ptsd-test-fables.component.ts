@@ -5,6 +5,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { environment } from 'src/environments/environment';
 import { PtsdQuestion } from 'src/app/interfaces/ptsd-question';
 import { TranslocoService } from '@ngneat/transloco';
+import { BgTestSoundService } from 'src/app/services/bg-test-sound.service';
 
 @Component({
   selector: 'app-ptsd-test-fables',
@@ -17,7 +18,8 @@ export class PtsdTestFablesComponent implements OnInit {
     private ptsdTestService: PtsdTestService,
     private route: ActivatedRoute,
     private router: Router,
-    private translocoService: TranslocoService
+    private translocoService: TranslocoService,
+    private bgTestSoundService: BgTestSoundService
   ) { }
 
   lang = this.translocoService.getActiveLang();
@@ -44,6 +46,8 @@ export class PtsdTestFablesComponent implements OnInit {
   answers: any;
   answer: any;
   test: any;
+
+  isBgSoundPlaying = false;
   
   ngOnInit(): void {
     this.questionId = Number(this.route.snapshot.paramMap.get('question')); 
@@ -68,6 +72,8 @@ export class PtsdTestFablesComponent implements OnInit {
     this.translocoService.langChanges$.subscribe(lang => {
       this.lang = lang;
     });
+
+    this.isBgSoundPlaying = this.bgTestSoundService.isPlaying;
     
     this.router.events.subscribe((event: Event) => {
       if (event instanceof NavigationStart) {
@@ -108,7 +114,6 @@ export class PtsdTestFablesComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.answerForm.value);
     if(this.test.fables) {
       this.answer = this.test.fables.find((e: { questionId: number; }) => e.questionId === this.questionId);
       if(this.answer) {
@@ -145,6 +150,16 @@ export class PtsdTestFablesComponent implements OnInit {
       //     console.error(error);
       //   }
       // });
+    }
+  }
+
+  onBgSoundClick() {
+    if(this.isBgSoundPlaying == false) {
+      this.bgTestSoundService.start();
+      this.isBgSoundPlaying = this.bgTestSoundService.isPlaying;
+    } else {
+      this.bgTestSoundService.pause();
+      this.isBgSoundPlaying = this.bgTestSoundService.isPlaying;
     }
   }
 
