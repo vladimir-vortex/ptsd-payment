@@ -6,11 +6,13 @@ import { PtsdQuestion } from 'src/app/interfaces/ptsd-question';
 import { BgTestSoundService } from 'src/app/services/bg-test-sound.service';
 import { PtsdTestService } from 'src/app/services/ptsd-test.service';
 import { environment } from 'src/environments/environment';
+import { fadeAnimation } from 'src/app/animations';
 
 @Component({
   selector: 'app-ptsd-test',
   templateUrl: './ptsd-test.component.html',
-  styleUrls: ['./ptsd-test.component.sass']
+  styleUrls: ['./ptsd-test.component.sass'],
+  animations: [fadeAnimation]
 })
 export class PtsdTestComponent implements OnInit {
 
@@ -48,7 +50,11 @@ export class PtsdTestComponent implements OnInit {
   test: any;
 
   isBgSoundPlaying = false;
-  
+
+  isShow = true;
+
+  url = this.router.url
+
   ngOnInit(): void {
     this.questionId = Number(this.route.snapshot.paramMap.get('question'));
     this.isBgSoundPlaying = this.bgTestSoundService.isPlaying;
@@ -91,6 +97,8 @@ export class PtsdTestComponent implements OnInit {
               answer: this.answer.answer.toString()
             });
           }
+          this.isShow = true;
+          this.url = event.url;
           // console.log(this.route);
       }
 
@@ -130,6 +138,7 @@ export class PtsdTestComponent implements OnInit {
       answer: ''
     });
     if(this.nextQuestion) {
+      this.isShow = false;
       this.router.navigate([this.lang, 'ptsd-test', this.questionId + 1 ]);
     } else {
       // this.router.navigate(['/ptsd-test-lusher']);
