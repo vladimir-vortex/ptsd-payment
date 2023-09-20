@@ -177,21 +177,25 @@ export class PtsdTestResultComponent implements OnInit {
     this.testId = this.route.snapshot.paramMap.get('id') || '';
     this.ptsdTestService.result(this.testId).subscribe({
       next: (response) => {
-        if(response.body?.child?.param_1 > 0.6) {
-          this.textResults.push(this.results[0]);
-        } else {
-          if(response.body?.child?.param_2 > 0.1) {
-            this.textResults.push(this.results[1]);
-          };
-          if(response.body?.child?.param_3 > 0.1) {
-            this.textResults.push(this.results[2]);
-          };
-          if(response.body?.child?.param_4 > 0.1) {
-            this.textResults.push(this.results[3]);
-          };
+
+        if(response.body.hasOwnProperty('child') && response.body?.child != null) {
+
+          if(response.body?.child?.param_1 > 0.6) {
+            this.textResults.push(this.results[0]);
+          } else {
+            if(response.body?.child?.param_2 > 0.1) {
+              this.textResults.push(this.results[1]);
+            };
+            if(response.body?.child?.param_3 > 0.1) {
+              this.textResults.push(this.results[2]);
+            };
+            if(response.body?.child?.param_4 > 0.1) {
+              this.textResults.push(this.results[3]);
+            };
+          }
         }
 
-        if(response.body?.lusher?.score) {
+        if(response.body?.lusher?.hasOwnProperty('score') && response.body?.lusher?.score != null) {
           this.scoreLusher = response.body?.lusher?.score;
           
           if(this.scoreLusher < 3) {
@@ -205,7 +209,8 @@ export class PtsdTestResultComponent implements OnInit {
           }
         }
 
-        if(response.body?.fables?.score) {
+        if(response.body?.fables?.hasOwnProperty('score') && response.body?.fables?.score != null) {
+
           this.scoreFables = response.body?.fables?.score;
           
           if(this.scoreFables > 0.8) {
@@ -217,6 +222,7 @@ export class PtsdTestResultComponent implements OnInit {
           } else {
             this.textFables = this.fables_results[3];
           }
+
         }
 
         this.isLoading = false;
