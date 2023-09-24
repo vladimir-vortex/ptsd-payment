@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { ExtraOptions, RouterModule, Routes } from '@angular/router';
 import { LangGuard } from './lang/lang.guard';
+import { AboutComponent } from './pages/about/about.component';
 import { HomeComponent } from './pages/home/home.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { PrivacyPolicyComponent } from './pages/privacy-policy/privacy-policy.component';
@@ -24,6 +25,7 @@ const routes: Routes = [
   { path: ':lang/ptsd-test', component: PtsdTestStartComponent, resolve: [LangGuard] },
   { path: ':lang/terms-of-use', component: TermsOfUseComponent, resolve: [LangGuard] },
   { path: ':lang/privacy-policy', component: PrivacyPolicyComponent, resolve: [LangGuard] },
+  { path: ':lang/about', component: AboutComponent, resolve: [LangGuard] },
   { path: ':lang/ptsd-test/:question', component: PtsdTestComponent, resolve: [LangGuard] },
   { path: ':lang/ptsd-test-fables/start', component: PtsdTestFablesStartComponent, resolve: [LangGuard] },
   { path: ':lang/ptsd-test-fables/:question', component: PtsdTestFablesComponent, resolve: [LangGuard] },

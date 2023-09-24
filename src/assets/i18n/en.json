@@ -106,7 +106,8 @@
         "copy": "© ПТСРкідс, 2023",
         "textLinkTermsOfUse": "Terms of use",
         "textLinkPrivacyPolicy": "Privacy policy",
-        "messageCookie": "By accessing the site, you consent to the use of cookies and other data in accordance with the Policy"
+        "messageCookie": "By accessing the site, you consent to the use of cookies and other data in accordance with the Policy",
+        "textLinkAbout": "About us"
     },
     "common": {
         "button": {
