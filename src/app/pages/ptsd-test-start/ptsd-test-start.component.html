@@ -120,6 +120,7 @@
 <section *ngIf="!isIntro" class="px-4 sm:px-8 py-10 sm:py-14">
     <div class="tm-container tm-container-2xs">
         <h1 class="tm-section-header text-center">{{ 'page.test-start.header' | transloco }}</h1>
+        <p class="mt-6 text-center">{{ 'page.test-start.description' | transloco }}</p>
         <div class="container px-4 md:px-8 mx-auto mt-8 max-w-md">
             <form [formGroup]="startTestForm" (ngSubmit)="onSubmit()">
                 <!-- <p *ngIf="startTestForm.controls.test.errors && startTestForm.controls.test.errors['minlength']">minlength</p> -->
@@ -134,13 +135,14 @@
                     <mat-form-field appearance="fill" class="w-full">
                         <mat-select required formControlName="age" [disabled]="isLoading">
                             <!-- <mat-option>-- None --</mat-option> -->
+                            <mat-option value="5">5</mat-option>
+                            <mat-option value="6">6</mat-option>
+                            <mat-option value="7">7</mat-option>
                             <mat-option value="8">8</mat-option>
                             <mat-option value="9">9</mat-option>
                             <mat-option value="10">10</mat-option>
                             <mat-option value="11">11</mat-option>
                             <mat-option value="12">12</mat-option>
-                            <mat-option value="13">13</mat-option>
-                            <mat-option value="14">14</mat-option>
                         </mat-select>
                         <mat-label>{{ 'page.test-start.input-age.label' | transloco }}</mat-label>
                     </mat-form-field>

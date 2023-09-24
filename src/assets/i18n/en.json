@@ -27,6 +27,7 @@
             "intro-header": "Shall we begin?",
             "intro-text": "Please start the test well-rested and with minimal distractions.",
             "header": "PTSD test",
+            "description": "PTSD test adasdds",
             "input-gender": {
                 "label": "Gender of child",
                 "option-b": "Boy",
