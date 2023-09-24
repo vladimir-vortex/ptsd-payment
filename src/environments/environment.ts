@@ -12,7 +12,8 @@
 export const environment = {
   baseUrl: 'https://ptsd-avangraph.vercel.app',
   production: true,
-  apiUrl: 'https://ptsd-rest.onrender.com',
+  apiUrl: 'https://ptsd-test-rest-api.efil-web.com',
+  // apiUrl: 'http://ptsd-test-rest-api-2.loc',
   imagesUrl: 'https://ik.imagekit.io/dk2qinybhy'
 };
 

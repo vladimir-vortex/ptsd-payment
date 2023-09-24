@@ -172,57 +172,62 @@ export class PtsdTestResultComponent implements OnInit {
   emailFormControl = new FormControl({ value: '', disabled: this.isSending || this.isSend }, [Validators.required, Validators.email, ]);
   matcher = new MyErrorStateMatcher();
 
+  isOk = false;
+
   ngOnInit(): void {
     this.bgTestSoundService.stop();
     this.testId = this.route.snapshot.paramMap.get('id') || '';
     this.ptsdTestService.result(this.testId).subscribe({
       next: (response) => {
 
-        if(response.body.hasOwnProperty('child') && response.body?.child != null) {
+        if(response.ok) {
+          this.isOk = true;
+          if(response.body.hasOwnProperty('child') && response.body?.child != null) {
 
-          if(response.body?.child?.param_1 > 0.6) {
-            this.textResults.push(this.results[0]);
-          } else {
-            if(response.body?.child?.param_2 > 0.1) {
-              this.textResults.push(this.results[1]);
-            };
-            if(response.body?.child?.param_3 > 0.1) {
-              this.textResults.push(this.results[2]);
-            };
-            if(response.body?.child?.param_4 > 0.1) {
-              this.textResults.push(this.results[3]);
-            };
+            if(response.body?.child?.param_1 > 0.6) {
+              this.textResults.push(this.results[0]);
+            } else {
+              if(response.body?.child?.param_2 > 0.1) {
+                this.textResults.push(this.results[1]);
+              };
+              if(response.body?.child?.param_3 > 0.1) {
+                this.textResults.push(this.results[2]);
+              };
+              if(response.body?.child?.param_4 > 0.1) {
+                this.textResults.push(this.results[3]);
+              };
+            }
           }
-        }
-
-        if(response.body?.lusher?.hasOwnProperty('score') && response.body?.lusher?.score != null) {
-          this.scoreLusher = response.body?.lusher?.score;
-          
-          if(this.scoreLusher < 3) {
-            this.textLusher = this.lusher_results[0];
-          } else if(this.scoreLusher < 6) {
-            this.textLusher = this.lusher_results[1];
-          } else if(this.scoreLusher < 9) {
-            this.textLusher = this.lusher_results[2];
-          } else {
-            this.textLusher = this.lusher_results[3];
+  
+          if(response.body?.lusher?.hasOwnProperty('score') && response.body?.lusher?.score != null) {
+            this.scoreLusher = response.body?.lusher?.score;
+            
+            if(this.scoreLusher < 3) {
+              this.textLusher = this.lusher_results[0];
+            } else if(this.scoreLusher < 6) {
+              this.textLusher = this.lusher_results[1];
+            } else if(this.scoreLusher < 9) {
+              this.textLusher = this.lusher_results[2];
+            } else {
+              this.textLusher = this.lusher_results[3];
+            }
           }
-        }
-
-        if(response.body?.fables?.hasOwnProperty('score') && response.body?.fables?.score != null) {
-
-          this.scoreFables = response.body?.fables?.score;
-          
-          if(this.scoreFables > 0.8) {
-            this.textFables = this.fables_results[0];
-          } else if(this.scoreFables > 0.7) {
-            this.textFables = this.fables_results[1];
-          } else if(this.scoreFables > 0.55) {
-            this.textFables = this.fables_results[2];
-          } else {
-            this.textFables = this.fables_results[3];
+  
+          if(response.body?.fables?.hasOwnProperty('score') && response.body?.fables?.score != null) {
+  
+            this.scoreFables = response.body?.fables?.score;
+            
+            if(this.scoreFables > 0.8) {
+              this.textFables = this.fables_results[0];
+            } else if(this.scoreFables > 0.7) {
+              this.textFables = this.fables_results[1];
+            } else if(this.scoreFables > 0.55) {
+              this.textFables = this.fables_results[2];
+            } else {
+              this.textFables = this.fables_results[3];
+            }
+  
           }
-
         }
 
         this.isLoading = false;
@@ -242,15 +247,22 @@ export class PtsdTestResultComponent implements OnInit {
 
       let email = this.emailFormControl.value;
 
-      this.ptsdTestService.send({testId: this.testId, email: email}).subscribe({
+      this.ptsdTestService.send(this.testId, {lang: this.lang, email: email}).subscribe({
         next: (response) => {
           this.isSending = false;
-          this.isSend = true;
-          let sendResultSendSuccessMessage = this.translocoService.translate('page.results.sendResultSendSuccessMessage');
-          this._snackBar.open(sendResultSendSuccessMessage, 'OK', {
-            duration: 3000
-          });
-          console.log(response);
+          if(response.ok) {
+            this.isSend = true;
+            let sendResultSendSuccessMessage = this.translocoService.translate('page.results.sendResultSendSuccessMessage');
+            this._snackBar.open(sendResultSendSuccessMessage, 'OK', {
+              duration: 3000
+            });
+          } else {
+            this.isSend = false;
+            let sendResultSendErrorMessage = this.translocoService.translate('page.results.sendResultSendErrorMessage');
+            this._snackBar.open(sendResultSendErrorMessage, 'OK', {
+              duration: 3000
+            });
+          }
           // if(response.body?.id) {
           //   this.ptsdTestService.setTestId(response.body.id);
           // }

@@ -48,6 +48,8 @@ export class PtsdTestFablesComponent implements OnInit {
   test: any;
 
   isBgSoundPlaying = false;
+
+  isImageLoaded = false;
   
   ngOnInit(): void {
     this.questionId = Number(this.route.snapshot.paramMap.get('question')); 
@@ -92,6 +94,7 @@ export class PtsdTestFablesComponent implements OnInit {
               answer: this.answer.answer.toString()
             });
           }
+          this.isImageLoaded = false;  
           // console.log(this.route);
       }
 

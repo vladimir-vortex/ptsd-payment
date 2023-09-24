@@ -8,8 +8,13 @@
             <p *ngIf="question.description" class="mt-6">
                 {{question.description[lang] || question.description[lang_default]}}
             </p>
-            <div class="mt-14 flex justify-center">
-                <img src="{{imagesUrl}}/{{question.image_b}}" alt="" class="object-contain w-96 h-96">
+            <div class="mt-8 flex justify-center">
+                <div class="w-auto relative">
+                    <div *ngIf="!isImageLoaded" class="flex justify-center items-center absolute top-0 bottom-0 left-0 right-0 bg-gray-50 border rounded border-gray-100">
+                        <app-loader ></app-loader>
+                    </div>
+                    <img (load)="isImageLoaded = true" src="{{imagesUrl}}/{{question.image_b}}" alt="" [style]="{'opacity': isImageLoaded ? 1 : 0 }" class="object-contain w-96 h-96 transition-opacity duration-200">
+                </div>
             </div>
             <div *ngIf="question.answers" class="mt-14">
                 <form [formGroup]="answerForm" (ngSubmit)="onSubmit()">

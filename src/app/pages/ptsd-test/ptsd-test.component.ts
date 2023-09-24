@@ -55,6 +55,8 @@ export class PtsdTestComponent implements OnInit {
 
   url = this.router.url
 
+  isImageLoaded = false;
+
   ngOnInit(): void {
     this.questionId = Number(this.route.snapshot.paramMap.get('question'));
     this.isBgSoundPlaying = this.bgTestSoundService.isPlaying;
@@ -98,6 +100,7 @@ export class PtsdTestComponent implements OnInit {
             });
           }
           this.isShow = true;
+          this.isImageLoaded = false;
           this.url = event.url;
           // console.log(this.route);
       }
