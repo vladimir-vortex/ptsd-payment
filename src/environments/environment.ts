@@ -10,7 +10,7 @@
 // };
 
 export const environment = {
-  baseUrl: 'https://ptsd-avangraph.vercel.app',
+  baseUrl: 'http://localhost:4200',
   production: true,
   apiUrl: 'https://ptsd-test-rest-api.efil-web.com',
   // apiUrl: 'http://ptsd-test-rest-api-2.loc',

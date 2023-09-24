@@ -120,7 +120,9 @@
 <section *ngIf="!isIntro" class="px-4 sm:px-8 py-10 sm:py-14">
     <div class="tm-container tm-container-2xs">
         <h1 class="tm-section-header text-center">{{ 'page.test-start.header' | transloco }}</h1>
-        <p class="mt-6 text-center">{{ 'page.test-start.description' | transloco }}</p>
+        <p class="mt-6 text-center">{{ 'page.test-start.description-1' | transloco }}</p>
+        <p class="text-center">{{ 'page.test-start.description-2' | transloco }}</p>
+        <p class="text-center">{{ 'page.test-start.description-3' | transloco }}</p>
         <div class="container px-4 md:px-8 mx-auto mt-8 max-w-md">
             <form [formGroup]="startTestForm" (ngSubmit)="onSubmit()">
                 <!-- <p *ngIf="startTestForm.controls.test.errors && startTestForm.controls.test.errors['minlength']">minlength</p> -->

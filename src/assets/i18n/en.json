@@ -27,7 +27,9 @@
             "intro-header": "Shall we begin?",
             "intro-text": "Please start the test well-rested and with minimal distractions.",
             "header": "PTSD test",
-            "description": "PTSD test adasdds",
+            "description-1": "Тест призначений для дітей віком від 5 до 12 років",
+            "description-2": "Тест є допоміжною методикою для виявлення проявів ПТСР у дітей",
+            "description-3": "Для валідного результату рекомендується проходити гру-тестування у супроводі дорослих",
             "input-gender": {
                 "label": "Gender of child",
                 "option-b": "Boy",
