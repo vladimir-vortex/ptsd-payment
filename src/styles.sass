@@ -74,6 +74,13 @@ $section-header-gap-sm: 3rem
     line-height: 1.2em
     letter-spacing: -0.02em
 
+@mixin body-1
+    /* Body 1 */
+    font-family: $font-primary
+    font-size: 18px
+    font-weight: 400
+    line-height: 1.25em
+
 @mixin body-2
     /* body 2 */
     font-family: $font-primary
@@ -147,10 +154,16 @@ footer
     box-shadow: 0px 5px 15px 0px rgba(183, 183, 183, 0.15)
 
 .tm-section-p
+    &-md
+        @include body-1
     &-lg
+        @include body-1
+        line-height: 1.4em
         @media ( min-width: $media-sm )
             font-size: 20px
-            line-height: 1.4em
+
+.tm-section-a
+    text-decoration: underline
 
 .tm-section-list
     padding: 0
@@ -159,6 +172,27 @@ footer
         margin-left: 32px
     li + li
         margin-top: 8px
+
+.tm-section-list-md
+    @include body-1
+    padding: 0
+    padding-left: 16px
+    position: relative
+    list-style: none
+    line-height: 1.25em
+    li
+        position: relative
+        &::before
+            position: absolute
+            content: ""
+            height: 8px
+            width: 8px
+            border-radius: 50%
+            background-color: $color-primary
+            top: 8px
+            left: -16px
+    li + li
+        margin-top: 12px
 
 .tm-section-header
     @include title-2
