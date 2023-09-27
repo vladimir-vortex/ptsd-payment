@@ -20,8 +20,8 @@
                 <form [formGroup]="answerForm" (ngSubmit)="onSubmit()">
                     <div class="flex flex-col gap-4">
                         <div *ngFor="let answer of question.answers" class="flex gap-3 items-center">
-                            <input type="radio" id="{{answer.id}}" formControlName="answer" value="{{answer.id}}">
-                            <label for="{{answer.id}}">{{answer.title[lang] || answer.title[lang_default]}}</label>
+                            <input class="cursor-pointer" type="radio" id="{{answer.id}}" formControlName="answer" value="{{answer.id}}">
+                            <label class="cursor-pointer" for="{{answer.id}}">{{answer.title[lang] || answer.title[lang_default]}}</label>
                         </div>
                     </div>
                     <button type="submit" class="tm-button tm-button-primary tm-button-width tm-button-flat mt-8" [disabled]="!this.answerForm.value.answer">

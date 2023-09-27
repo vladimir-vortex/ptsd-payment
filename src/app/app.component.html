@@ -2,7 +2,8 @@
   <app-header></app-header>
   <!-- <div class="content" [@fadeAnimation]="outlet.isActivated ? outlet.activatedRoute : ''"> -->
   <div class="content" [@fadeAnimation]="url">
-      <router-outlet #outlet="outlet"></router-outlet>
+      <app-loader *ngIf="isLoading"></app-loader>
+      <router-outlet *ngIf="!isLoading" #outlet="outlet"></router-outlet>
   </div>
   <app-footer></app-footer>
 </div>

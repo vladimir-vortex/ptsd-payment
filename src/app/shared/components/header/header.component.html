@@ -10,57 +10,14 @@
             </a>
             <div class="gap-8 hidden lg:flex flex-initial">
                 <div>
-                    <button [matMenuTriggerFor]="helpMenu" class="menu-icon-button flex items-center h-10">
-                        <div class="h-6 flex-initial">
-                            Як ми можемо допомогти?
-                        </div>
-                        <div class="flex-initial">
-                            <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M13.4732 14.6432C13.0816 15.2699 12.1689 15.2699 11.7772 14.6432L8.58149 9.53C8.16521 8.86395 8.64406 8 9.42949 8L15.821 8C16.6064 8 17.0853 8.86395 16.669 9.53L13.4732 14.6432Z" fill="#495C66"/>
-                            </svg>
-                        </div>
-                    </button>
-                    <mat-menu #helpMenu="matMenu" xPosition="before" class="header-dropdown">
-                        <a routerLink="/user/support" mat-menu-item [disabled]="true">
-                            <div class="flex gap-2">
-                                <div>Menu 1</div>
-                            </div>
-                        </a>
-                        <a routerLink="/user/support" mat-menu-item>
-                            <div class="flex gap-2">
-                                <div>Menu 2</div>
-                            </div>
-                        </a>
-                        <a routerLink="/user/support" mat-menu-item>
-                            <div class="flex gap-2">
-                                <div>Menu 3</div>
-                            </div>
-                        </a>
-                    </mat-menu>
+                    <a routerLink="{{currentLang.id}}" class="menu-icon-button h-10">
+                        {{ 'header.textLinkHome' | transloco }}
+                    </a>
                 </div>
                 <div>
-                    <button [matMenuTriggerFor]="infoMenu" class="menu-icon-button flex items-center h-10">
-                        <div class="h-6">
-                            Інформаційна база
-                        </div>
-                        <div>
-                            <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M13.4732 14.6432C13.0816 15.2699 12.1689 15.2699 11.7772 14.6432L8.58149 9.53C8.16521 8.86395 8.64406 8 9.42949 8L15.821 8C16.6064 8 17.0853 8.86395 16.669 9.53L13.4732 14.6432Z" fill="#495C66"/>
-                            </svg>
-                        </div>
-                    </button>
-                    <mat-menu #infoMenu="matMenu" xPosition="before" class="header-dropdown">
-                        <a routerLink="/user/support" mat-menu-item [disabled]="true">
-                            <div class="flex gap-2">
-                                <div>Menu 4</div>
-                            </div>
-                        </a>
-                        <a routerLink="/user/support" mat-menu-item>
-                            <div class="flex gap-2">
-                                <div>Menu 5</div>
-                            </div>
-                        </a>
-                    </mat-menu>
+                    <a routerLink="{{currentLang.id}}/about" class="menu-icon-button h-10">
+                        {{ 'header.textLinkAbout' | transloco }}
+                    </a>
                 </div>
             </div>
             <div class="gap-7 flex flex-initial">

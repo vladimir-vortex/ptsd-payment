@@ -1,10 +1,8 @@
 {
     "menu": {
         "header": {
-            "item1": "Menu 1",
-            "item2": "Menu 2",
-            "item3": "Menu 3",
-            "item4": "Menu 4"
+            "textLinkHome": "Główna",
+            "textLinkAbout": "O projekcie"
         }
     },
     "page": {
