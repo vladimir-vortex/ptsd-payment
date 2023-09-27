@@ -1,9 +1,7 @@
 {
-    "menu": {
-        "header": {
-            "textLinkHome": "Головна",
-            "textLinkAbout": "Про проект"
-        }
+    "header": {
+        "textLinkHome": "Головна",
+        "textLinkAbout": "Про проект"
     },
     "page": {
         "results": {

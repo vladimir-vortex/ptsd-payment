@@ -1,9 +1,7 @@
 {
-    "menu": {
-        "header": {
-            "textLinkHome": "Główna",
-            "textLinkAbout": "O projekcie"
-        }
+    "header": {
+        "textLinkHome": "Główna",
+        "textLinkAbout": "O projekcie"
     },
     "page": {
         "results": {

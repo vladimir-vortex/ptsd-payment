@@ -1,9 +1,7 @@
-{
-    "menu": {
-        "header": {
-            "textLinkHome": "Home",
-            "textLinkAbout": "About Us"
-        }
+{ 
+    "header": {
+        "textLinkHome": "Home",
+        "textLinkAbout": "About Us"
     },
     "page": {
         "results": {

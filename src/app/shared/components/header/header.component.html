@@ -35,9 +35,6 @@
                     <mat-menu #lang="matMenu" xPosition="before" class="header-dropdown">
                         <a [routerLink]="[lang_item.id + currentUrl]" mat-menu-item *ngFor="let lang_item of langs">
                             <div class="flex gap-2">
-                                <div class="uppercase">
-                                    {{lang_item.id}}
-                                </div>
                                 <div>
                                     {{lang_item.label}}
                                 </div>
