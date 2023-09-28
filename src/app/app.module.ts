@@ -1,5 +1,6 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -42,8 +43,10 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
     BrowserAnimationsModule,
     SharedModule,
     ReactiveFormsModule,
-    TranslocoRootModule
+    TranslocoRootModule,
+    CommonModule
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],
   bootstrap: [AppComponent]
 })

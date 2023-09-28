@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { TranslocoService } from '@ngneat/transloco';
+import { SidenavService } from 'src/app/services/sidenav.service';
 
 @Component({
   selector: 'app-header',
@@ -11,7 +12,8 @@ export class HeaderComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private translocoService: TranslocoService
+    private translocoService: TranslocoService,
+    private sidenav: SidenavService
   ) { }
 
   lang = "en";
@@ -44,6 +46,10 @@ export class HeaderComponent implements OnInit {
         }
       }
     )
+  }
+
+  toggleSidenav() {
+    this.sidenav.toggle();
   }
 
 }

@@ -6,13 +6,15 @@ import { HeaderComponent } from './components/header/header.component';
 import { MaterialModule } from './material/material.module';
 import { LoaderComponent } from './components/loader/loader.component';
 import { TranslocoRootModule } from '../transloco-root.module';
+import { CookieDialodComponent } from './components/cookie-dialod/cookie-dialod.component';
 
 
 @NgModule({
   declarations: [
     FooterComponent,
     HeaderComponent,
-    LoaderComponent
+    LoaderComponent,
+    CookieDialodComponent
   ],
   imports: [
     CommonModule,
@@ -24,7 +26,8 @@ import { TranslocoRootModule } from '../transloco-root.module';
     HeaderComponent,
     FooterComponent,
     LoaderComponent,
-    MaterialModule
+    MaterialModule,
+    CookieDialodComponent
   ],
 })
 export class SharedModule { }
