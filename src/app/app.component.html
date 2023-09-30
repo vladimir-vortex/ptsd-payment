@@ -1,5 +1,5 @@
-<mat-drawer-container class="slidenav-container" autosize hasBackdrop="true">
-  <mat-drawer #sidenav class="sidenav-content w-72 md:w-80" mode="over">
+<mat-drawer-container class="example-container" autosize="false" hasBackdrop="true">
+  <mat-drawer #sidenav class="example-sidenav w-72 md:w-80" mode="push">
     <div class="flex flex-col h-full">
       <div class="flex p-2">
         <div class="flex-initial w-auto flex items-center pl-2">
@@ -27,13 +27,15 @@
       </div>
     </div>
   </mat-drawer>
-  <div class="wrapper">
-    <app-header></app-header>
-    <!-- <div class="content" [@fadeAnimation]="outlet.isActivated ? outlet.activatedRoute : ''"> -->
-    <div class="content" [@fadeAnimation]="url">
-        <router-outlet #outlet="outlet"></router-outlet>
+  <mat-drawer-content class="example-sidenav-content">
+    <div class="wrapper">
+      <app-header></app-header>
+      <!-- <div class="content" [@fadeAnimation]="outlet.isActivated ? outlet.activatedRoute : ''"> -->
+        <div class="content" [@fadeAnimation]="url">
+          <router-outlet #outlet="outlet"></router-outlet>
+        </div>
+      <!-- <button (click)="scrollToTop()" mat-fab class="back-to-top">sadadsasd</button> -->
+      <app-footer></app-footer>
     </div>
-    <app-footer></app-footer>
-  </div>
-  
+  </mat-drawer-content>
 </mat-drawer-container>

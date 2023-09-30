@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
-import { NavigationEnd, Router } from '@angular/router';
+import { NavigationEnd, Router, Scroll } from '@angular/router';
 import { TranslocoService } from '@ngneat/transloco';
 import { fadeAnimation } from './animations';
 import { SidenavService } from 'src/app/services/sidenav.service';
@@ -26,9 +26,10 @@ export class AppComponent implements OnInit {
     private translocoService: TranslocoService,
     private sidenavService: SidenavService,
     private dialog: MatDialog,
+
   ) {
     router.events.subscribe((evt) => { // will trigger each time there's a route change.
-      if(evt instanceof NavigationEnd){
+      if(evt instanceof NavigationEnd) {
         this.url = evt.url;
         this.sidenav.close();
       }
@@ -74,6 +75,5 @@ export class AppComponent implements OnInit {
     });
 
   };
-
 
 }
