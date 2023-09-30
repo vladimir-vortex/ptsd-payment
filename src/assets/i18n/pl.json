@@ -83,6 +83,20 @@
                 "text": "Nasza technika ma na celu identyfikację objawów PTSD u dzieci w wieku przedszkolnym, wczesnoszkolnym i gimnazjalnym. Może stanowić uzupełnienie kompleksowej diagnostyki zespołu stresu pourazowego u dzieci."
             }
         },
+        "about": {
+            "header": "O nas",
+            "p-1": "Projekt metodologii badań został opracowany przez zespół ośrodka psychologicznego \"FIDES\" w Winnicy na Ukrainie.",
+            "list-1-title": "Oferujemy współpracę w następujących obszarach:",
+            "list-1-line-1": "Indywidualne poradnictwo psychologiczne online i offline - wszystkie kategorie;",
+            "list-1-line-2": "Organizacja i prowadzenie szkoleń oraz zajęć korekcyjno-rozwojowych - wszystkie kategorie;",
+            "list-1-line-3": "Organizacja i realizacja staży, doskonalenia zawodowego specjalistów w dziedzinach psychologicznych, pedagogicznych, medycznych i społecznych;",
+            "list-1-line-4": "Psychodiagnostyka osobowości;",
+            "list-1-line-5": "Przeprowadzenie badania patopsychologicznego i wyciągnięcie wniosku patopsychologicznego;",
+            "list-1-line-6": "Przeprowadzanie badań przesiewowych kandydatów do pracy przy użyciu wariografu; przeprowadzanie badań wariografem w interesie jednostki - wykrywanie kłamstw; przygotowywanie raportów na podstawie wyników badań.",
+            "list-1-line-7": "Organizacja i prowadzenie konferencji, okrągłych stołów, networkingu, eventów, brunchów w kierunku psychoedukacyjnym.",
+            "p-2": "Naszymi specjalistami są lekarze i kandydaci nauk psychologicznych, profesorowie, docentowie, praktycy psychologowie, certyfikowani psychoterapeuci, coachowie.",
+            "contact-header": "Szczegółowe informacje o Centrum \"FIDES\" pod linkiem:"
+        },
         "not-found": {
             "header": "Strona nie znaleziona",
             "text": "Ups! Coś poszło nie tak",

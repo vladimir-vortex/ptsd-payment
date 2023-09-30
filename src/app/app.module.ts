@@ -20,6 +20,7 @@ import { TermsOfUseComponent } from './pages/terms-of-use/terms-of-use.component
 import { PtsdTestFablesStartComponent } from './pages/ptsd-test-fables-start/ptsd-test-fables-start.component';
 import { PtsdTestLusherStartComponent } from './pages/ptsd-test-lusher-start/ptsd-test-lusher-start.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { AboutComponent } from './pages/about/about.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
     PtsdTestFablesComponent,
     PrivacyPolicyComponent,
     NotFoundComponent,
-    TermsOfUseComponent
+    TermsOfUseComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,

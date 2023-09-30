@@ -93,7 +93,18 @@
             }
         },
         "about": {
-            "header": "About us"
+            "header": "About us",
+            "p-1": "The testing methodology project was developed by the team of the psychological center \"FIDES\" in Vinnytsia, Ukraine.",
+            "list-1-title": "We offer cooperation in the following areas:",
+            "list-1-line-1": "Individual psychological counseling online and offline - all categories;",
+            "list-1-line-2": "Organization and conduct of trainings and corrective and developmental classes - all categories;",
+            "list-1-line-3": "Organization and implementation of internships, professional development of specialists in psychological, pedagogical, medical and social fields;",
+            "list-1-line-4": "Psychodiagnostics of personality;",
+            "list-1-line-5": "Conducting a pathopsychological examination and drawing up a pathopsychological conclusion;",
+            "list-1-line-6": "Conducting screening tests of job candidates using a polygraph; conducting polygraph tests in the interests of individuals - lie detection; preparing reports based on the results of the tests.",
+            "list-1-line-7": "Organization and holding of conferences, round tables, networking, events, brunches in a psycho-educational direction.",
+            "p-2": "Our specialists are doctors and candidates of psychological sciences, professors, associate professors, practicing psychologists, certified psychotherapists, coaches.",
+            "contact-header": "Detailed information about the \"FIDES\" Center at the link:"
         },
         "not-found": {
             "header": "Page not found",

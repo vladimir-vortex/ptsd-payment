@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { BgTestSoundService } from 'src/app/services/bg-test-sound.service';
 import { TranslocoService } from '@ngneat/transloco';
+import { BgTestSoundService } from 'src/app/services/bg-test-sound.service';
 
 @Component({
   selector: 'app-about',
@@ -10,8 +10,8 @@ import { TranslocoService } from '@ngneat/transloco';
 export class AboutComponent implements OnInit {
 
   constructor(
-    private bgTestSoundService: BgTestSoundService,
-    private translocoService: TranslocoService
+    private translocoService: TranslocoService,
+    private bgTestSoundService: BgTestSoundService
   ) { }
 
   lang = this.translocoService.getActiveLang();
