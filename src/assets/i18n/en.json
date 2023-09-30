@@ -92,6 +92,9 @@
                 "text": "Our method is aimed at identifying signs of PTSD in children of preschool, elementary school, and middle school age. It can be additional in the comprehensive diagnosis of PTSD in children."
             }
         },
+        "about": {
+            "header": "About us"
+        },
         "not-found": {
             "header": "Page not found",
              "text": "oops, something went wrong",
