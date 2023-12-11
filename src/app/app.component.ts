@@ -61,7 +61,8 @@ export class AppComponent implements OnInit {
 
   openDialog() {    
     const dialogRef = this.dialog.open(CookieDialodComponent, {
-      panelClass: 'tm-dialog-container'
+      panelClass: 'tm-dialog-container',
+      maxWidth: '640px',
       // width: '100%',
       // position: { bottom: '32px' },
       // hasBackdrop: false,
