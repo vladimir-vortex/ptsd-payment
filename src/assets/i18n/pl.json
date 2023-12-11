@@ -104,11 +104,12 @@
         }
     },
     "footer": {
-        "copy": "© ПТСРкідс, 2023",
+        "copy": "© KidsCare, 2023",
         "textLinkTermsOfUse": "Warunki korzystania",
         "textLinkPrivacyPolicy": "Półka prywatności",
         "messageCookie": "Wchodząc na stronę wyrażasz zgodę na wykorzystywanie plików cookies i innych danych zgodnie z Polityką",
-        "textLinkAbout": "O nas"
+        "textLinkAbout": "O nas",
+        "textDevOps": "Rozwój projektu i wsparcie: "
     },
     "common": {
         "button": {
