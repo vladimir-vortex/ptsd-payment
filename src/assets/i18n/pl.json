@@ -46,37 +46,82 @@
         "home": {
             "cover": {
                 "header": "Zespół stresu pourazowego u dziecka",
-                "text": "Traumatyczne przeżycie może prowadzić do rozwoju zespołu stresu pourazowego (PTSD) u dzieci. Ten proces może stać się nieodwracalny, jeśli przegapisz moment, w którym musisz skontaktować się ze specjalistą.",
-                "subheader": "Rozpocznij test oceniający już teraz"
+                "text": "Traumatyczne doświadczenia mogą prowadzić do rozwoju zespołu stresu pourazowego (PTSD) u dzieci. Proces ten może stać się nieodwracalny, jeśli przegapisz moment, w którym konieczna będzie wizyta u specjalisty.",
+                "subheader": "Rozpocznij ocenę teraz"
             },
             "points": {
-                "text-1": "Według oficjalnych danych, według stanu na 1 sierpnia 2022 r., wojna na Ukrainie w tym roku dotknęła co najmniej 1051 dzieci. Każdego dnia ta rozczarowująca statystyka rośnie",
-                "text-2": "Nie ma laboratoryjnych metod wykrywania PTSD. Dlatego metody diagnozowania PTSD u dzieci opierają się na badaniu psychofizjologicznym",
-                "text-3": "Szacunkowa liczba takich dzieci sięga 4-5 milionów. Przyjmuje się, że u zdecydowanej większości z nich rozwiną się kliniczne objawy zespołu stresu pourazowego (PTSD)."
+                "text-1": "Według oficjalnych danych, wg stanu na 1 sierpnia 2022 r., w tym oku wojna na Ukrainie dotknęła co najmniej 1051 dzieci. Z każdym dniem ta niezadowalająca statystyka rośnie",
+                "text-2": "Nie istnieją laboratoryjne metody wykrywania PTSD. Dlatego metody diagnozowania PTSD u dzieci opierają się na badaniach psychofizjologicznych, które rozczarowują",
+                "text-3": "Szacuje się, że liczba takich dzieci sięga 4-5 milionów. Zakłada się, że u zdecydowanej większości z nich rozwiną się kliniczne objawy zespołu stresu pourazowego (PTSD)"
             },
             "what": {
                 "header": "Co to jest zespół stresu pourazowego?",
-                "text": "PTSD to zaburzenie psychiczne, które zwykle zaczyna się objawiać około sześć miesięcy po traumatycznym zdarzeniu. Jeśli jednak stresor ma silny długotrwały efekt (na przykład przebywanie pod okupacją, ciągłe sytuacje ostrzału i nalotów itp.), Prawdopodobieństwo szybkiego rozwoju PTSD wzrasta.",
+                "text": "PTSD to zaburzenie psychiczne, które zwykle zaczyna się objawiać około sześciu miesięcy po traumatycznym wydarzeniu. Jeśli jednak stresor ma silny efekt długoterminowy (na przykład przebywanie pod okupacją, ciągłe sytuacje ostrzału i nalotów itp.), prawdopodobieństwo szybkiego rozwoju PTSD wzrasta",
                 "link": "Więcej informacji o zespole stresu pourazowego"
             },
             "problem": {
                 "header": "Dlaczego zespół stresu pourazowego u dzieci staje się zagrożeniem?",
-                "text": "Jeżeli teraz nie zaczniemy rehabilitować ukraińskich dzieci, to za 10-20 lat możemy spodziewać się pokolenia dorosłych z traumą, ludzi z różnymi uzależnieniami, ludzi okrutnych, co najwyżej wycofanych i obojętnych. A to wszystko jest następstwem PTSD."
+                "text": "Jeśli teraz nie zaczniemy rehabilitować ukraińskich dzieci, to za  10-20 lat możemy spodziewać się pokolenia dorosłych po traumie, osób  z różnymi uzależnieniami, ludzi okrutnych, w najlepszym wypadku wycofanych i obojętnych. A to szystko są konsekwencje zespołu stresu pourazowego (PTSD)."
             },
             "diagnostic": {
                 "header": "Niektóre objawy PTSD:",
                 "text-1": "Nie ma laboratoryjnych metod wykrywania PTSD. Metody diagnozowania PTSD u dzieci opierają się na kompleksowym badaniu psychofizjologicznym.",
-                "text-2": "Jednak testy online mogą uwypuklić aspekty, które mogą być sygnałem dla rodziców.",
+                "text-2": "Jednak testy online mogą uwydatnić aspekty, które mogą być sygnałem dla rodziców.",
                 "list": {
                     "item-1": "Reakcja na ostre dźwięki, dreszcze",
-                    "item-2": "Strachy, nerwowość",
-                    "item-3": "Jąkanie się",
+                    "item-2": "Strach, nerwowość",
+                    "item-3": "Jąkanie",
                     "item-4": "Wysoka temperatura",
                     "item-5": "Zaburzenia trawienia, nudności",
                     "item-6": "Zaburzenia snu",
-                    "item-7": "Enureza"
+                    "item-7": "Moczenie mimowolne"
                 },
                 "link": "Dowiedz się więcej o przejawach PTSD u dzieci"
+            },
+            "criteria": {
+                "header": "Criteria of diagnosis",
+                "list": [
+                    "niezaprzeczalny fakt zdarzenia traumatycznego;",
+                    "utrzymywanie się określonych objawów przez ponad miesiąc."
+                ]
+            },
+            "correction": {
+                "header": "Korekcja PTSD u dzieci – podejścia do terapii",
+                "content": [
+                    {
+                        "type": "paragraph",
+                        "text": "Psychika zarówno dorosłych, jak i zwłaszcza dzieci i młodzieży ma ogromne rezerwy na regenerację i samoregulację. Dzięki wsparciu bliskich i, w razie potrzeby, wsparciu psychologicznemu specjalistów, osoba po traumatycznym doświadczeniu może wrócić do normalności. Pierwszym i najważniejszym krokiem w korygowaniu PTSD u dzieci jest zapewnienie dziecku bezpieczeństwa i usunięcie poczucia winy. Dzieciom trzeba powiedzieć, że są bezpieczne i że ich reakcje są całkowicie naturalne."
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Korekcję PTSD u dzieci najczęściej przeprowadza się za pomocą terapii poznawczo-behawioralnej, mającej na celu przezwyciężenie traumy."
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Obejmuje:"
+                    },
+                    {
+                        "type": "list",
+                        "items": [
+                            "Nauczanie rodziców specyfiki komunikacji z dzieckiem. Muszą przekazać dziecku, jakie jest dla nich ważne, dać wiarę w siebie.",
+                            "Nauczanie dzieci technik relaksacyjnych.",
+                            "Trening umiejętności panowania nad emocjami.",
+                            "Identyfikowanie i praca z myślami, które uniemożliwiają adaptację, takimi jak obwinianie się.",
+                            "Opowiadanie o traumatycznym wydarzeniu ze świadomą intencjązmniejszenia napięcia przeżyć emocjonalnych.",
+                            "Ekspozycja to regularne, delikatne przypomnienie dziecku o traumatycznym wydarzeniu, jednocześnie wyjaśniające, jak radzić sobie z własnymi reakcjami.",
+                            "Prowadzenie zajęć rodzinnych.",
+                            "Tworzenie poczucia bezpieczeństwa dziecka."
+                        ]
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Dzieci cierpiące na zespół stresu pourazowego są bardziej narażone na samobójstwo. Dlatego w leczeniu PTSD u dzieci ze skłonnością do samodestrukcji można rozważyć kwestię czasowego leczenia psychiatrycznego w trybie stacjonarnym."
+                    },
+                    {
+                        "type": "paragraph",
+                        "text": "Młodsze dzieci należy zapoznać z zabawą, która jest elementem przetwarzania traumy. Należy jednak unikać przekształcania gry w rekonstrukcję."
+                    }
+                ]
             },
             "action": {
                 "header": "Test online na objawy PTSD u dzieci",
@@ -113,8 +158,8 @@
     },
     "common": {
         "button": {
-            "startPtsdTest": "Rozpocznij testowanie",
+            "startPtsdTest": "Rozpocznij test",
             "next": "Następny"
         }
     }
-  }
+}
