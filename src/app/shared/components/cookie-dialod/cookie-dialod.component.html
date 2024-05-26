@@ -1,7 +1,7 @@
-<h1 class="tm-dialog-title">In order to provide you with the best online experience, this website uses cookies.</h1>
-<div class="tm-dialog-content">By using our website, you agree to our use of cookies</div>
+<h1 class="tm-dialog-title">{{ 'cookies.header' | transloco }}</h1>
+<div class="tm-dialog-content">{{ 'cookies.description' | transloco }}</div>
 <div class="flex justify-center gap-2 mt-6" align="center">
     <div>
-        <button class="tm-button tm-button-primary tm-button-flat" marRipple (click)="onConfirmClick()">I agree</button>
+        <button class="tm-button tm-button-primary tm-button-flat" marRipple (click)="onConfirmClick()">{{ 'cookies.button' | transloco }}</button>
     </div>
 </div>

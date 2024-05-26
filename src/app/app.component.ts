@@ -71,7 +71,7 @@ export class AppComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe((confirmed: boolean) => {
       if (confirmed) {
-        localStorage.setItem('acept_cookie', Math.floor(Date.now() + 1000 * 60 * 60 * 24).toString());
+        localStorage.setItem('acept_cookie', Math.floor(Date.now() + 1000 * 60 * 60 * 24 * 365).toString());
       }
     });
 

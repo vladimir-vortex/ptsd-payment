@@ -69,7 +69,8 @@
             "diagnostic": {
                 "header": "Niektóre objawy PTSD:",
                 "text-1": "Nie ma laboratoryjnych metod wykrywania PTSD. Metody diagnozowania PTSD u dzieci opierają się na kompleksowym badaniu psychofizjologicznym.",
-                "text-2": "Jednak testy online mogą uwydatnić aspekty, które mogą być sygnałem dla rodziców.",
+                "text-2": "Варто звертати увагу на вищезазначені прояви розладу. При цьому враховувати вік пацієнта. До 6 років – опитати батьків щодо якості сну дитини, її стосунків із іншими дітьми. Старше 6 років – за результатами розмови та психологічного тестування самої дитини.",
+                "text-3": "Jednak testy online mogą uwydatnić aspekty, które mogą być sygnałem dla rodziców.",
                 "list": {
                     "item-1": "Reakcja na ostre dźwięki, dreszcze",
                     "item-2": "Strach, nerwowość",
