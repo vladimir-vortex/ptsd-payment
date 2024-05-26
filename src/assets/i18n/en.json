@@ -153,6 +153,278 @@
             "p-2": "Our specialists are doctors and candidates of psychological sciences, professors, associate professors, practicing psychologists, certified psychotherapists, coaches.",
             "contact-header": "Detailed information about the \"FIDES\" Center at the link:"
         },
+        "terms-of-use": {
+            "header": "Terms of use",
+            "content": [
+                {
+                    "type": "paragraph",
+                    "text": "Welcome to our website. If you continue to browse and use this website you are agreeing to comply with and be bound by the following terms and conditions of use, which together with our privacy policy govern PTSD Kids relationship with you in relation to this website."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "The term 'Service' or 'us' or 'we' refers to the owner of the website. The term 'you' refers to the user or viewer of our website."
+                },
+                {
+                    "type": "subheader",
+                    "text": "The use of this website is subject to the following terms of use:"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "The content of the pages of this website is for your general information and use only. It is for your access only. We do not guarantee that the website is free of errors."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "The content of the pages of this website is for your general information and use only. It is subject to change without notice."
+                },
+                {
+                    "type": "paragraph",
+                    "text":"Neither we nor any third parties provide any warranty or guarantee as to the accuracy, timeliness, performance, completeness or suitability of the information and materials found or offered on this website for any particular purpose. You acknowledge that such information and materials may contain inaccuracies or errors and we expressly exclude liability for any such inaccuracies or errors to the fullest extent permitted by law."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Your use of any information or materials on this website is entirely at your own risk, for which we shall not be liable. It shall be your own responsibility to ensure that any products, services or information available through this website meet your specific requirements."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "This website contains material which is owned by or licensed to us. This material includes, but is not limited to, the design, layout, look, appearance and graphics. Reproduction is prohibited other than in accordance with the copyright notice, which forms part of these terms and conditions."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "All trademarks reproduced in this website, which are not the property of, or licensed to the operator, are acknowledged on the website."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Unauthorised use of this website may give rise to a claim for damages and/or be a criminal offence."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "From time to time, we may also provide links to other websites or services of interest to you."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "From time to time, this website may also include links to other websites. These links are provided for your convenience to provide further information. They do not signify that we endorse the website(s). We have no responsibility for the content of the linked website(s)."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Your use of this website and any dispute arising out of such use of the website is subject to the laws of Ukraine."
+                }
+
+            ]
+        },
+        "privacy-policy": {
+            "header": "Політика конфіденційності",
+            "content": [
+                {
+                    "type": "paragraph",
+                    "text": "Ця політика разом із нашими положеннями та умовами визначає основу, на якій будь-які особисті дані, які ми збираємо від вас або які ви нам надаєте, будуть оброблятися нами. Будь ласка, уважно прочитайте наведене нижче, щоб зрозуміти наші погляди та практику щодо ваших особистих даних і способи їх обробки."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "<b>Важливо: Надсилаючи нам особисті дані та/або використовуючи наш веб-сайт, ви даєте свою згоду на те, що всі надані вами персональні дані можуть оброблятися нами у спосіб і для цілей, описаних нижче.</b>"
+                },
+                {
+                    "type": "subheader",
+                    "text": "Що таке дані?"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Посилання на «дані» в цій Політиці конфіденційності стосуватимуться будь-яких даних, для збору яких ви використовуєте наші служби, будь то відповіді на опитування, дані, зібрані у формі, або дані, розміщені на веб-сайті, який ми розміщуємо – це всі ваші дані. Посилання на особисту інформацію або просто інформацію означає інформацію про вас особисто, яку ми збираємо або для якої ми виступаємо як зберігачі."
+                },
+                {
+                    "type": "subheader",
+                    "text": "Інформація, яку ви вирішили надати нам"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Ви можете надати нам інформацію про себе, пройшовши один із наших онлайн-тестів, заповнивши форми, приєднавшись до нашого списку підписки, або у інший явний спосіб надсилання даних до нашого Сервісу."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Ми оброблятимемо будь-які дані законним, чесним і прозорим способом."
+                },
+                {
+                    "type": "subheader",
+                    "text": "Інформація, яку ми збираємо про вас"
+                },
+                {
+                    "type": "subheader-2",
+                    "text": "Інформація про використання"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Ми збираємо інформацію про використання про вас кожного разу, коли ви взаємодієте з нашими веб-сайтами та службами. Це стосується того, які веб-сторінки ви відвідуєте, що ви натискаєте, коли ви виконуєте ці дії, яку мову ви вибрали тощо."
+                },
+                {
+                    "type": "subheader-2",
+                    "text": "Дані пристрою та браузера"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Ми збираємо інформацію з пристрою та програми, які ви використовуєте для доступу до наших послуг. Дані пристрою в основному означають вашу IP-адресу, версію операційної системи, тип пристрою, інформацію про систему та продуктивність, а також тип браузера. Якщо ви використовуєте мобільний пристрій, ми також збираємо UUID для цього пристрою."
+                },
+                {
+                    "type": "subheader-2",
+                    "text": "Дані журналу"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Як і більшість сучасних веб-сайтів, наші веб-сервери зберігають файли журналу, які записують дані кожного разу, коли пристрій отримує доступ до цих серверів. Файли журналу містять дані про характер кожного доступу, включаючи вихідні IP-адреси, постачальників послуг Інтернету, файли, які переглядаються на нашому сайті (наприклад, HTML-сторінки, графіка тощо), версії операційної системи, час перебування на сайті, тип пристрою позначки часу та інші технічні параметри."
+                },
+                {
+                    "type": "subheader",
+                    "text": "Як ми використовуємо ваші дані"
+                },
+                {
+                    "type": "subheader-2",
+                    "text": "Інформація, яку ви нам надаєте"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "В процесі тестування ми зберігаємо необхідні дані, а саме - вік, стать особи якаа проходить тестування а також всі відповіді, які надаються в процесі тестування."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Iнформацію яку ми отримуємо від вас в процесі онлайн-тестування ми зберігаємо та оброляємо для обчислення, відображення та надсилання вам результатів тестування."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Результати тестування відображаються за унікальним веб-посиланням та доступні для перегляду відразу після завершення тесту. Це посилання ви можете зберігати та поширювати у будь-який зручний спосіб. Всі інтернет-користувачі яким ви надаєте посилання на результати тестування можуть так само переглядати їx та поширювати"
+                },
+                {
+                    "type": "subheader-2",
+                    "text": "Інформацію, яку ми збираємо про вас"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Інформацію, яку ми збираємо про вас ми використовуэмо для адміністрування нашого сайту, забезпечення технічної підтримки та покращення роботи Сервісу, ведення статистики та аналітики ефективності нашої діяльності."
+                },
+                {
+                    "type": "subheader",
+                    "text": "Сторонні сервіси та передача даних третім особам"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Ми не продаємо та не передаємо Ваші дані, отримані для надання послуг, третім особам, за винятком випадків, передбачених нижче"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Ми можемо використовувати сторонні технічні платформи та сервіси для забезпечення функціонування нашого Сервісу роботи, зокрема, для зберігання та обробки даних"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Ми можемо наймати сторонні компанії та приватних осіб для забезпечення функціонування та покращення нашого сервісу"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Сервіс використовує сторонні служби, які можуть збирати інформацію, яка використовується для ідентифікації Користувача"
+                },
+                {
+                    "type": "subheader",
+                    "text": "Ваші права на ваші дані"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Ви маєте право робити запитати щодо пояснення обробки ваших персональних даних"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Ви маєте право на доступ до персональних даних, які ми зберігаємо про вас. Такий доступ є безкоштовний, однак ми залишаємо за собою право відхилити запити, які є необґрунтованими або надмірними"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Ви маєте право вимагати припинення будь-якої обробку ваших персональних даних на основі згоди після того, як ви відкликаєте згоду"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Якщо ви хочете, щоб ми припинили зберігати ваші дані листа на контакту електронну пошту"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Якщо ми вирішимо не виконувати ваш запит, ми пояснимо причини нашої відмови. Ви маєте право поскаржитися на цю відмову в наглядовий орган"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Щоб захистити конфіденційність вашої інформації, ми попросимо вас підтвердити вашу особу, перш ніж продовжити будь-який запит, який ви подасте відповідно до цього повідомлення про конфіденційність. Якщо ви попросили когось іншого подати запит від вашого імені, ми попросимо їх довести, що вони мають ваш дозвіл діяти"
+                },
+                {
+                    "type": "subheader",
+                    "text": "Де ми зберігаємо ваші дані"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Дані, які ми збираємо від вас, можуть передаватися та зберігатися за межами Європейської економічної зони. Його може обробляти персонал, який працює за межами цієї території, який працює на нас або одного з наших постачальників. Надсилаючи свої персональні дані, ви погоджуєтеся на цю передачу, зберігання або обробку. Ми вживемо всіх розумно необхідних заходів, щоб гарантувати, що ваші дані обробляються безпечно та відповідно до цієї політики конфіденційності."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Уся інформація, яку ви нам надаєте, зберігається на наших захищених серверах"
+                },
+                {
+                    "type": "subheader",
+                    "text": "Файли Cookie"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Наш веб-сайт використовує файли cookie та аналогічні технології ідентифікації користувача, щоб покращити ваш досвід і покращити наш Сервіс"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Файл cookie (або їх аналоги) — це невелика частина даних, що передається між веб-сервером та вашим веб-браузером, коли ви відвідуєте веб-сайт. Ці дані зберігаються у пам'яті вашого пристрою(смартфон, планшет, ноутбук, тощо) та можуть включати анонімний унікальний ідентифікатор"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Якщо ваш веб-браузер налаштовано на прийом файлів cookie, вони зберігатимуться у веб-браузері або жорсткому драйвері, доки не закінчиться термін дії або ви самостійно видалите файли cookie. При відмові від використання cookie-файлів деякі частини (функції) сервісів можуть бути йому недоступні для використання"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Ви можете будь-коли видалити файли cookie зі свого комп’ютера, а також вимкнути файли cookie в налаштуваннях веб-браузера"
+                },
+                {
+                    "type": "subheader",
+                    "text": "Посилання на інші веб-сайти"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Цей веб-сайт може містити гіперпосилання на веб-сайти, якими ми не керуємо. Ці гіперпосилання надаються лише для вашої довідки та зручності та не означають жодного схвалення діяльності таких сторонніх веб-сайтів або будь-якого зв’язку з їхніми операторами. Ми не контролюємо ці веб-сайти та не несемо відповідальності за їх використання персональних даних. Ми закликаємо вас переглянути будь-яку політику конфіденційності, опубліковану на будь-якому сайті, який ви відвідуєте, перш ніж використовувати сайт або надавати будь-які особисті дані про себе"
+                },
+                {
+                    "type": "subheader",
+                    "text": "Відписатися"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Ми сподіваємося, що ви будете задоволені нашою інформацією та послугами. Однак, якщо ви не бажаєте отримувати від нас електронні листи, будь ласка, надішліть нам листа на наведену нижче адресу, указавши в темі «email unsubscribe»."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Ви можете припинити надсилання вам електронних листів від нас, надіславши електронний лист на Shportun_o@ukr.net"
+                },
+                {
+                    "type": "subheader",
+                    "text": "Звернення до регулятора"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Якщо ви вважаєте, що ваші дані оброблялися неналежним чином, або ви незадоволені нашою відповіддю на будь-який запит, який ви надіслали нам щодо використання ваших особистих даних, ви маєте право подати скаргу до офісу Уповноваженого з питань інформації."
+                },
+                {
+                    "type": "subheader",
+                    "text": "Контактна інформація"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Якщо у вас є якісь запитання чи пропозиції щодо роботи Сервісу або нашої Політики конфіденційності, напишіть нам на адресу Shportun_o@ukr.net"
+                },
+                {
+                    "type": "subheader",
+                    "text": "Повідомлення про зміни політики конфіденційності"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Ми постійно вдосконалюємо наші методи зв’язку та додаємо нові функції на цей веб-сайт, тому, якщо ми змінимо нашу практику захисту даних, ми повідомимо вас на цій сторінці, тому ми рекомендуємо вам часто перевіряти цю сторінку"
+                }
+
+            ]
+        },
         "not-found": {
             "header": "Page not found",
              "text": "oops, something went wrong",

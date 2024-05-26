@@ -7,8 +7,8 @@
         "results": {
             "title": "Wynik testu",
             "subtitle1": "Zabawa z młodszymi dziećmi",
-            "subtitle2": "Opowieści-testy Louise Duss",
-            "subtitle3": "Test koloru Lüschera",
+            "subtitle2": "Bajka-test Luisy Duess",
+            "subtitle3": "Test koloru Luschera",
             "copyLinkButton": "Skopiuj link",
             "sendResultTitle": "Wysłać wyniki testu e-mailem?",
             "sendResultButton": "Wyślij wynik"
@@ -17,17 +17,20 @@
             "intro-header": "Powinniśmy zaczynać?",
             "intro-text": "Rozpocznij test wypoczęty i nie rozpraszaj się niczym.",
             "header": "Test na zespół stresu pourazowego",
+            "description-1": "Badanie przeznaczone jest dla dzieci w wieku od 5 do 12 lat",
+            "description-2": "Test jest techniką pomocniczą służącą identyfikacji przejawów PTSD u dzieci",
+            "description-3": "Aby uzyskać ważny wynik, zaleca się zdanie testu gry w towarzystwie osób dorosłych",
             "input-gender": {
-                "label": "Płeć dziecka",
+                "label": "Płec",
                 "option-b": "Chłopak",
                 "option-g": "Dziewczyna"
             },
             "input-age": {
-                "label": "Wiek dziecka"
+                "Wiek": "Wiek dziecka"
             }
         },
         "fables-start": {
-            "header": "Wspaniały!",
+            "header": "Świetnie!",
             "text": "Przejdźmy teraz do drugiej części testu"
         },
         "lusher-start": {
@@ -35,13 +38,13 @@
             "text": "Z oferowanych kolorów wybierz ten, który najbardziej Ci się podoba."
         },
         "lusher": {
-            "header": "Test koloru Lüschera",
+            "header": "Test koloru Luschera",
             "text": "Z oferowanych kolorów wybierz ten, który najbardziej Ci się podoba.",
             "calc-header": "Obliczenie!",
             "calc-text": "Może to potrwać kilka sekund...",
             "result-header": "Gotowy!",
             "result-text": "Aby zapoznać się z wynikami, kliknij przycisk poniżej",
-            "result-button": "Aż do wyniku"
+            "result-button": "Do wyniku"
         },
         "home": {
             "cover": {
@@ -125,22 +128,284 @@
             },
             "action": {
                 "header": "Test online na objawy PTSD u dzieci",
-                "text": "Nasza technika ma na celu identyfikację objawów PTSD u dzieci w wieku przedszkolnym, wczesnoszkolnym i gimnazjalnym. Może stanowić uzupełnienie kompleksowej diagnostyki zespołu stresu pourazowego u dzieci."
+                "text": "Nasza metoda ma na celu identyfikację objawów PTSD u dzieci w wieku przedszkolnym, podstawowym i gimnazjalnym. Może stanowić uzupełnienie kompleksowej diagnostyki PTSD u dzieci."
             }
         },
         "about": {
             "header": "O nas",
-            "p-1": "Projekt metodologii badań został opracowany przez zespół ośrodka psychologicznego \"FIDES\" w Winnicy na Ukrainie.",
+            "p-1": "Projekt metodologii badań został opracowany przez zespół centrum psychologicznego \"FIDES\" w Winnicy na Ukrainie.",
             "list-1-title": "Oferujemy współpracę w następujących obszarach:",
-            "list-1-line-1": "Indywidualne poradnictwo psychologiczne online i offline - wszystkie kategorie;",
-            "list-1-line-2": "Organizacja i prowadzenie szkoleń oraz zajęć korekcyjno-rozwojowych - wszystkie kategorie;",
-            "list-1-line-3": "Organizacja i realizacja staży, doskonalenia zawodowego specjalistów w dziedzinach psychologicznych, pedagogicznych, medycznych i społecznych;",
+            "list-1-line-1": "Indywidualne poradnictwo psychologiczne online i offline – wszystkie kategorie;",
+            "list-1-line-2": "Organizacja i prowadzenie szkoleń oraz zajęć korekcyjnych i rozwojowych – wszystkie kategorie;",
+            "list-1-line-3": "Organizacja i realizacja staży, doskonalenie zawodowe specjalistów z dziedzin psychologicznych, pedagogicznych, medycznych i społecznych;",
             "list-1-line-4": "Psychodiagnostyka osobowości;",
             "list-1-line-5": "Przeprowadzenie badania patopsychologicznego i wyciągnięcie wniosku patopsychologicznego;",
-            "list-1-line-6": "Przeprowadzanie badań przesiewowych kandydatów do pracy przy użyciu wariografu; przeprowadzanie badań wariografem w interesie jednostki - wykrywanie kłamstw; przygotowywanie raportów na podstawie wyników badań.",
-            "list-1-line-7": "Organizacja i prowadzenie konferencji, okrągłych stołów, networkingu, eventów, brunchów w kierunku psychoedukacyjnym.",
-            "p-2": "Naszymi specjalistami są lekarze i kandydaci nauk psychologicznych, profesorowie, docentowie, praktycy psychologowie, certyfikowani psychoterapeuci, coachowie.",
+            "list-1-line-6": "Organizacja i prowadzenie konferencji, okrągłych stołów, networkingu, eventów, brunchów w kierunku psychoedukacyjnym.",
+            "p-2": "Nasi specjaliści to lekarze i kandydaci nauk psychologicznych, profesorowie, adiunkci, praktycy psychologowie, certyfikowani psychoterapeuci, coachowie.",
             "contact-header": "Szczegółowe informacje o Centrum \"FIDES\" pod linkiem:"
+        },
+        "terms-of-use": {
+            "header": "Warunki korzystania",
+            "content": [
+                {
+                    "type": "paragraph",
+                    "text": "Witamy na naszej stronie internetowej. Kontynuując przeglądanie i korzystanie z tej witryny, wyrażasz zgodę na przestrzeganie i związanie  się poniższymi warunkami użytkowania, które wraz z naszą polityką                     prywatności regulują relacje KidsCare z Tobą w odniesieniu do tej witryny."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Termin \"Usługa\" lub \"nas\" lub \"my\" odnosi się do właściciela strony internetowej. Termin \"Ty\" odnosi się do użytkownika lub osoby przeglądającej naszą stronę internetową."
+                },
+                {
+                    "type": "subheader",
+                    "text": "Korzystanie z tej strony internetowej podlega następującym warunkom użytkowania:"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Zawartość stron tej witryny służy wyłącznie do celów informacyjnych i do użytku ogólnego. Zastrzegamy sobie prawo do zmian bez uprzedzenia."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Ani my, ani osoby trzecie nie udzielamy żadnych gwarancji ani rękojmi co do dokładności, terminowości, wydajności, kompletności lub przydatności informacji i materiałów znalezionych lub oferowanych na tej                     stronie internetowej do jakiegokolwiek określonego celu. Użytkownik przyjmuje do wiadomości, że takie informacje i materiały mogą zawierać nieścisłości lub błędy, a my wyraźnie wykluczamy odpowiedzialność za wszelkie takie nieścisłości lub błędy w najszerszym zakresie dozwolonym przez prawo."
+                },
+                {
+                    "type": "paragraph",
+                    "text":"Korzystanie z jakichkolwiek informacji lub materiałów na tej stronie internetowej odbywa się wyłącznie na własne ryzyko, za które nie ponosimy odpowiedzialności. Użytkownik ponosi odpowiedzialność za upewnienie się, że wszelkie produkty, usługi lub informacje dostępne za pośrednictwem tej witryny spełniają jego określone wymagania."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Niniejsza strona internetowa zawiera materiały, które są naszą własnością lub są nam licencjonowane. Materiały te obejmują między innymi projekt, układ, wygląd i grafikę. Powielanie jest zabronione w sposób inny niż zgodny z informacją o prawach autorskich, która stanowi część niniejszych warunków."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Wszystkie znaki towarowe zamieszczone na tej stronie internetowej, które nie są własnością operatora ani nie są przez niego licencjonowane, są uznane na stronie internetowej."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Nieuprawnione korzystanie z tej strony internetowej może stanowić podstawę do roszczenia odszkodowawczego i/lub stanowić przestępstwo."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Od czasu do czasu ta strona internetowa może również zawierać linki do innych stron internetowych. Linki te zostały zamieszczone dla wygody użytkownika w celu uzyskania dalszych informacji. Nie oznacza to, że popieramy stronę internetową. Nie ponosimy odpowiedzialności za treść stron internetowych, do których prowadzą linki."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Korzystanie z tej witryny internetowej i wszelkie spory wynikające z takiego korzystania z witryny podlegają prawu Ukrainy"
+                }
+            ]
+        },
+        "privacy-policy": {
+            "header": "Polityka prywatności",
+            "content": [
+                {
+                    "type": "paragraph",
+                    "text": "Niniejsza polityka, wraz z naszymi warunkami, określa podstawę, na której przetwarzamy wszelkie dane osobowe, które zbieramy od Państwa lub które Państwo nam przekazują. Należy przeczytać uważnie poniższe informacje, aby zrozumieć nasze poglądy i praktyki dotyczące danych osobowych Państwa oraz sposobu ich przetwarzania."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "<b>Ważne: Przesyłając nam dane osobowe i/lub korzystając z naszej strony internetowej, zgadzaсie się, że wszystkie podane przez Państwo dane osobowe mogą być przez nas przetwarzane w sposób i w celach opisanych poniżej.</b>"
+                },
+                {
+                    "type": "subheader",
+                    "text": "Co to są dane?"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Odniesienia do „danych” w niniejszej Polityce prywatności będą odnosić się do wszelkich danych, do gromadzenia których korzystasz z naszych usług, niezależnie od tego, czy są to odpowiedzi na ankiety, dane zebrane w formularzu, czy dane opublikowane na umieszczanej przez nas stronie internetowej, czyli wszystkie dane każdego indywidualnego odwiedzającego stronę internetową. Odniesienie do danych osobowych lub po prostu informacja oznacza indywidualne informacje o osobie, które gromadzimy lub dla których pełnimy funkcję opiekunów."
+                },
+                {
+                    "type": "subheader",
+                    "text": "Informacje, które Państwo zdecyduje nam przekazać"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Może Państwo przekazać nam informacje o sobie, biorąc udział w jednym z naszych testów online, wypełniając formularze, dołączając do naszej listy subskrypcyjnej lub w inny wyraźny sposób, przesyłając dane do naszej Usługi."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Wszelkie dane będziemy przetwarzać w sposób zgodny z prawem, rzetelny i przejrzysty."
+                },
+                {
+                    "type": "subheader",
+                    "text": "Informacje, które zbieramy"
+                },
+                {
+                    "type": "subheader-2",
+                    "text": "Informacje o użytkowaniu"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Gromadzimy informacje o użytkowaniu o Państwie za każdym razem, gdy wchodzicie w interakcję z naszymi witrynami internetowymi i usługami. Obejmuje to, jakie strony internetowe odwiedzacie, na co Państwo klika, kiedy wykonuje te czynności, jaki wybiera język itp."
+                },
+                {
+                    "type": "subheader-2",
+                    "text": "Dane urządzenia i przeglądarki"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Zbieramy informacje z urządzenia i aplikacji, z których Państwo korzysta, aby uzyskać dostęp do naszych usług. Dane urządzenia oznaczają głównie adres IP, wersję systemu operacyjnego, typ urządzenia, informacje o systemie i wydajności oraz typ przeglądarki. Jeśli korzysta Państwo z urządzenia mobilnego, zbieramy również identyfikator UUID tego urządzenia."
+                },
+                {
+                    "type": "subheader-2",
+                    "text": "Dane dziennika"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Podobnie jak większość współczesnych witryn internetowych, nasze serwery internetowe przechowują pliki dziennika rejestrujące dane za każdym razem, gdy urządzenie uzyskuje dostęp do tych serwerów. Pliki dziennika zawierają dane o charakterze każdego dostępu, w tym źródłowe adresy IP, dostawców usług internetowych, pliki przeglądane w naszej witrynie (takie jak strony HTML, grafiki itp.), wersje systemu operacyjnego, czas spędzony na stronie, rodzaj znacznika czasu urządzenia i inne parametry techniczne."
+                },
+                {
+                    "type": "subheader",
+                    "text": "Jak wykorzystujemy Pańśtwa dane"
+                },
+                {
+                    "type": "subheader-2",
+                    "text": "Informacje, które nam Państwo przekazuje"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Podczas procesu testowania przechowujemy niezbędne dane, a mianowicie wiek, płeć osoby poddawanej testowi, a także wszystkie odpowiedzi udzielone w trakcie procesu testowania."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Informacje, które otrzymujemy od Państwa podczas procesu testowania online, są przechowywane i przetwarzane w celu obliczenia, wyświetlenia i przesłania wyników testu."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Wyniki testu są wyświetlane za pośrednictwem unikalnego łącza internetowego i można je przeglądać natychmiast po zakończeniu testu. Może Państwo zapisać i rozpowszechniać ten link w dowolny dogodny sposób. Wszyscy użytkownicy Internetu, którym udostępnicie link do wyników testu, również będą mogli je przeglądać i rozpowszechniać"
+                },
+                {
+                    "type": "subheader-2",
+                    "text": "Informacje, które zbieramy o Państwie"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Informacje, które zbieramy o Państwie, wykorzystujemy w celu administrowania naszym serwisem, zapewnienia wsparcia technicznego i udoskonalania Serwisu, prowadzenia statystyk i analizy efektywności naszych działań."
+                },
+                {
+                    "type": "subheader",
+                    "text": "Usługi podmiotów trzecich i przekazywanie danych podmiotom trzecim"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Nie sprzedajemy ani nie przekazujemy Państwa danych otrzymanych w związku ze świadczeniem usług podmiotom trzecim, za wyjątkiem przypadków określonych poniżej"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Możemy korzystać z platform i usług technicznych podmiotów zewnętrznych w celu zapewnienia działania naszego Serwisu, w szczególności w celu przechowywania i przetwarzania danych"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Możemy zatrudniać firmy i osoby trzecie do obsługi i ulepszania naszych usług"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Serwis korzysta z usług podmiotów trzecich, które mogą zbierać informacje służące identyfikacji Użytkownika"
+                },
+                {
+                    "type": "subheader",
+                    "text": "Państwa prawa do Państwa danych"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Ma Państwo prawo poprosić o wyjaśnienie sposobu przetwarzania Państwa danych osobowych"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Ma Państwo prawo dostępu do przechowywanych przez nas danych osobowych na Państwa temat. Dostęp taki jest bezpłatny, zastrzegamy sobie jednak prawo do odrzucenia żądań, które są nieuzasadnione lub nadmierne"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Po wycofaniu zgody Państwo ma prawo żądać zaprzestania przetwarzania Państwa danych osobowych na podstawie zgody"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Jeśli chce Państwo, żebyśmy zaprzestali przechowywać Państwa dane, skontaktujcie się z nami mailowo"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Jeśli zdecydujemy się nie spełnić Państwa prośby, wyjaśnimy powody naszej odmowy. Przysługuje Państwu prawo zaskarżenia tej odmowy do organu nadzorczego"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Aby chronić prywatność Państwa danych, prosimy o zweryfikowanie Państwa tożsamości przed przystąpieniem do realizacji jakiegokolwiek żądania złożonego zgodnie z niniejszą Polityką prywatności. Jeśli prosiłeście Państwo inną osobę o złożenie wniosku w imieniu Państwa, poprosimy ją o udowodnienie, że ma na to Państwa zgodę"
+                },
+                {
+                    "type": "subheader",
+                    "text": "Gdzie przechowujemy Państwa dane"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Dane, które od Państwa zbieramy, mogą być przekazywane i przechowywane poza Europejskim Obszarem Gospodarczym. Mogą być przetwarzane przez personel spoza tego terytorium, który pracuje dla nas lub jednego z naszych dostawców. Przesyłając swoje dane osobowe, wyrażacie Państwo zgodę na to przekazywanie, przechowywanie lub przetwarzanie. Podejmiemy wszelkie niezbędne kroki, aby zapewnić, że Państwa dane będą przetwarzane w sposób bezpieczny i zgodny z niniejszą polityką prywatności."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Wszystkie informacje, które nam przekazujecie, są przechowywane na naszych bezpiecznych serwerach"
+                },
+                {
+                    "type": "subheader",
+                    "text": "Pliki cookies"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Nasza strona internetowa wykorzystuje pliki cookie i podobne technologie identyfikacji użytkownika, aby poprawić Państwa doświadczenia i ulepszyć naszą Usługę"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Plik cookie (lub podobny) to niewielki fragment danych przesyłany pomiędzy serwerem internetowym a przeglądarką internetową podczas odwiedzania witryny internetowej. Dane te są przechowywane w pamięci Państwa urządzenia (smartfona, tabletu, laptopa itp.) i mogą zawierać anonimowy unikalny identyfikator"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Jeśli Państwa przeglądarka internetowa jest ustawiona na akceptowanie plików cookie, będą one przechowywane w przeglądarce internetowej lub na dysku twardym do czasu wygaśnięcia lub samodzielnego usunięcia plików cookie. W przypadku odmowy stosowania plików cookie niektóre części (funkcje) usług mogą być niedostępne"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "W każdej chwili możecie usunąć pliki cookies ze swojego komputera i wyłączyć obsługę plików cookies w ustawieniach swojej przeglądarki internetowej"
+                },
+                {
+                    "type": "subheader",
+                    "text": "Linki do innych stron internetowych"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Niniejsza witryna internetowa może zawierać hiperłącza do witryn internetowych, nad którymi nie mamy kontroli. Hiperłącza te służą wyłącznie celom informacyjnym i dla wygody użytkownika i nie oznaczają żadnego poparcia dla działalności takich stron internetowych osób trzecich ani żadnego powiązania z ich operatorami. Nie kontrolujemy tych stron internetowych i nie ponosimy odpowiedzialności za wykorzystanie przez nie danych osobowych. Zachęcamy Państwo do zapoznania się z polityką prywatności zamieszczoną na odwiedzanej stronie przed skorzystaniem z niej lub podaniem jakichkolwiek danych osobowych o sobie."
+                },
+                {
+                    "type": "subheader",
+                    "text": "Zrezygnuj z subskrypcji"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Mamy nadzieję, że będą Państwo usatysfakcjonowani naszymi informacjami i usługami. Jeśli jednak nie chcecie Państwo otrzymywać od nas wiadomości e-mail, wyślij nam wiadomość e-mail na poniższy adres, wpisując w temacie \"email unsubscribe\"."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Możecie Państwo zrezygnować z otrzymywania od nas e-maili, wysyłając wiadomość na adres Shportun_o@ukr.net"
+                },
+                {
+                    "type": "subheader",
+                    "text": "Apel do regulatora"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Jeśli uważacie Państwo, że Państwa dane zostały przetworzone niewłaściwie lub nie jesteście zadowolony z naszej odpowiedzi na jakąkolwiek prośbę, którą do nas skierowałeście w związku z wykorzystaniem Twoich danych osobowych, macie Państwo prawo złożyć skargę do Biura Komisarza ds. Informacji."
+                },
+                {
+                    "type": "subheader",
+                    "text": "Informacje kontaktowe"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Jeśli macie Państwo jakieś pytania lub sugestie dotyczące Usługi lub naszej Polityki prywatności, napiszcie do nas na adres Shportun_o@ukr.net"
+                },
+                {
+                    "type": "subheader",
+                    "text": "Powiadomienie o zmianach w polityce prywatności"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Stale udoskonalamy nasze metody komunikacji i dodajemy nowe funkcje do tej witryny, więc jeśli zmienimy nasze praktyki w zakresie ochrony danych, powiadomimy Pańśtwo o tym na tej stronie, dlatego zachęcamy do częstego sprawdzania tej strony"
+                }
+
+            ]
         },
         "not-found": {
             "header": "Strona nie znaleziona",
@@ -151,10 +416,10 @@
     "footer": {
         "copy": "© KidsCare, 2023",
         "textLinkTermsOfUse": "Warunki korzystania",
-        "textLinkPrivacyPolicy": "Półka prywatności",
+        "textLinkPrivacyPolicy": "Polityka prywatności",
         "messageCookie": "Wchodząc na stronę wyrażasz zgodę na wykorzystywanie plików cookies i innych danych zgodnie z Polityką",
         "textLinkAbout": "O nas",
-        "textDevOps": "Rozwój projektu i wsparcie: "
+        "textDevOps": "Rozwój i wsparcie: "
     },
     "common": {
         "button": {
