@@ -21,11 +21,16 @@ import { PtsdTestFablesStartComponent } from './pages/ptsd-test-fables-start/pts
 import { PtsdTestLusherStartComponent } from './pages/ptsd-test-lusher-start/ptsd-test-lusher-start.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { AboutComponent } from './pages/about/about.component';
+import { CheckoutComponent } from './pages/checkout/checkout.component';
+import { PaymentReturnComponent } from './pages/payment-return/payment-return.component';
+import { AuthorComponent } from './pages/author/author.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
+    AboutComponent,
+    AuthorComponent,
     PtsdTestComponent,
     PtsdTestStartComponent,
     PtsdTestResultComponent,
@@ -36,7 +41,9 @@ import { AboutComponent } from './pages/about/about.component';
     PrivacyPolicyComponent,
     NotFoundComponent,
     TermsOfUseComponent,
-    AboutComponent
+    AboutComponent,
+    CheckoutComponent,
+    PaymentReturnComponent,
   ],
   imports: [
     BrowserModule,

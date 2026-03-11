@@ -1,0 +1,20 @@
+@use 'variables' as *
+@use 'mixins' as *
+
+.hero-text
+    @include subtitle-1
+
+.experience-card-title
+    @include subtitle-3
+    color: $color-primary-black
+
+.consultation-card-title
+    @include subtitle-2
+    color: $color-base
+
+.consultation-card-text
+    @include body-3()
+    color: $color-base
+
+app-accordion-item:last-child
+  border-bottom: none

@@ -1,0 +1,78 @@
+<section class="tm-section tm-section-lg">
+  <div class="px-4 sm:px-8">
+    <div class="tm-container tm-container-2xs flex flex-col gap-8 md:flex-row items-center">
+      <div class="w-[268px] h-[336px] w-auto md:order-2 rounded-lg overflow-hidden">
+        <img class="object-cover w-[268px] h-[336px]" src="assets/images/author.webp" alt="author">
+      </div>
+      <div class="w-full flex-1 md:order-1">
+        <p class="tm-section-subtitle-2">{{ 'page.author.hero.subheader' | transloco }}</p>
+        <div class="tm-section-header tm-section-header-lg mt-2">{{ 'page.author.hero.header' | transloco }}</div>
+        <p class="hero-text mt-2 ">{{ 'page.author.hero.text' | transloco }}</p>
+        <div class="w-full flex justify-center md:justify-start mt-9">
+          <a routerLink="#" class="tm-button tm-button-primary tm-button-flat" matRipple>{{
+            'common.button.consultation' | transloco }}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="tm-section tm-section-primary" *transloco="let t">
+  <div class="px-4 sm:px-8">
+    <div class="tm-container tm-container-3xs grid md:grid-cols-2 gap-4 md:gap-8 auto-rows-fr">
+      <ng-container *ngFor="let experienceItem of t('page.author.experience')">
+        <div
+          class="flex flex-col gap-4 px-8 py-6 bg-[var(--color-background)] rounded-[5px] shadow-[0px_5px_15px_rgba(183,183,183,0.15)]">
+          <div class="flex items-center gap-3">
+            <div [innerHTML]="icons[experienceItem.icon]"></div>
+            <div class="experience-card-title">{{ experienceItem.title }}</div>
+          </div>
+          <div [innerHtml]="experienceItem.text"></div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</section>
+<section class="tm-section" *transloco="let t">
+  <div class="px-4 sm:px-8">
+    <div class="tm-container tm-container-2md">
+      <h2 class="tm-section-subheader text-center">{{ 'page.author.biography.header' | transloco }}</h2>
+      <div class="mt-4">
+        <app-accordion-item class="max-w-[488px] mx-auto"
+          *ngFor="let accordionItem of t('page.author.biography.content'); let i = index" [title]="accordionItem.title"
+          [defaultOpen]="i === 0">
+          <ng-container *ngFor="let accordionItemContent of accordionItem.content">
+            <ng-container *ngIf="accordionItemContent.type === 'list'">
+              <ul class="tm-list">
+                <li *ngFor="let accordionItemContentListItem of accordionItemContent.items">{{
+                  accordionItemContentListItem }}</li>
+              </ul>
+            </ng-container>
+          </ng-container>
+        </app-accordion-item>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="tm-section tm-section-primary" *transloco="let t">
+  <div class="px-4 sm:px-8">
+    <div class="tm-container tm-container-2xss">
+      <div class="max-w-[576px] mx-auto">
+        <div class="tm-section-header text-center">{{ 'page.author.consultation.header' | transloco }}</div>
+        <div class="grid md:grid-cols-2 gap-4 md:gap-8 auto-rows-fr mt-8">
+          <ng-container *ngFor="let consultationItem of t('page.author.consultation.items')">
+            <div
+              class="px-8 py-10 bg-[var(--color-background)] rounded-[5px] shadow-[0px_5px_15px_rgba(183,183,183,0.15)]">
+              <div [innerHTML]="icons[consultationItem.icon]"></div>
+              <div class="consultation-card-title text-center mt-6" [innerHTML]="consultationItem.title"></div>
+              <div class="consultation-card-text text-center mt-4" [innerHtml]="consultationItem.description"></div>
+            </div>
+          </ng-container>
+        </div>
+        <div class="flex justify-center mt-8">
+          <a routerLink="#" class="tm-button tm-button-primary tm-button-flat" matRipple>{{
+            'common.button.consultation' | transloco }}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -23,6 +23,9 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "sass",
+            "stylePreprocessorOptions": {
+              "includePaths": ["src"]
+            },
             "assets": [
               "src/favicon.ico",
               "src/robots.txt",
@@ -31,6 +34,7 @@
             ],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "src/_tailwind.sass",
               "src/styles.sass"
             ],
             "scripts": []
@@ -94,12 +98,16 @@
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
             "inlineStyleLanguage": "sass",
+            "stylePreprocessorOptions": {
+              "includePaths": ["src"]
+            },
             "assets": [
               "src/favicon.ico",
               "src/assets"
             ],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "src/_tailwind.sass",
               "src/styles.sass"
             ],
             "scripts": []

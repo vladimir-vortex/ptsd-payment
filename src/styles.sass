@@ -1,99 +1,10 @@
-/* You can add global styles to this file, and also import other style files */
-@tailwind base
-@tailwind components
-@tailwind utilities
-
-$media-sm: 640px
-$media-md: 768px
-$media-2md: 880px
-$media-lg: 1024px
-$media-xl: 1280px
-$media-2xl: 1536px
-
-$color-grey-blue-dark: #495C66
-$color-blue-oceanic: #3B75BF
-$color-green: #95AB63
-$color-green-light: #E2F0D6
-
-$color-grey-tetriary: #F4F6EC
-
-$color-background: #FEFFFD
-$color-base: $color-grey-blue-dark
-$color-gray: #ccc
-$color-gray-medium: #777
-$color-stroke: #333
-$color-primary: $color-green
-$font-primary: 'Exo 2', sans-serif
-$global-line-height: 1.4em
-
-$section-gap: 4rem
-$section-gap-sm: 6rem
-$section-header-gap: 2rem
-$section-header-gap-sm: 3rem
+@use 'variables' as *
+@use 'mixins' as *
 
 :root
     --list-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='25' viewBox='0 0 24 25' fill='none'%3E%3Cpath d='M20 6.49609L9 17.4961L4 12.4961' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat 50% 50%
     --color-primary: #{$color-primary}
-
-@mixin title-1
-    font-family: $font-primary
-    font-weight: 700
-    font-size: 48px
-    line-height: 1.2em
-    letter-spacing: -0.02em
-
-@mixin title-2
-    /* Title 2 */
-    font-family: $font-primary
-    font-weight: 700
-    font-size: 32px
-    line-height: 1.2em
-
-@mixin title-3
-    /* Title 3 */
-    font-family: $font-primary
-    font-weight: 600
-    font-size: 36px
-    line-height: 1.2em
-    letter-spacing: -0.02em
-
-@mixin subtitle-2
-    /* Subtitle 2 */
-
-    font-family: $font-primary
-    font-weight: 600
-    font-size: 16px
-    line-height: 1.2em
-    letter-spacing: -0.02em
-
-@mixin subtitle-3
-    /* Subtitle 3 */
-    font-family: $font-primary
-    font-weight: 600
-    font-size: 24px
-    line-height: 1.2em
-    letter-spacing: -0.02em
-
-@mixin body-1
-    /* Body 1 */
-    font-family: $font-primary
-    font-size: 18px
-    font-weight: 400
-    line-height: 1.25em
-
-@mixin body-2
-    /* body 2 */
-    font-family: $font-primary
-    font-weight: 400
-    font-size: 16px
-    line-height: 1.4em
-
-@mixin body-3
-    /* body 3 */
-    font-family: $font-primary
-    font-weight: 400
-    font-size: 14px
-    line-height: 1.4em
+    --color-background: #{$color-background}
 
 :root
     --background-color: #{$color-background}
@@ -121,7 +32,7 @@ svg
 .content
     flex: 1 0 auto
 
-header  
+header
     position: relative
     z-index: 50
     background-color: $color-grey-tetriary
@@ -138,7 +49,7 @@ footer
         padding: 80px 0
     &-primary
         background: $color-grey-tetriary
-    color: $color-base
+        color: $color-base
     &-pt-0
         padding-top: 0
     &-pb-0
@@ -192,7 +103,7 @@ footer
             top: 8px
             left: -16px
     li + li
-        margin-top: 12px
+            margin-top: 12px
 
 .tm-section-header
     @include title-2
@@ -231,11 +142,13 @@ footer
             mask-size: cover
             background-color: var(--color-primary)
     li + li
-        margin-top: 8px
+            margin-top: 8px
 
 .tm-container
     max-width: 1200px
     margin: auto
+    &-3xs
+        max-width: 736px
     &-2xs
         max-width: 768px
     &-xs
@@ -320,7 +233,6 @@ footer
     border: 2px solid $color-green-light
     background: $color-background
     box-shadow: 0px 5px 15px 0px rgba(183, 183, 183, 0.15)
-    
 
 .tm-button-width
     width: 216px
@@ -350,7 +262,6 @@ input[type="radio"]::before
 input[type="radio"]:checked::before
     opacity: 1
 
-
 .tm-dialog
     &-container
         padding: 24px
@@ -363,21 +274,20 @@ input[type="radio"]:checked::before
         margin-top: 16px
 
 .example-container
-  width: 100%
+    width: 100%
 //   height: 100vh
 
-.example-sidenav-content
-  display: flex
-  height: 100%
-  align-items: center
-  justify-content: center
+// .example-sidenav-content
+//   display: flex
+//   height: 100%
+//   align-items: center
+//   justify-content: center
 
-
-.example-sidenav
-  position: fixed !important
-  top: 0
-  bottom: 0
-  height: 100vh
+// .example-sidenav
+//   position: fixed !important
+//   top: 0
+//   bottom: 0
+//   height: 100vh
 
 // .slidenav-container.mat-drawer-container
 //     height: 100%
