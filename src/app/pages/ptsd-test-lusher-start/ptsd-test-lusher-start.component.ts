@@ -25,7 +25,7 @@ export class PtsdTestLusherStartComponent implements OnInit {
   }
 
   onNext() {
-    this.router.navigate([this.lang, 'ptsd-test-lusher']);
+    this.router.navigate([this.lang, 'ptsd-test', 'lusher']);
   }
 
   onBgSoundClick() {

@@ -1,21 +1,46 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { TranslocoService } from '@ngneat/transloco';
 import { Observable } from 'rxjs';
+import { tap } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 
+const TOKEN_KEY = 'testToken';
+const API = environment.apiUrl;
+
 export interface Answer {
-  questionId: number,
-  answer: number
+  questionId: number;
+  answer: number;
 }
 
-@Injectable({
-  providedIn: 'root'
-})
+export interface OtpRequestResponse {
+  id: string;
+}
 
+export interface CreateWithOtpResponse {
+  token: string;
+  hasActiveTest: boolean;
+}
 
+export interface LiqPayParamsResponse {
+  data: string;
+  signature: string;
+  amount: number;
+  description: string;
+  currency: string;
+  order_id: string;
+}
+
+export interface TestStatusResponse {
+  status: 'created' | 'pending' | 'paid' | 'completed' | 'failed' | 'reversed' | 'expired' | 'not_found';
+}
+
+@Injectable({ providedIn: 'root' })
 export class PtsdTestService {
-
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient,
+    private translocoService: TranslocoService
+    ) {}
 
   headers = new HttpHeaders({
     'Content-Type': 'application/json',
@@ -24,67 +49,126 @@ export class PtsdTestService {
 
   answers: Answer[] = [];
 
+  // ─── OTP ─────────────────────────────────────────────────────────────────────
+
+  otpRequest(email: string): Observable<OtpRequestResponse> {
+    return this.http.post<OtpRequestResponse>(`${API}/api/v1/ptsd-test/otp-request`, { email });
+  }
+
+  createWithOtp(code: string, requestId: string): Observable<CreateWithOtpResponse> {
+    return this.http.post<CreateWithOtpResponse>(`${API}/api/v1/ptsd-test/create-with-otp`, {
+      code,
+      requestId,
+    });
+  }
+
+  // ─── LiqPay ──────────────────────────────────────────────────────────────────
+
+  getLiqPayParams(token: string): Observable<LiqPayParamsResponse> {
+    return this.http.post<LiqPayParamsResponse>(`${API}/api/v1/ptsd-test/create-order`, {
+      token,
+      lang: this.translocoService.getActiveLang(),
+    });
+  }
+  // ─── Test status ─────────────────────────────────────────────────────────────
+
+  getTestStatus(): Observable<TestStatusResponse> {
+    return this.http.post<TestStatusResponse>(`${API}/api/v1/ptsd-test/status`, {
+      token: this.getToken(),
+    });
+  }
+
+
+  getTestInfo(): Observable<{ email: string }> {
+    return this.http.post<{ email: string }>(`${API}/api/v1/ptsd-test/info`, {
+      token: this.getToken(),
+    });
+  }
+
+  // ─── Test data ───────────────────────────────────────────────────────────────
+
+  updateTestData(body: any): Observable<any> {
+    return this.http.post<any>(
+      `${API}/api/v1/ptsd-test/update`,
+      { token: this.getToken(), ...body },
+      { headers: this.headers, observe: 'response', responseType: 'json' }
+    );
+  }
+
+  submit(answers: any): Observable<any> {
+    return this.http.post<any>(
+      `${API}/api/v1/ptsd-test/answers`,
+      { token: this.getToken(), answers },
+      { headers: this.headers, observe: 'response', responseType: 'json' }
+    );
+  }
+
+  result(testId: string): Observable<any> {
+    return this.http.get<any>(
+      `${API}/api/v1/ptsd-test/${testId}/results`,
+      { headers: this.headers, observe: 'response', responseType: 'json' }
+    );
+  }
+
+  send(id: string, body: any): Observable<any> {
+    return this.http.post<any>(
+      `${API}/api/v1/ptsd-test/${id}/send-results`,
+      body,
+      { headers: this.headers, observe: 'response', responseType: 'json' }
+    );
+  }
+
+  // ─── Questions ───────────────────────────────────────────────────────────────
+
   getQuestions(): Observable<any> {
     return this.http.get<any>('assets/data/ptsd-questions.json');
-      // .map((response:any) => response.json())
-      // .catch((error:any) => console.log(error));
   }
-  
+
   getFablesQuestions(): Observable<any> {
     return this.http.get<any>('assets/data/ptsd-fables-questions.json');
-
   }
 
   getResults(): Observable<any> {
     return this.http.get<any>('assets/data/ptsd-results.json');
   }
 
-  create(body: any): Observable<any> {
-    return this.http.post<any>(environment.apiUrl + `/api/v1/ptsd-test`, body, { headers: this.headers, observe: 'response', responseType: 'json' });
+  // ─── localStorage — token ─────────────────────────────────────────────────────
+
+  saveToken(token: string): void {
+    localStorage.setItem(TOKEN_KEY, token);
   }
 
-  result(testId: string): Observable<any> {
-    return this.http.get<any>(environment.apiUrl + `/api/v1/ptsd-test/${testId}/results`, { headers: this.headers, observe: 'response', responseType: 'json' });
+  getToken(): string | null {
+    return localStorage.getItem(TOKEN_KEY);
   }
 
-  submit(): Observable<any> {
-    let test = this.getTest();
-    return this.http.post<any>(environment.apiUrl + `/api/v1/ptsd-test/${this.getTestId()}/answers`,
-     { "child": test.child, "lusher": test.lusher, "fables": test.fables }, { headers: this.headers, observe: 'response', responseType: 'json' });
+  clearToken(): void {
+    localStorage.removeItem(TOKEN_KEY);
   }
 
-  send(id: string, body: any): Observable<any> {
-    return this.http.post<any>(environment.apiUrl + `/api/v1/ptsd-test/${id}/send-results`,
-    body, { headers: this.headers, observe: 'response', responseType: 'json' });
+  hasToken(): boolean {
+    return !!this.getToken();
   }
 
-  // test(body: any): Observable<any> {
-  //   // return this.http.post<any>(`https://vetclinic-backend.onrender.com/api/users/registration`, body, { headers: this.headers, observe: 'response', responseType: 'json' });
-  // }
+  // ─── localStorage — test data ─────────────────────────────────────────────────
 
-  setTest(test: string) {
+  setTest(test: any): void {
     localStorage.setItem('ptsd-test-data', JSON.stringify(test));
   }
 
-  clearTest() {
+  getTest(): any {
+    return JSON.parse(localStorage.getItem('ptsd-test-data') || '{}');
+  }
+
+  clearTest(): void {
     localStorage.removeItem('ptsd-test-data');
   }
 
-  getTest() {
-    return JSON.parse(localStorage.getItem('ptsd-test-data') || '');
-  }
+  // ─── Answers ──────────────────────────────────────────────────────────────────
 
-  setTestId(id: string) {
-    localStorage.setItem('ptsd-test-id', id);
-  }
-
-  getTestId() {
-    return localStorage.getItem('ptsd-test-id');
-  }
-
-  setAnswer(answer: Answer) {
-    let idx = this.answers.findIndex((e: any) => answer.questionId === e.questionId);
-    if(idx != -1) {
+  setAnswer(answer: Answer): void {
+    const idx = this.answers.findIndex((e) => answer.questionId === e.questionId);
+    if (idx !== -1) {
       this.answers.splice(idx, 1);
     }
     this.answers.push(answer);

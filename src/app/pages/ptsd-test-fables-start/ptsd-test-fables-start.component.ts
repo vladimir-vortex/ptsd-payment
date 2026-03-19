@@ -26,7 +26,7 @@ export class PtsdTestFablesStartComponent implements OnInit {
   }
 
   onNext() {
-    this.router.navigate([this.lang, 'ptsd-test-fables', 1]);
+    this.router.navigate([this.lang, 'ptsd-test', 'fables', 1]);
   }
 
   onBgSoundClick() {

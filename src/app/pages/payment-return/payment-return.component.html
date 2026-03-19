@@ -1,0 +1,35 @@
+<section class="px-4 sm:px-8 py-10 sm:py-14">
+  <div class="tm-container tm-container-2xs">
+    <div
+      class="gap-4 py-12 pt-8 px-6 sm:px-8 md:px-10 bg-[var(--color-background)] rounded-[5px] shadow-[0px_5px_15px_rgba(183,183,183,0.15)] max-w-[480px] mx-auto">
+      <!-- waiting / polling -->
+      <div class="flex flex-col items-center" *ngIf="status === 'waiting' || status === 'polling'">
+        <mat-spinner diameter="48" strokeWidth="2" class="spinner-primary mt-4"></mat-spinner>
+        <p class="tm-section-p text-center mt-6">{{ 'page.payment-return.waiting.description' | transloco }}</p>
+        <p class="tm-section-p text-center mt-2" *ngIf="status === 'polling'">{{ 'page.payment-return.polling.description' | transloco }}</p>
+      </div>
+
+      <!-- Success -->
+      <ng-container *ngIf="status === 'success'">
+        <h1 class="tm-section-header text-center">{{ 'page.payment-return.success.title' | transloco }}</h1>
+        <p class="tm-section-p text-center mt-8">{{ 'page.payment-return.success.description' | transloco }}</p>
+      </ng-container>
+
+      <!-- Timeout -->
+      <div class="flex flex-col items-center" *ngIf="status === 'timeout'">
+        <h1 class="tm-section-header text-center">{{ 'page.payment-return.timeout.title' | transloco }}</h1>
+        <p class="tm-section-p text-center mt-8">{{ 'page.payment-return.timeout.polling' | transloco }}</p>
+        <button class="tm-button tm-button-primary tm-button-stroked tm-button-width mt-8" matRipple (click)="retryPolling()">{{ 'page.payment-return.buttonPolling' | transloco }}</button>
+        <p class="tm-section-p text-center mt-12">{{ 'page.payment-return.timeout.checkout' | transloco }}</p>
+        <button class="tm-button tm-button-primary tm-button-stroked tm-button-width mt-8" matRipple (click)="goToCheckout()">{{ 'page.payment-return.buttonCheckout' | transloco }}</button>
+      </div>
+
+      <!-- Error - sessionId not found -->
+      <ng-container *ngIf="status === 'error'">
+        <h1 class="tm-section-header text-center">{{ 'page.payment-return.error.title' | transloco }}</h1>
+        <p class="tm-section-p text-center mt-8">{{ 'page.payment-return.error.description' | transloco }}</p>
+        <button class="tm-button tm-button-primary tm-button-flat tm-button-width" matRipple (click)="goToCheckout()">{{ 'page.payment-return.buttonCheckout' | transloco }}</button>
+      </ng-container>
+    </div>
+  </div>
+</section>

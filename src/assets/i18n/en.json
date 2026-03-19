@@ -1,10 +1,65 @@
-{ 
+{
     "header": {
         "textLinkHome": "Home",
         "textLinkAbout": "About Us",
         "textLinkAuthor": "Автор методики"
     },
     "page": {
+        "auth": {
+            "requestTitle": "Enter your email",
+            "requestSubtitle": "You will receive a confirmation code and test results.",
+            "requestPlaceholder": "Ex. pat@example.com",
+            "requestInputEmailRequiredMessage": "Email is required.",
+            "requestErrorEmailInvalidMessage": "Please enter a valid email address.",
+            "requestButton": "Get code",
+            "requestButtonLoading": "Sending...",
+            "verifyTitle": "Enter the code",
+            "verifySubtitle": "Code sent to",
+            "verifyButton": "Confirm",
+            "verifyButtonLoading": "Checking...",
+            "backButton": "Change email",
+            "resendDescription": "Check your spam folder if you don't see it.",
+            "resendCountdown": "You can request a new code in {{ countdown }} sec.",
+            "resendLink": "Resend code",
+            "resendSending": "Sending...",
+            "codeSent": "Code sent successfully.",
+            "errorOtpRequestValidation": "Error sending code. Please try again later.",
+            "errorOtpRequestRateLimit": "Too many requests. Please try again later.",
+            "errorOtpVerifyValidation": "Error checking code. Please try again later.",
+            "errorOtpVerifyInvalid": "Invalid code. Please request a new one.",
+            "errorOtpVerifyExpired": "Code has expired. Please request a new one.",
+            "errorOtpVerifyNotFound": "Code not found. Please request a new one.",
+            "errorUnknown": "Unknown error. Please try again later."
+        },
+        "payment": {
+            "title": "Payment",
+            "description": "You will be redirected to the payment page.",
+            "total": "Total",
+            "buttonPay": "Pay"
+        },
+        "payment-return": {
+            "waiting": {
+                "description": "Checking payment..."
+            },
+            "polling": {
+                "description": "Please wait a few seconds"
+            },
+            "success": {
+                "title": "Payment success!",
+                "description": "Redirecting to the test..."
+            },
+            "timeout": {
+                "title": "Payment timeout",
+                "polling": "Sometimes confirmation takes a bit longer. Please try again in a minute.",
+                "checkout": "If for any reason the payment was not successful, you can try to complete the payment again."
+            },
+            "error": {
+                "title": "Payment error",
+                "description": "Your payment has failed. Please try again."
+            },
+            "buttonCheckout": "Go to Checkout",
+            "buttonPolling": "Retry"
+        },
         "results": {
             "title": "Test result",
             "subtitle1": "Playing with younger children",
@@ -18,7 +73,25 @@
             "sendResultSendErrorMessage": "ERROR send email",
             "sendResultButton": "Send result",
             "sendResultButtonSending": "Sending ...",
-            "sendResultButtonSuccess": "Sent"
+            "sendResultButtonSuccess": "Sent",
+            "child": {
+                "1": "EN Дитина завжди у довірливих стосунках з батьками, відчуває любов, безумовне прийняття та позитивне схвалення дій дитини. Дитина – щаслива, гармонійна, розуміє себе, впевнена у своїх силах. Дитина відчуває підтримку родини. Вона щаслива спілкуванню із рідними. В сім’ї  її люблять, нею цікавляться, ії слухають і чують. Стосунки між дорослими і дитиною- дружні, паритетні.",
+                "2": "EN Дитина має занижену самооцінку. Дитина продукує конформну поведінку. У житті  намагається відповідати нормам та стандартам дорослих. Боїться помилитися.Часто не має вибору. Батьки проявляють надмірну гіперопіку до дитини, не даючи їй самостійності. Дитина  переживає через те, що буде покарана. Страх покарання, тривожність.",
+                "3": "EN Дитина, яка завжди обділена увагою, іграшками. Коли ії знецінюють. Порушують її особисті кордони. Часто це - Відсутність відповідальності, впертість, егоцентризм.",
+                "4": "EN Дитина не отримує радості від стану комфорту, доглянутості, затишку та ситості…. Можливо, ці поведінкові патерни на разі порушені. Це може свідчити про депресивний стан дитини. відсутність  емоційного відреагування. Апатія, відчудження, сум."
+            },
+            "fables": {
+                "1": "EN Стан особистості дитини та її почуття - в межах норми. Ознак проблем не виявлено",
+                "2": "EN Стан особистості дитини та її почуття в цілому - в межах норми. Окремі відповіді не є типовими для нормального стану. Для більш точної оцінки слід звернутися до психолога",
+                "3": "EN Стан особистості дитини та її почуття, виходячи із відповідей на декілька із поставлених питань, викликають занепокоєння. Рекомендовано звернутись до психолога",
+                "4": "EN Стан особистості дитини та її почуття, виходячи із відповідей на більшість із поставлених питань, викликають занепокоєння. Наполегливо рекомендуємо звернутись до психолога"
+            },
+            "lusher": {
+                "1": "EN Сприятливий емоційний стан",
+                "2": "EN Задовільний емоційний стан",
+                "3": "EN Емоційний стан дитини незадовільний – потрібна допомога психолога, педагога",
+                "4": "EN Дитина перебуває у кризовому стані, потрібна допомога спеціалістів (психолога, психотерапевта)"
+            }
         },
         "test-start": {
             "intro-header": "Shall we begin?",
@@ -52,7 +125,27 @@
             "result-header": "Ready!",
             "result-text": "Click on the button below to get the results",
             "result-button": "Up to the result"
-        },      
+        },
+        "complete": {
+            "title": "Test completed",
+            "description": [
+                {
+                    "type": "paragraph",
+                    "value": "The test has been successfully completed. You can now proceed to view your test results, which will be displayed on the next page."
+                },
+                {
+                    "type": "paragraph",
+                    "value": "The paid service is considered fulfilled at this stage."
+                },
+                {
+                    "type": "paragraph",
+                    "value": "If you wish, you may retake the test."
+                }
+            ],
+            "buttonRestart": "Restart the test",
+            "buttonSubmit": "Go to results",
+            "buttonSubmitLoading": "Sending..."
+        },
         "home": {
             "cover": {
                 "header": "PTSD in a child",
@@ -133,8 +226,6 @@
                         "text": "Дітям молодшого віку слід впроваджувати ігровий компонент переробки травми. Проте необхідно уникати трансформації гри на реконструкцію."
                     }
                 ]
-
-                
             },
             "action": {
                 "header": "Online test for signs of PTSD in children",
@@ -223,14 +314,14 @@
                 "header": "Консультації",
                 "items": [
                     {
-                     "icon": "personal",
-                     "title": "Індивідуальна <br> консультація",
-                     "description": "Консультація 1 на 1 стосовно будь-якого запиту"
+                        "icon": "personal",
+                        "title": "Індивідуальна <br> консультація",
+                        "description": "Консультація 1 на 1 стосовно будь-якого запиту"
                     },
                     {
-                     "icon": "group",
-                     "title": "Сімейна <br> консультація",
-                     "description": "Сімейна консультація для чоловіка і дружини, доньки і батька і тд."
+                        "icon": "group",
+                        "title": "Сімейна <br> консультація",
+                        "description": "Сімейна консультація для чоловіка і дружини, доньки і батька і тд."
                     }
                 ]
             }
@@ -274,7 +365,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "text":"Neither we nor any third parties provide any warranty or guarantee as to the accuracy, timeliness, performance, completeness or suitability of the information and materials found or offered on this website for any particular purpose. You acknowledge that such information and materials may contain inaccuracies or errors and we expressly exclude liability for any such inaccuracies or errors to the fullest extent permitted by law."
+                    "text": "Neither we nor any third parties provide any warranty or guarantee as to the accuracy, timeliness, performance, completeness or suitability of the information and materials found or offered on this website for any particular purpose. You acknowledge that such information and materials may contain inaccuracies or errors and we expressly exclude liability for any such inaccuracies or errors to the fullest extent permitted by law."
                 },
                 {
                     "type": "paragraph",
@@ -304,7 +395,6 @@
                     "type": "paragraph",
                     "text": "Your use of this website and any dispute arising out of such use of the website is subject to the laws of Ukraine."
                 }
-
             ]
         },
         "privacy-policy": {
@@ -518,13 +608,12 @@
                     "type": "paragraph",
                     "text": "Ми постійно вдосконалюємо наші методи зв’язку та додаємо нові функції на цей веб-сайт, тому, якщо ми змінимо нашу практику захисту даних, ми повідомимо вас на цій сторінці, тому ми рекомендуємо вам часто перевіряти цю сторінку"
                 }
-
             ]
         },
         "not-found": {
             "header": "Page not found",
-             "text": "oops, something went wrong",
-             "link": "To the main"
+            "text": "oops, something went wrong",
+            "link": "To the main"
         }
     },
     "footer": {
@@ -544,7 +633,11 @@
         "button": {
             "startPtsdTest": "Start Test",
             "consultation": "Записатись на консультацію",
+            "logout": "another email",
             "next": "Next"
+        },
+        "error": {
+            "unknown": "Unknown error"
         }
     }
-  }
+}

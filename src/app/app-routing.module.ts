@@ -13,72 +13,66 @@ import { PtsdTestResultComponent } from './pages/ptsd-test-result/ptsd-test-resu
 import { PtsdTestStartComponent } from './pages/ptsd-test-start/ptsd-test-start.component';
 import { PtsdTestComponent } from './pages/ptsd-test/ptsd-test.component';
 import { TermsOfUseComponent } from './pages/terms-of-use/terms-of-use.component';
-import { CheckoutComponent } from './pages/checkout/checkout.component';
 import { PaymentReturnComponent } from './pages/payment-return/payment-return.component';
 import { TestAuthGuard } from './guards/test-auth.guard';
 import { AuthorComponent } from './pages/author/author.component';
+import { PtsdAuthRequestComponent } from './pages/ptsd-auth-request/ptsd-auth-request.component';
+import { PtsdAuthVerifyComponent } from './pages/ptsd-auth-verify/ptsd-auth-verify.component';
+import { PtsdPaymentComponent } from './pages/ptsd-payment/ptsd-payment.component';
+import { LangRedirectComponent } from './lang/lang-redirect.component';
+import { PtsdTestCompleteComponent } from './pages/ptsd-test-complete/ptsd-test-complete.component';
 
 const routes: Routes = [
-  // { path: '', component: HomeComponent, resolve: [LangGuard] },
   {
     path: '',
-    redirectTo: '/en',
+    component: LangRedirectComponent,
     pathMatch: 'full'
   },
-  { path: ':lang', component: HomeComponent, resolve: [LangGuard] },
   {
-    // Страница авторизации и оплаты: email → OTP → LiqPay
-    path: ':lang/checkout',
-    component: CheckoutComponent,
+    path: 'payment-return',
+    component: LangRedirectComponent,
+    pathMatch: 'full'
+  },
+  {
+    path: ':lang/ptsd-test/auth-request',
+    component: PtsdAuthRequestComponent,
     resolve: [LangGuard],
   },
   {
-    // Возврат с LiqPay: искусственная задержка + поллинг статуса оплаты
+    path: ':lang/ptsd-test/auth-verify',
+    component: PtsdAuthVerifyComponent,
+    resolve: [LangGuard],
+  },
+  {
+    path: ':lang/ptsd-test/payment',
+    component: PtsdPaymentComponent,
+    resolve: [LangGuard],
+  },
+  {
     path: ':lang/payment-return',
     component: PaymentReturnComponent,
     resolve: [LangGuard],
   },
-  { path: ':lang/ptsd-test', 
-    component: PtsdTestStartComponent,
-    canActivate: [TestAuthGuard],
-    resolve: [LangGuard] 
-  },
-  { 
-    path: ':lang/ptsd-test/:question',
-    component: PtsdTestComponent, 
-    canActivate: [TestAuthGuard],
-    resolve: [LangGuard] 
-  },
   {
-    path: ':lang/ptsd-test-fables/start',
-    component: PtsdTestFablesStartComponent,
+    path: ':lang/ptsd-test',
     canActivate: [TestAuthGuard],
-    resolve: [LangGuard] 
-  },
-  { 
-    path: ':lang/ptsd-test-fables/:question',
-    component: PtsdTestFablesComponent,
-    canActivate: [TestAuthGuard],
-    resolve: [LangGuard] 
-  },
-  {
-    path: ':lang/ptsd-test-lusher-start', 
-    component: PtsdTestLusherStartComponent,
-    canActivate: [TestAuthGuard],
-    resolve: [LangGuard] 
-  },
-  {
-    path: ':lang/ptsd-test-lusher',
-    component: PtsdTestLusherComponent,
-    canActivate: [TestAuthGuard],
-    resolve: [LangGuard]
+    resolve: [LangGuard],
+    children: [
+      { path: '', component: PtsdTestStartComponent },
+      { path: 'question/:question', component: PtsdTestComponent },
+      { path: 'fables/start', component: PtsdTestFablesStartComponent },
+      { path: 'fables/:question', component: PtsdTestFablesComponent },
+      { path: 'lusher/start', component: PtsdTestLusherStartComponent },
+      { path: 'lusher', component: PtsdTestLusherComponent },
+      { path: 'complete', component: PtsdTestCompleteComponent },
+    ]
   },
   { path: ':lang/terms-of-use', component: TermsOfUseComponent, resolve: [LangGuard] },
   { path: ':lang/privacy-policy', component: PrivacyPolicyComponent, resolve: [LangGuard] },
   { path: ':lang/author', component: AuthorComponent, resolve: [LangGuard] },
   { path: ':lang/about', component: AboutComponent, resolve: [LangGuard] },
-  // { path: 'ptsd-test-result/:id', component: PtsdTestResultComponent, resolve: [LangGuard] },
   { path: ':lang/ptsd-test-result/:id', component: PtsdTestResultComponent, resolve: [LangGuard] },
+  { path: ':lang', component: HomeComponent, resolve: [LangGuard] },
   { path: ':lang/:any-page', component: NotFoundComponent, resolve: [LangGuard] },
   { path: '**', component: NotFoundComponent, resolve: [LangGuard] },
 ];

@@ -6,37 +6,51 @@ import {
 } from '@angular/router';
 import { Observable, of } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
-import { TestService } from '../services/test.service';
+import { PtsdTestService } from 'src/app/services/ptsd-test.service';
 
 @Injectable({ providedIn: 'root' })
 export class TestAuthGuard implements CanActivate {
-  constructor(private testService: TestService, private router: Router) {}
+  constructor(private ptsdTestService: PtsdTestService, private router: Router) { }
 
   canActivate(route: ActivatedRouteSnapshot): Observable<boolean> {
-    // Язык берём из URL — он всегда есть в params т.к. все роуты вида :lang/...
     const lang = route.params['lang'] ?? 'en';
 
-    // Быстрая проверка — токен вообще есть в localStorage?
-    if (!this.testService.hasToken()) {
-      this.router.navigate([`/${lang}/checkout`]);
+    if (!this.ptsdTestService.hasToken()) {
+      this.router.navigate([`/${lang}/ptsd-test/auth-request`]);
       return of(false);
     }
 
-    // Полная проверка — токен валиден на бэкенде?
-    return this.testService.validateToken().pipe(
+    return this.ptsdTestService.getTestStatus().pipe(
       map((res) => {
-        if (res.valid) {
-          return true;
+        switch (res.status) {
+          case 'paid':
+            return true;
+
+          case 'pending':
+            this.router.navigate([`/${lang}/ptsd-test/payment`]);
+            return false;
+
+          case 'completed':
+            this.ptsdTestService.clearToken();
+            this.router.navigate([`/${lang}/ptsd-test/auth-request`]);
+            return false;
+
+          case 'failed':
+          case 'reversed':
+          case 'created':
+            this.router.navigate([`/${lang}/ptsd-test/payment`]);
+            return false;
+
+          case 'not_found':
+          case 'expired':
+          default:
+            this.ptsdTestService.clearToken();
+            this.router.navigate([`/${lang}/ptsd-test/auth-request`]);
+            return false;
         }
-        this.testService.clearToken();
-        this.router.navigate([`/${lang}/checkout`]);
-        return false;
       }),
       catchError(() => {
-        // Сетевая ошибка — не наказываем пользователя,
-        // но и внутрь не пускаем пока не убедимся в валидности токена
-        this.testService.clearToken();
-        this.router.navigate([`/${lang}/checkout`]);
+        this.router.navigate([`/${lang}/ptsd-test/auth-request`]);
         return of(false);
       })
     );

@@ -18,7 +18,7 @@ export class PtsdTestLusherComponent implements OnInit {
     private router: Router,
     private translocoService: TranslocoService,
     private bgTestSoundService: BgTestSoundService
-  ) {}
+  ) { }
 
   colors = [
     {
@@ -78,6 +78,8 @@ export class PtsdTestLusherComponent implements OnInit {
 
   isBgSoundPlaying = false
 
+  testId: string | null = null;
+
   ngOnInit(): void {
     this.colors = shuffle(this.colors);
     this.test = this.ptsdTestService.getTest();
@@ -98,36 +100,16 @@ export class PtsdTestLusherComponent implements OnInit {
     if (!color?.id) {
       this.test.lusher = this.selectedColorsIdx;
       this.ptsdTestService.setTest(this.test);
-      this.isCalcTimeout = true;
-      this.isLoading = true;
-      this.isShowResultBlock = true;
-      timer(2000)
-        .pipe()
-        .subscribe((res) => {
-          this.isCalcTimeout = false;
-        });
-      this.ptsdTestService.submit().subscribe({
-        next: (response) => {
-          this.isLoading = false;
-          console.log(response);
-          // if(response.body?.id) {
-          //   this.ptsdTestService.setTestId(response.body.id);
-          // }
-        },
-        error: (error) => {
-          this.isLoading = false;
-          console.error(error);
-        },
-      });
+      this.router.navigate([this.lang, 'ptsd-test', 'complete']);
     }
   }
 
   onNext(): void {
-    this.router.navigate([this.lang, 'ptsd-test-result', this.ptsdTestService.getTestId()]);
+    this.router.navigate([this.lang, 'ptsd-test-result', this.testId]);
   }
 
   onBgSoundClick() {
-    if(this.isBgSoundPlaying == false) {
+    if (this.isBgSoundPlaying == false) {
       this.bgTestSoundService.start();
       this.isBgSoundPlaying = this.bgTestSoundService.isPlaying;
     } else {

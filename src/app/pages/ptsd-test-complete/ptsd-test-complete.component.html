@@ -1,0 +1,25 @@
+<section class="px-4 sm:px-8 py-10 sm:py-14" *transloco="let t">
+  <div class="tm-container tm-container-2xs text-center">
+    <h1 class="tm-section-header">{{ 'page.complete.title' | transloco }}</h1>
+    <ng-container *ngFor="let content of t('page.complete.description')">
+        <p *ngIf="content.type === 'paragraph'" class="tm-section-p" [innerHtml]="content.value"></p>
+    </ng-container>
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-12">
+      <button class="tm-button tm-button-stroked tm-button-primary tm-button-width" (click)="restart()"
+        [disabled]="isLoading">
+        {{ 'page.complete.buttonRestart' | transloco }}
+      </button>
+      <button class="tm-button tm-button-primary tm-button-flat tm-button-width" (click)="submit()">
+        <div class="flex items-center gap-1">
+          <span class="flex-initial">{{ 'page.complete.buttonSubmit' | transloco }}</span>
+          <svg class="flex-initial w-auto" width="17" height="16" viewBox="0 0 17 16" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M3.83337 8H13.1667" stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M8.5 3.3335L13.1667 8.00016L8.5 12.6668" stroke="white" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </div>
+      </button>
+    </div>
+  </div>
+</section>

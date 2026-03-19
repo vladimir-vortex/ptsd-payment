@@ -21,9 +21,13 @@ import { PtsdTestFablesStartComponent } from './pages/ptsd-test-fables-start/pts
 import { PtsdTestLusherStartComponent } from './pages/ptsd-test-lusher-start/ptsd-test-lusher-start.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { AboutComponent } from './pages/about/about.component';
-import { CheckoutComponent } from './pages/checkout/checkout.component';
 import { PaymentReturnComponent } from './pages/payment-return/payment-return.component';
 import { AuthorComponent } from './pages/author/author.component';
+import { PtsdAuthRequestComponent } from './pages/ptsd-auth-request/ptsd-auth-request.component';
+import { PtsdAuthVerifyComponent } from './pages/ptsd-auth-verify/ptsd-auth-verify.component';
+import { PtsdPaymentComponent } from './pages/ptsd-payment/ptsd-payment.component';
+import { PtsdTestCompleteComponent } from './pages/ptsd-test-complete/ptsd-test-complete.component';
+
 
 @NgModule({
   declarations: [
@@ -42,8 +46,11 @@ import { AuthorComponent } from './pages/author/author.component';
     NotFoundComponent,
     TermsOfUseComponent,
     AboutComponent,
-    CheckoutComponent,
+    PtsdAuthRequestComponent,
+    PtsdAuthVerifyComponent,
+    PtsdPaymentComponent,
     PaymentReturnComponent,
+    PtsdTestCompleteComponent
   ],
   imports: [
     BrowserModule,

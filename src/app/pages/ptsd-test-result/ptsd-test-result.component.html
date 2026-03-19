@@ -4,27 +4,27 @@
         <h1 class="tm-section-header">{{ 'page.results.title' | transloco }}</h1>
         <ng-container *ngIf="textResults.length">
             <h2 class="tm-section-subheader mt-8">{{ 'page.results.subtitle1' | transloco }}</h2>
-            <div class="mt-4" *ngFor="let result of textResults">
-                {{result.description[lang] || result.description[lang_default]}}
+            <div class="mt-4" *ngFor="let id of textResults">
+                {{ 'page.results.child.' + id | transloco }}
             </div>
         </ng-container>
         <ng-container *ngIf="textFables">
             <h2 class="tm-section-subheader mt-8">{{ 'page.results.subtitle2' | transloco }}</h2>
             <div class="mt-4">
-                {{  textFables.description[lang] || textFables.description[lang_default]}}
+                {{ 'page.results.fables.' + textFables | transloco }}
             </div>
         </ng-container>
         <ng-container *ngIf="textLusher">
             <h2 class="tm-section-subheader mt-8">{{ 'page.results.subtitle3' | transloco }}</h2>
             <div class="mt-4">
-                {{  textLusher.description[lang] || textLusher.description[lang_default]}}
+                {{ 'page.results.lusher.' + textLusher | transloco }}
             </div>
         </ng-container>
-        <p class="text-center text-lg font-medium mt-8">{{resultUrl}}</p>
-        <div class="flex justify-center mt-4">
+        <p class="text-center text-lg font-medium mt-12">{{resultUrl}}</p>
+        <div class="flex justify-center mt-12">
             <button class="tm-button tm-button-stroked tm-button-primary" (click)="onCopyUrl()">{{ 'page.results.copyLinkButton' | transloco }}</button>
         </div>
-        <form [formGroup]="emailFormGroup" (ngSubmit)="onSendResult()" class="mt-8 mx-auto max-w-md">
+        <!-- <form [formGroup]="emailFormGroup" (ngSubmit)="onSendResult()" class="mt-8 mx-auto max-w-md">
             <p class="text-center">{{ 'page.results.sendResultTitle' | transloco }}</p>
             <mat-form-field class="w-full mt-4" appearance="outline">
                 <mat-label>Email</mat-label>
@@ -47,7 +47,7 @@
                 </button>
             </div>
 
-        </form>
+        </form> -->
     </div>
     <div *ngIf="!isLoading && !isOk" class="tm-container tm-container-2xs">
         <div>

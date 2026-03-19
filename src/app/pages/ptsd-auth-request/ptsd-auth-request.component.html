@@ -1,0 +1,35 @@
+<section class="px-4 sm:px-8 py-10 sm:py-14">
+  <div class="tm-container tm-container-2xs">
+    <div
+      class="gap-4 py-12 pt-8 px-6 sm:px-8 md:px-10 bg-[var(--color-background)] rounded-[5px] shadow-[0px_5px_15px_rgba(183,183,183,0.15)] max-w-[480px] mx-auto">
+      <form [formGroup]="form" (ngSubmit)="submit()">
+        <h1 class="tm-section-header text-center">{{ 'page.auth.requestTitle' | transloco }}</h1>
+        <p class="tm-section-p text-center mt-4">{{ 'page.auth.requestSubtitle' | transloco }}</p>
+        <mat-form-field class="w-full mt-8" appearance="outline">
+          <mat-label>Email</mat-label>
+          <input type="email" matInput formControlName="email" placeholder="your@email.com" autocomplete="email">
+          <mat-error *ngIf="form.get('email')?.hasError('required')">
+            {{ 'page.auth.requestInputEmailRequiredMessage' | transloco }}
+          </mat-error>
+          <mat-error *ngIf="form.get('email')?.hasError('email')">
+            {{ 'page.auth.requestErrorEmailInvalidMessage' | transloco }}
+          </mat-error>
+        </mat-form-field>
+
+        <div class="flex justify-center mt-4">
+          <button type="submit" class="tm-button tm-button-primary tm-button-flat tm-button-width" matRipple
+            [disabled]="form.invalid || loading">
+            <div class="flex items-center justify-center gap-1">
+              <span *ngIf="!loading">{{ 'page.auth.requestButton' | transloco }}</span>
+              <div *ngIf="loading" class="flex items-center gap-2">
+                <mat-spinner diameter="16" strokeWidth="1" class="spinner-white"></mat-spinner>
+                <span>{{ 'page.auth.requestButtonLoading' | transloco }}</span>
+              </div>
+            </div>
+          </button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</section>

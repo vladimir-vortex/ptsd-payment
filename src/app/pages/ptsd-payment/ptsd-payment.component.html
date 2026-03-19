@@ -1,0 +1,49 @@
+<app-ptsd-user-bar></app-ptsd-user-bar>
+
+<section class="px-4 sm:px-8 py-10 sm:py-14">
+  <div class="tm-container tm-container-2xs">
+    <div
+      class="gap-4 py-12 pt-8 px-6 sm:px-8 md:px-10 bg-[var(--color-background)] rounded-[5px] shadow-[0px_5px_15px_rgba(183,183,183,0.15)] max-w-[480px] mx-auto">
+
+      <ng-container *ngIf="loading">
+        <div class="flex justify-center mt-8">
+          <app-loader></app-loader>
+        </div>
+      </ng-container>
+
+      
+      <ng-container *ngIf="!loading && data.data">
+        <h1 class="tm-section-header text-center">{{ 'page.payment.title' | transloco }}</h1>
+        <p class="tm-section-p text-center mt-4">{{ 'page.payment.description' | transloco }}</p>
+
+        <hr class="my-4 mt-8 border-gray-300 border-dashed dark:border-gray-700" />
+
+        <p class="tm-section-p mt-2">{{ data.description }}</p>
+
+        <hr class="my-4 border-gray-300 border-dashed dark:border-gray-700" />
+
+        <p class="tm-section-p flex items-center gap-2">
+          <span class="flex-1">{{ 'page.payment.total' | transloco }}:</span>
+          <span class="font-semibold shrink-0">{{ data.amount }} {{ data.currency }}</span>
+        </p>
+
+        <hr class="my-4 border-gray-300 border-dashed dark:border-gray-700" />
+        
+        <form id="liqpay-form" method="POST" action="https://www.liqpay.ua/api/3/checkout" accept-charset="utf-8">
+          <input type="hidden" name="data" [value]="data.data" />
+          <input type="hidden" name="signature" [value]="data.signature" />
+          <div class="flex justify-center mt-8">
+            <button type="submit" class="tm-button tm-button-primary tm-button-flat tm-button-width mt-5" matRipple>
+              <div class="flex items-center justify-center gap-1">
+                <span>{{ 'page.payment.buttonPay' | transloco }}</span>
+              </div>
+            </button>
+          </div>
+        </form>
+      </ng-container>
+
+      <p class="form-error mt-4 text-center" *ngIf="error">{{ error }}</p>
+
+    </div>
+  </div>
+</section>

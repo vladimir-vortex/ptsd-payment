@@ -1,0 +1,50 @@
+<section class="px-4 sm:px-8 py-10 sm:py-14">
+  <div class="tm-container tm-container-2xs">
+    <div
+      class="py-12 pt-8 px-6 sm:px-8 md:px-10 bg-[var(--color-background)] rounded-[5px] shadow-[0px_5px_15px_rgba(183,183,183,0.15)] max-w-[480px] mx-auto">
+      <h1 class="tm-section-header text-center">{{ 'page.auth.verifyTitle' | transloco }}</h1>
+      <p class="tm-section-p text-center mt-4">{{ 'page.auth.verifySubtitle' | transloco }}</p>
+      <p class="tm-section-p text-center font-semibold mt-1">{{ email }}</p>
+      <p class="tm-section-p mt-1 text-center">
+        <a class="text-sm text-gray-400 cursor-pointer underline decoration-dashed hover:text-gray-500"
+          (click)="back()">
+          {{ 'common.button.logout' | transloco }}
+        </a>
+      </p>
+      <div class="flex justify-center mt-8">
+        <ng-otp-input #ngOtpInput (onInputChange)="onOtpChange($event)" [config]="otpConfig">
+        </ng-otp-input>
+      </div>
+      <div class="mt-4 text-sm text-gray-500 text-center">
+        <ng-container *ngIf="!canResend">
+          <p>{{ 'page.auth.resendDescription' | transloco }}</p>
+          <p>{{ 'page.auth.resendCountdown' | transloco: { countdown: countdown } }}</p>
+        </ng-container>
+        <ng-container *ngIf="canResend">
+          <a class="text-primary cursor-pointer underline decoration-dashed hover:opacity-75" (click)="resend()"
+            *ngIf="!resending">
+            {{ resending ? ('page.auth.resendSending' | transloco) : ('page.auth.resendLink' | transloco) }}
+          </a>
+          <div class="flex items-center justify-center gap-1" *ngIf="resending">
+            <div class="flex items-center gap-2">
+              <mat-spinner diameter="16" strokeWidth="1" class="spinner-primary"></mat-spinner>
+              <span>{{ 'page.auth.resendSending' | transloco }}</span>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+      <div class="flex justify-center mt-8">
+        <button type="submit" class="tm-button tm-button-primary tm-button-flat tm-button-width" matRipple
+          [disabled]="otpValue.length !== 4 || !requestId || loading || submitBlocked" (click)="submit()">
+          <div class="flex items-center justify-center gap-1">
+            <span *ngIf="!loading">{{ 'page.auth.verifyButton' | transloco }}</span>
+            <div *ngIf="loading" class="flex items-center gap-2">
+              <mat-spinner diameter="16" strokeWidth="1" class="spinner-white"></mat-spinner>
+              <span>{{ 'page.auth.verifyButtonLoading' | transloco }}</span>
+            </div>
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

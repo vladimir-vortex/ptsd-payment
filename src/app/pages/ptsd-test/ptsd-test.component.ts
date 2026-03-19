@@ -28,7 +28,7 @@ export class PtsdTestComponent implements OnInit {
   lang_default = this.translocoService.getDefaultLang();
 
   imagesUrl = environment.imagesUrl;
-  
+
   questionId = 1;
 
   questions!: PtsdQuestion[];
@@ -66,12 +66,12 @@ export class PtsdTestComponent implements OnInit {
         this.questions = data;
         this.question = this.getQuestion(this.questionId);
         this.answer = this.test.child.find((e: { questionId: number; }) => e.questionId === this.questionId);
-        if(this.answer) {
+        if (this.answer) {
           this.answerForm.patchValue({
             answer: this.answer.answer.toString()
           });
         }
-        if(this.test.gender == "b") {
+        if (this.test.gender == "b") {
           this.gender = "b"
         }
         this.isLoading = false;
@@ -81,35 +81,35 @@ export class PtsdTestComponent implements OnInit {
     this.translocoService.langChanges$.subscribe(lang => {
       this.lang = lang;
     });
-    
+
     this.router.events.subscribe((event: Event) => {
       if (event instanceof NavigationStart) {
-          // Show progress spinner or progress bar
-          console.log('Route change detected');
+        // Show progress spinner or progress bar
+        console.log('Route change detected');
       }
 
       if (event instanceof NavigationEnd) {
-          // Hide progress spinner or progress bar
-          //this.currentRoute = event.url;
-          this.questionId = Number(this.route.snapshot.paramMap.get('question')); 
-          this.question = this.getQuestion(this.questionId);
-          this.answer = this.test.child.find((e: { questionId: number; }) => e.questionId === this.questionId);
-          if(this.answer) {
-            this.answerForm.patchValue({
-              answer: this.answer.answer.toString()
-            });
-          }
-          this.isShow = true;
-          this.isImageLoaded = false;
-          this.url = event.url;
-          // console.log(this.route);
+        // Hide progress spinner or progress bar
+        //this.currentRoute = event.url;
+        this.questionId = Number(this.route.snapshot.paramMap.get('question'));
+        this.question = this.getQuestion(this.questionId);
+        this.answer = this.test.child.find((e: { questionId: number; }) => e.questionId === this.questionId);
+        if (this.answer) {
+          this.answerForm.patchValue({
+            answer: this.answer.answer.toString()
+          });
+        }
+        this.isShow = true;
+        this.isImageLoaded = false;
+        this.url = event.url;
+        // console.log(this.route);
       }
 
       if (event instanceof NavigationError) {
-           // Hide progress spinner or progress bar
+        // Hide progress spinner or progress bar
 
-          // Present error to user
-          console.log(event.error);
+        // Present error to user
+        console.log(event.error);
       }
     });
 
@@ -125,27 +125,28 @@ export class PtsdTestComponent implements OnInit {
   }
 
   onSubmit() {
-    if(this.test.child) {
+    if (this.test.child) {
       this.answer = this.test.child.find((e: { questionId: number; }) => e.questionId === this.questionId);
-      if(this.answer) {
+      if (this.answer) {
         this.answer.answer = Number(this.answerForm.value.answer);
       } else {
-        this.test.child = [...this.test.child, {questionId: this.questionId, answer: Number(this.answerForm.value.answer)}];
+        this.test.child = [...this.test.child, { questionId: this.questionId, answer: Number(this.answerForm.value.answer) }];
         // this.answers.push({questionId: this.questionId, answer: Number(this.answerForm.value.answer)});
       }
     } else {
-      this.test.child = [{questionId: this.questionId, answer: Number(this.answerForm.value.answer)}];
+      this.test.child = [{ questionId: this.questionId, answer: Number(this.answerForm.value.answer) }];
     }
     this.ptsdTestService.setTest(this.test);
     this.answerForm.patchValue({
       answer: ''
     });
-    if(this.nextQuestion) {
+    if (this.nextQuestion) {
       this.isShow = false;
-      this.router.navigate([this.lang, 'ptsd-test', this.questionId + 1 ]);
+      // внутри вопроса — следующий вопрос
+      this.router.navigate([this.lang, 'ptsd-test', 'question', this.questionId + 1]);
     } else {
       // this.router.navigate(['/ptsd-test-lusher']);
-      this.router.navigate([this.lang, 'ptsd-test-fables', 'start']);
+      this.router.navigate([this.lang, 'ptsd-test', 'fables', 'start']);
       // this.ptsdTestService.submit().subscribe({
       //   next: (response) => {
       //     this.isLoading = false;
@@ -166,7 +167,7 @@ export class PtsdTestComponent implements OnInit {
   }
 
   onBgSoundClick() {
-    if(this.isBgSoundPlaying == false) {
+    if (this.isBgSoundPlaying == false) {
       this.bgTestSoundService.start();
       this.isBgSoundPlaying = this.bgTestSoundService.isPlaying;
     } else {

@@ -11,7 +11,25 @@
             "subtitle3": "Test koloru Luschera",
             "copyLinkButton": "Skopiuj link",
             "sendResultTitle": "Wysłać wyniki testu e-mailem?",
-            "sendResultButton": "Wyślij wynik"
+            "sendResultButton": "Wyślij wynik",
+            "child": {
+                "1": "Dziecko zawsze pozostaje w relacji zaufania z rodzicami, odczuwa miłość, bezwarunkową akceptację i pozytywną pochwałę dla działań dziecka. Dziecko jest szczęśliwe, harmonijne, rozumie siebie, jest pewne swoich umiejętności. Dziecko czuje wsparcie rodziny. Chętnie komunikuje się z bliskimi. W rodzinie jest kochana, zainteresowana nią, słuchana i słyszana. Relacje między dorosłymi i dziećmi są przyjazne i równe.",
+                "2": "Dziecko ma niską samoocenę. Dziecko wytwarza zachowania konformistyczne. W życiu stara się spełniać standardy dorosłych. Boi się popełnić błąd. Często nie ma wyboru. Rodzice okazują dziecku nadmierną troskę, nie dając mu niezależności. Dziecko boi się kary. Strach przed karą, niepokój.",
+                "3": "Dziecko, które jest zawsze pozbawione uwagi i zabawek. Kiedy są zdewaluowane. Naruszaj jej osobiste granice. Często jest to brak odpowiedzialności, upór, egocentryzm.",
+                "4": "Dziecko nie czerpie radości ze stanu komfortu, dobrego dbania, wygody i sytości.... Być może te wzorce zachowań są obecnie przełamane. Może to wskazywać na stan depresyjny dziecka. brak reakcji emocjonalnej, apatię, wyobcowanie, smutek."
+            },
+            "fables": {
+                "1": "PL Стан особистості дитини та її почуття - в межах норми. Ознак проблем не виявлено",
+                "2": "PL Стан особистості дитини та її почуття в цілому - в межах норми. Окремі відповіді не є типовими для нормального стану. Для більш точної оцінки слід звернутися до психолога",
+                "3": "PL Стан особистості дитини та її почуття, виходячи із відповідей на декілька із поставлених питань, викликають занепокоєння. Рекомендовано звернутись до психолога",
+                "4": "PL Стан особистості дитини та її почуття, виходячи із відповідей на більшість із поставлених питань, викликають занепокоєння. Наполегливо рекомендуємо звернутись до психолога"
+            },
+            "lusher": {
+                "1": "PL Сприятливий емоційний стан",
+                "2": "PL Задовільний емоційний стан",
+                "3": "PL Емоційний стан дитини незадовільний – потрібна допомога психолога, педагога",
+                "4": "PL Дитина перебуває у кризовому стані, потрібна допомога спеціалістів (психолога, психотерапевта)"
+            }
         },
         "test-start": {
             "intro-header": "Powinniśmy zaczynać?",
