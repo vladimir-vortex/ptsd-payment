@@ -34,6 +34,13 @@ const routes: Routes = [
   { path: 'ptsd-test/auth-request', component: LangRedirectComponent, pathMatch: 'full' },
   { path: 'ptsd-test/auth-verify', component: LangRedirectComponent, pathMatch: 'full' },
   { path: 'ptsd-test/payment', component: LangRedirectComponent, pathMatch: 'full' },
+  { path: 'ptsd-test-result/:id', component: LangRedirectComponent },
+  { path: 'ptsd-test/complete', component: LangRedirectComponent, pathMatch: 'full' },
+  { path: 'ptsd-test/fables/start', component: LangRedirectComponent, pathMatch: 'full' },
+  { path: 'ptsd-test/lusher/start', component: LangRedirectComponent, pathMatch: 'full' },
+  { path: 'ptsd-test/lusher', component: LangRedirectComponent, pathMatch: 'full' },
+  { path: 'ptsd-test/question/:question', component: LangRedirectComponent },
+  { path: 'ptsd-test/fables/:question', component: LangRedirectComponent },
 
   // Роуты с языком
   {
