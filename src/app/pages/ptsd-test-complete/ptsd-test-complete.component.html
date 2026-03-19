@@ -10,7 +10,7 @@
         {{ 'page.complete.buttonRestart' | transloco }}
       </button>
       <button class="tm-button tm-button-primary tm-button-flat tm-button-width" (click)="submit()">
-        <div class="flex items-center gap-1">
+        <div class="flex items-center gap-1" *ngIf="!isLoading">
           <span class="flex-initial">{{ 'page.complete.buttonSubmit' | transloco }}</span>
           <svg class="flex-initial w-auto" width="17" height="16" viewBox="0 0 17 16" fill="none"
             xmlns="http://www.w3.org/2000/svg">
@@ -18,6 +18,10 @@
             <path d="M8.5 3.3335L13.1667 8.00016L8.5 12.6668" stroke="white" stroke-linecap="round"
               stroke-linejoin="round" />
           </svg>
+        </div>
+        <div *ngIf="isLoading" class="flex items-center gap-2">
+          <mat-spinner diameter="16" strokeWidth="1" class="spinner-white"></mat-spinner>
+          <span>{{ 'page.complete.buttonSubmitLoading' | transloco }}</span>
         </div>
       </button>
     </div>
