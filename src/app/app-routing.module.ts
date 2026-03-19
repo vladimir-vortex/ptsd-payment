@@ -23,16 +23,19 @@ import { LangRedirectComponent } from './lang/lang-redirect.component';
 import { PtsdTestCompleteComponent } from './pages/ptsd-test-complete/ptsd-test-complete.component';
 
 const routes: Routes = [
-  {
-    path: '',
-    component: LangRedirectComponent,
-    pathMatch: 'full'
-  },
-  {
-    path: 'payment-return',
-    component: LangRedirectComponent,
-    pathMatch: 'full'
-  },
+  // Роуты без языка
+  { path: '', component: LangRedirectComponent, pathMatch: 'full' },
+  { path: 'about', component: LangRedirectComponent, pathMatch: 'full' },
+  { path: 'author', component: LangRedirectComponent, pathMatch: 'full' },
+  { path: 'terms-of-use', component: LangRedirectComponent, pathMatch: 'full' },
+  { path: 'privacy-policy', component: LangRedirectComponent, pathMatch: 'full' },
+  { path: 'payment-return', component: LangRedirectComponent, pathMatch: 'full' },
+  { path: 'ptsd-test', component: LangRedirectComponent, pathMatch: 'full' },
+  { path: 'ptsd-test/auth-request', component: LangRedirectComponent, pathMatch: 'full' },
+  { path: 'ptsd-test/auth-verify', component: LangRedirectComponent, pathMatch: 'full' },
+  { path: 'ptsd-test/payment', component: LangRedirectComponent, pathMatch: 'full' },
+
+  // Роуты с языком
   {
     path: ':lang/ptsd-test/auth-request',
     component: PtsdAuthRequestComponent,
@@ -74,9 +77,8 @@ const routes: Routes = [
   { path: ':lang/ptsd-test-result/:id', component: PtsdTestResultComponent, resolve: [LangGuard] },
   { path: ':lang', component: HomeComponent, resolve: [LangGuard] },
   { path: ':lang/:any-page', component: NotFoundComponent, resolve: [LangGuard] },
-  { path: '**', component: NotFoundComponent, resolve: [LangGuard] },
+  { path: '**', component: NotFoundComponent },
 ];
-
 
 const routerOptions: ExtraOptions = {
   anchorScrolling: 'enabled',

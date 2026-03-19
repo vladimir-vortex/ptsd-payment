@@ -9,10 +9,8 @@ export class LangRedirectComponent implements OnInit {
     const AVAILABLE_LANGS = ['en', 'pl', 'uk'];
     const saved = localStorage.getItem('preferredLang');
     const lang = saved && AVAILABLE_LANGS.includes(saved) ? saved : 'en';
-
-    // Берём текущий путь без языка и редиректим с языком
-    const currentPath = this.router.url.replace(/^\/[a-z]{2}\//, '/').replace(/^\//, '');
-    
+  
+    const currentPath = this.router.url.replace(/^\//, '');
     this.router.navigate([`/${lang}/${currentPath}`]);
   }
 }
