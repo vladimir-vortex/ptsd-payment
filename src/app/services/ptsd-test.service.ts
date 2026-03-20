@@ -98,7 +98,11 @@ export class PtsdTestService {
   submit(answers: any): Observable<any> {
     return this.http.post<any>(
       `${API}/api/v1/ptsd-test/answers`,
-      { token: this.getToken(), answers },
+      { 
+        token: this.getToken(),
+        answers,
+        lang: this.translocoService.getActiveLang()
+      },
       { headers: this.headers, observe: 'response', responseType: 'json' }
     );
   }
