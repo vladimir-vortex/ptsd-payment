@@ -4,6 +4,61 @@
         "textLinkAbout": "Про проект"
     },
     "page": {
+        "auth": {
+            "requestTitle": "Введіть вашу електронну пошту",
+            "requestSubtitle": "Ви отримаєте код підтвердження та результати тесту.",
+            "requestPlaceholder": "Напр. pat@example.com",
+            "requestInputEmailRequiredMessage": "Email обов'язковий.",
+            "requestErrorEmailInvalidMessage": "Будь ласка, введіть коректну електронну адресу.",
+            "requestButton": "Отримати код",
+            "requestButtonLoading": "Відправка...",
+            "verifyTitle": "Введіть код",
+            "verifySubtitle": "Код надіслано на",
+            "verifyButton": "Підтвердити",
+            "verifyButtonLoading": "Перевірка...",
+            "backButton": "Змінити email",
+            "resendDescription": "Перевірте папку спам, якщо не бачите листа.",
+            "resendCountdown": "Запросити новий код можна через {{ countdown }} сек.",
+            "resendLink": "Надіслати код повторно",
+            "resendSending": "Відправка...",
+            "codeSent": "Код успішно надіслано.",
+            "errorOtpRequestValidation": "Помилка відправки коду. Будь ласка, спробуйте пізніше.",
+            "errorOtpRequestRateLimit": "Забагато запитів. Будь ласка, спробуйте пізніше.",
+            "errorOtpVerifyValidation": "Помилка перевірки коду. Будь ласка, спробуйте пізніше.",
+            "errorOtpVerifyInvalid": "Невірний код. Будь ласка, запросіть новий.",
+            "errorOtpVerifyExpired": "Термін дії коду закінчився. Будь ласка, запросіть новий.",
+            "errorOtpVerifyNotFound": "Код не знайдено. Будь ласка, запросіть новий.",
+            "errorUnknown": "Невідома помилка. Будь ласка, спробуйте пізніше."
+        },
+        "payment": {
+            "title": "Оплата",
+            "description": "Ви будете перенаправлені на сторінку оплати.",
+            "total": "До оплати",
+            "buttonPay": "Оплатити"
+        },
+        "payment-return": {
+            "waiting": {
+                "description": "Перевірка оплати..."
+            },
+            "polling": {
+                "description": "Зачекайте кілька секунд"
+            },
+            "success": {
+                "title": "Оплата успішна!",
+                "description": "Перенаправлення до тесту..."
+            },
+            "timeout": {
+                "title": "Час очікування вичерпано",
+                "polling": "Іноді підтвердження займає трохи більше часу. Будь ласка, спробуйте ще раз за хвилину.",
+                "checkout": "Якщо з якоїсь причини оплата не пройшла, ви можете спробувати здійснити оплату ще раз."
+            },
+            "error": {
+                "title": "Помилка оплати",
+                "description": "Ваш платіж не пройшов. Будь ласка, спробуйте ще раз."
+            },
+            "buttonCheckout": "Перейти до оплати",
+            "buttonPolling": "Повторити"
+        },
         "results": {
             "title": "Результат тесту",
             "subtitle1": "Гра з молодшими дітьми",
@@ -66,6 +121,28 @@
             "result-header": "Готово!",
             "result-text": "Натисніть на кнопку нижче, щоб отримати результати",
             "result-button": "До результату"
+        },
+        "complete": {
+            "title": "Тест завершено",
+            "description": [
+                {
+                    "type": "paragraph",
+                    "value": "Тест успішно пройдено. Ви можете перейти до перегляду результатів, які будуть відображені на наступній сторінці."
+                },
+                {
+                    "type": "paragraph",
+                    "value": "Платна послуга вважається виконаною на цьому етапі."
+                },
+                {
+                    "type": "paragraph",
+                    "value": "За бажанням ви можете пройти тест повторно."
+                }
+            ],
+            "buttonRestart": "Пройти тест повторно",
+            "buttonSubmit": "Перейти до результатів",
+            "buttonSubmitLoading": "Відправка...",
+            "testNotFound": "Тест не знайдено",
+            "testNotPaid": "Тест не оплачено"
         },
         "home": {
             "cover": {
