@@ -43,8 +43,8 @@ export class PtsdTestCompleteComponent {
         this.isLoading = false;
         const errorKey = err?.error?.message;
       
-        const message = this.translocoService.translate(`page.auth.${errorKey}`) !== `page.auth.${errorKey}`
-          ? this.translocoService.translate(`page.auth.${errorKey}`)
+        const message = this.translocoService.translate(`page.complete.${errorKey}`) !== `page.complete.${errorKey}`
+          ? this.translocoService.translate(`page.complete.${errorKey}`)
           : this.translocoService.translate('common.error.unknown');
       
         this._snackBar.open(message, 'OK', {
@@ -52,6 +52,17 @@ export class PtsdTestCompleteComponent {
           horizontalPosition: 'center',
           duration: 3000
         });
+
+        if (errorKey === 'testNotFound') {
+          this.ptsdTestService.clearTest();
+          this.router.navigate([this.lang, 'ptsd-test/auth-request']);
+        }
+
+        if (errorKey === 'testNotPaid') {
+          this.ptsdTestService.clearTest();
+          this.router.navigate([this.lang, 'ptsd-test/auth-verify']);
+        }
+
       },
     });
   }

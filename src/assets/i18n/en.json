@@ -144,7 +144,9 @@
             ],
             "buttonRestart": "Restart the test",
             "buttonSubmit": "Go to results",
-            "buttonSubmitLoading": "Sending..."
+            "buttonSubmitLoading": "Sending...",
+            "testNotFound": "Test not found",
+            "testNotPaid": "Test not paid"
         },
         "home": {
             "cover": {
